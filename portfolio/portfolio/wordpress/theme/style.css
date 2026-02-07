@@ -1,0 +1,21 @@
+/*
+Theme Name: Portfolio Headless Theme
+Theme URI: https://example.com
+Description: Minimal headless theme for portfolio site
+Version: 1.0.0
+Author: Ray Turk
+Author URI: https://example.com
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: portfolio-headless
+Domain Path: /languages
+
+A minimal WordPress theme designed for headless CMS usage with a Next.js frontend.
+The theme disables traditional WordPress frontend rendering and enables GraphQL APIs.
+*/
+
+/* Headless theme - minimal styling */
+body {
+    margin: 0;
+    padding: 0;
+}
