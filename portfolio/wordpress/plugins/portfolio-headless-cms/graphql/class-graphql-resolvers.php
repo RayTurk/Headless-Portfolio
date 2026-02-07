@@ -36,7 +36,7 @@ class GraphQL_Resolvers {
             'RootQuery',
             'featuredProjects',
             array(
-                'type'        => array( 'list_of' => 'Project' ],
+                'type'        => array( 'list_of' => 'Project' ),
                 'args'        => array(
                     'first' => array(
                         'type'        => 'Int',
@@ -86,7 +86,7 @@ class GraphQL_Resolvers {
             'RootQuery',
             'featuredServices',
             array(
-                'type'        => array( 'list_of' => 'Service' ],
+                'type'        => array( 'list_of' => 'Service' ),
                 'args'        => array(
                     'first' => array(
                         'type'        => 'Int',
@@ -136,7 +136,7 @@ class GraphQL_Resolvers {
             'RootQuery',
             'featuredTestimonials',
             array(
-                'type'        => array( 'list_of' => 'Testimonial' ],
+                'type'        => array( 'list_of' => 'Testimonial' ),
                 'args'        => array(
                     'first' => array(
                         'type'        => 'Int',
@@ -184,10 +184,10 @@ class GraphQL_Resolvers {
             'RootQuery',
             'projectsByTechnology',
             array(
-                'type'        => array( 'list_of' => 'Project' ],
+                'type'        => array( 'list_of' => 'Project' ),
                 'args'        => array(
                     'technology' => array(
-                        'type'        => array( 'non_null' => 'String' ],
+                        'type'        => array( 'non_null' => 'String' ),
                         'description' => esc_html__( 'Technology slug or name', 'portfolio-headless-cms' ),
                     ),
                     'first'      => array(
@@ -241,10 +241,10 @@ class GraphQL_Resolvers {
             'RootQuery',
             'projectsByType',
             array(
-                'type'        => array( 'list_of' => 'Project' ],
+                'type'        => array( 'list_of' => 'Project' ),
                 'args'        => array(
                     'type'  => array(
-                        'type'        => array( 'non_null' => 'String' ],
+                        'type'        => array( 'non_null' => 'String' ),
                         'description' => esc_html__( 'Project type slug', 'portfolio-headless-cms' ),
                     ),
                     'first' => array(
@@ -298,7 +298,7 @@ class GraphQL_Resolvers {
             'RootQuery',
             'recentBlogPosts',
             array(
-                'type'        => array( 'list_of' => 'Post' ],
+                'type'        => array( 'list_of' => 'Post' ),
                 'args'        => array(
                     'first' => array(
                         'type'        => 'Int',

@@ -93,7 +93,7 @@ class GraphQL_Config {
             'Post',
             'categoryList',
             array(
-                'type'        => array( 'list_of' => 'String' ],
+                'type'        => array( 'list_of' => 'String' ),
                 'description' => esc_html__( 'List of category names', 'portfolio-headless-cms' ),
                 'resolve'     => function( $post ) {
                     $categories = get_the_category( $post->ID );

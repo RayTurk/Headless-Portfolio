@@ -16,8 +16,7 @@
  * Text Domain: portfolio-isr-webhook
  * Domain Path: /languages
  *
- * Requires: PHP 7.4
- * Requires Plugins: portfolio-headless-cms
+ * Requires PHP: 7.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -112,15 +111,20 @@ function portfolio_isr_webhook_init() {
 
     // Add admin notice
     add_action( 'admin_notices', 'portfolio_isr_webhook_admin_notice' );
+}
+add_action( 'plugins_loaded', 'portfolio_isr_webhook_init', 20 );
 
-    // Load text domain
+/**
+ * Load text domain on init (WP 6.7+ requires init or later)
+ */
+function portfolio_isr_webhook_load_textdomain() {
     load_plugin_textdomain(
         'portfolio-isr-webhook',
         false,
         dirname( PORTFOLIO_ISR_WEBHOOK_BASENAME ) . '/languages'
     );
 }
-add_action( 'plugins_loaded', 'portfolio_isr_webhook_init', 20 );
+add_action( 'init', 'portfolio_isr_webhook_load_textdomain' );
 
 /**
  * Trigger revalidation on post save

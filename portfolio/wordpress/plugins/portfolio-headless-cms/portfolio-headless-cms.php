@@ -16,8 +16,7 @@
  * Text Domain: portfolio-headless-cms
  * Domain Path: /languages
  *
- * Requires: PHP 7.4
- * Requires Plugins: acf-pro, wp-graphql
+ * Requires PHP: 7.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -42,13 +41,23 @@ spl_autoload_register( function( $class ) {
     }
 
     // Remove namespace prefix
-    $class = str_replace( 'Portfolio_Headless_CMS\\', '', $class );
+    $class_name = str_replace( 'Portfolio_Headless_CMS\\', '', $class );
 
-    // Convert class name to file path
-    $file = PORTFOLIO_HEADLESS_CMS_DIR . 'includes/class-' . strtolower( str_replace( '_', '-', $class ) ) . '.php';
+    // Convert class name to filename
+    $filename = 'class-' . strtolower( str_replace( '_', '-', $class_name ) ) . '.php';
 
-    if ( file_exists( $file ) ) {
-        require_once $file;
+    // Search in multiple directories
+    $directories = array(
+        PORTFOLIO_HEADLESS_CMS_DIR . 'includes/',
+        PORTFOLIO_HEADLESS_CMS_DIR . 'graphql/',
+    );
+
+    foreach ( $directories as $directory ) {
+        $file = $directory . $filename;
+        if ( file_exists( $file ) ) {
+            require_once $file;
+            return;
+        }
     }
 } );
 
@@ -58,14 +67,14 @@ spl_autoload_register( function( $class ) {
 function portfolio_headless_cms_check_dependencies() {
     $dependencies = array();
 
-    // Check for ACF Pro
-    if ( ! class_exists( 'ACF_Pro' ) && ! defined( 'ACF_PRO' ) ) {
-        $dependencies[] = 'ACF Pro';
+    // Check for ACF Pro — ACF Pro defines the 'ACF' class and the acf() function
+    if ( ! class_exists( 'ACF' ) && ! function_exists( 'acf' ) ) {
+        $dependencies[] = 'Advanced Custom Fields PRO';
     }
 
-    // Check for WP GraphQL
-    if ( ! class_exists( '\WPGraphQL\Core' ) && ! defined( 'WPGRAPHQL_VERSION' ) ) {
-        $dependencies[] = 'WP GraphQL';
+    // Check for WP GraphQL — it defines the WPGRAPHQL_VERSION constant
+    if ( ! defined( 'WPGRAPHQL_VERSION' ) && ! class_exists( 'WPGraphQL' ) ) {
+        $dependencies[] = 'WPGraphQL';
     }
 
     return $dependencies;
@@ -123,15 +132,20 @@ function portfolio_headless_cms_init() {
 
     // Initialize GraphQL resolvers
     Portfolio_Headless_CMS\GraphQL_Resolvers::register();
+}
+add_action( 'plugins_loaded', 'portfolio_headless_cms_init', 10 );
 
-    // Load text domain
+/**
+ * Load text domain on init (WP 6.7+ requires init or later)
+ */
+function portfolio_headless_cms_load_textdomain() {
     load_plugin_textdomain(
         'portfolio-headless-cms',
         false,
         dirname( PORTFOLIO_HEADLESS_CMS_BASENAME ) . '/languages'
     );
 }
-add_action( 'plugins_loaded', 'portfolio_headless_cms_init', 10 );
+add_action( 'init', 'portfolio_headless_cms_load_textdomain' );
 
 /**
  * Load ACF field definitions
