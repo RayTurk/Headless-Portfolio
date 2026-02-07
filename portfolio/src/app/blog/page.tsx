@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import { getAllPosts } from '@/lib/api';
 import { BlogPostCard } from '@/components/blog/PostCard';
-import { motion } from 'framer-motion';
 import { Suspense } from 'react';
 
 export const metadata: Metadata = {
@@ -49,12 +48,7 @@ async function BlogContent({ page }: { page?: string }) {
     <main className="min-h-screen bg-slate-950 pt-32 pb-20 px-4 md:px-8 lg:px-12">
       {/* Hero Section */}
       <section className="max-w-5xl mx-auto mb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
             <span className="bg-gradient-to-r from-indigo-400 via-emerald-400 to-indigo-400 bg-clip-text text-transparent">
               Blog
@@ -63,16 +57,11 @@ async function BlogContent({ page }: { page?: string }) {
           <p className="text-lg text-slate-300 max-w-2xl mx-auto">
             Insights on WordPress, web development, and digital strategy
           </p>
-        </motion.div>
+        </div>
 
         {/* Category Filter */}
         {categories.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-wrap gap-2 justify-center mb-12"
-          >
+          <div className="flex flex-wrap gap-2 justify-center mb-12">
             <a
               href="/blog"
               className="px-4 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-emerald-500 text-white font-semibold text-sm"
@@ -88,7 +77,7 @@ async function BlogContent({ page }: { page?: string }) {
                 {cat.name} ({cat.count})
               </a>
             ))}
-          </motion.div>
+          </div>
         )}
       </section>
 
@@ -98,38 +87,23 @@ async function BlogContent({ page }: { page?: string }) {
           <>
             {/* Featured Post (First One) */}
             {paginatedPosts[0] && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                className="mb-12 md:col-span-2"
-              >
+              <div className="mb-12 md:col-span-2">
                 <BlogPostCard post={paginatedPosts[0]} featured />
-              </motion.div>
+              </div>
             )}
 
             {/* Rest of Posts */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {paginatedPosts.slice(1).map((post, index) => (
-                <motion.div
-                  key={post.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: (index + 1) * 0.05 }}
-                >
+              {paginatedPosts.slice(1).map((post) => (
+                <div key={post.id}>
                   <BlogPostCard post={post} />
-                </motion.div>
+                </div>
               ))}
             </div>
 
             {/* Pagination */}
             {totalPages > 1 && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="flex justify-center gap-2 flex-wrap"
-              >
+              <div className="flex justify-center gap-2 flex-wrap">
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
                   <a
                     key={p}
@@ -143,17 +117,13 @@ async function BlogContent({ page }: { page?: string }) {
                     {p}
                   </a>
                 ))}
-              </motion.div>
+              </div>
             )}
           </>
         ) : (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center py-12"
-          >
+          <div className="text-center py-12">
             <p className="text-slate-400 text-lg">No posts found.</p>
-          </motion.div>
+          </div>
         )}
       </section>
     </main>

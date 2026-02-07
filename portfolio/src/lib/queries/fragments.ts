@@ -222,16 +222,6 @@ export const POST_FRAGMENT = gql`
         ...TaxonomyTermFragment
       }
     }
-    blogFields {
-      readingTimeOverride
-      postSubtitle
-      showToc
-      ctaText
-      ctaUrl
-      seoTitle
-      seoDescription
-      seoKeywords
-    }
   }
   ${IMAGE_FRAGMENT}
   ${AUTHOR_FRAGMENT}
@@ -262,10 +252,6 @@ export const POST_FRAGMENT_MINIMAL = gql`
         name
         slug
       }
-    }
-    blogFields {
-      postSubtitle
-      readingTimeOverride
     }
   }
   ${IMAGE_FRAGMENT}
