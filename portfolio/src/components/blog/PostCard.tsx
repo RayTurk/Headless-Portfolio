@@ -6,19 +6,27 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 interface Post {
-  id: number;
+  id: string;
   slug: string;
-  title: {
-    rendered: string;
-  };
-  excerpt: {
-    rendered: string;
-  };
-  featured_media_url?: string;
-  categories?: Array<{ id: number; name: string; slug: string }>;
-  author_name?: string;
-  author_avatar?: string;
+  title: string;
+  excerpt: string;
+  content?: string;
   date: string;
+  featuredImage?: {
+    node: {
+      sourceUrl: string;
+      altText?: string;
+    };
+  };
+  categories?: {
+    nodes: Array<{ id: string; name: string; slug: string }>;
+  };
+  author?: {
+    node: {
+      name: string;
+      avatar?: { url: string };
+    };
+  };
 }
 
 interface PostCardProps {
@@ -26,21 +34,16 @@ interface PostCardProps {
   featured?: boolean;
 }
 
-// Calculate reading time
-function calculateReadingTime(content: string): number {
-  const wordsPerMinute = 200;
-  const text = content.replace(/<[^>]*>/g, '');
-  const wordCount = text.split(/\s+/).length;
-  return Math.ceil(wordCount / wordsPerMinute);
-}
-
 export function BlogPostCard({ post, featured = false }: PostCardProps) {
   const [isHovered, setIsHovered] = useState(false);
-  const category = post.categories?.[0];
-  // Estimate reading time based on excerpt length (rough estimate)
+  const category = post.categories?.nodes?.[0];
+  const imageUrl = post.featuredImage?.node?.sourceUrl;
+  const authorName = post.author?.node?.name || 'Author';
+  const authorAvatar = post.author?.node?.avatar?.url;
+  const cleanExcerpt = post.excerpt?.replace(/<[^>]*>/g, '') || '';
   const estimatedReadingTime = Math.max(
     2,
-    Math.ceil(post.excerpt.rendered.split(' ').length / 200)
+    Math.ceil(cleanExcerpt.split(' ').length / 200)
   );
 
   if (featured) {
@@ -53,15 +56,15 @@ export function BlogPostCard({ post, featured = false }: PostCardProps) {
         >
           {/* Image */}
           <div className="relative h-64 md:h-full overflow-hidden bg-slate-800">
-            {post.featured_media_url ? (
+            {imageUrl ? (
               <motion.div
                 animate={isHovered ? { scale: 1.05 } : { scale: 1 }}
                 transition={{ duration: 0.4 }}
                 className="w-full h-full"
               >
                 <Image
-                  src={post.featured_media_url}
-                  alt={post.title.rendered}
+                  src={imageUrl}
+                  alt={post.featuredImage?.node?.altText || post.title}
                   fill
                   className="object-cover"
                   priority
@@ -85,25 +88,25 @@ export function BlogPostCard({ post, featured = false }: PostCardProps) {
           {/* Content */}
           <div className="p-8 flex flex-col justify-center">
             <h2 className="text-2xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors line-clamp-3">
-              {post.title.rendered}
+              {post.title}
             </h2>
 
             <p className="text-slate-400 text-sm mb-6 line-clamp-3">
-              {post.excerpt.rendered.replace(/<[^>]*>/g, '')}
+              {cleanExcerpt}
             </p>
 
             <div className="flex items-center gap-4 text-slate-400 text-sm">
-              {post.author_avatar && (
+              {authorAvatar && (
                 <Image
-                  src={post.author_avatar}
-                  alt={post.author_name || 'Author'}
+                  src={authorAvatar}
+                  alt={authorName}
                   width={32}
                   height={32}
                   className="rounded-full"
                 />
               )}
-              <span>{post.author_name || 'Author'}</span>
-              <span>•</span>
+              <span>{authorName}</span>
+              <span>&bull;</span>
               <time dateTime={post.date}>
                 {new Date(post.date).toLocaleDateString('en-US', {
                   year: 'numeric',
@@ -111,7 +114,7 @@ export function BlogPostCard({ post, featured = false }: PostCardProps) {
                   day: 'numeric',
                 })}
               </time>
-              <span>•</span>
+              <span>&bull;</span>
               <span>{estimatedReadingTime} min read</span>
             </div>
 
@@ -124,7 +127,7 @@ export function BlogPostCard({ post, featured = false }: PostCardProps) {
             >
               Read Article
               <motion.span animate={isHovered ? { x: 4 } : { x: 0 }}>
-                →
+                &rarr;
               </motion.span>
             </motion.div>
           </div>
@@ -143,15 +146,15 @@ export function BlogPostCard({ post, featured = false }: PostCardProps) {
       >
         {/* Image Container */}
         <div className="relative h-48 overflow-hidden bg-slate-800">
-          {post.featured_media_url ? (
+          {imageUrl ? (
             <motion.div
               animate={isHovered ? { scale: 1.1 } : { scale: 1 }}
               transition={{ duration: 0.4 }}
               className="w-full h-full"
             >
               <Image
-                src={post.featured_media_url}
-                alt={post.title.rendered}
+                src={imageUrl}
+                alt={post.featuredImage?.node?.altText || post.title}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -185,26 +188,26 @@ export function BlogPostCard({ post, featured = false }: PostCardProps) {
         <div className="p-6 flex flex-col flex-1">
           {/* Title */}
           <h3 className="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors line-clamp-2 flex-1">
-            {post.title.rendered}
+            {post.title}
           </h3>
 
           {/* Excerpt */}
           <p className="text-slate-400 text-sm mb-4 line-clamp-2">
-            {post.excerpt.rendered.replace(/<[^>]*>/g, '')}
+            {cleanExcerpt}
           </p>
 
           {/* Meta Footer */}
           <div className="flex items-center gap-3 text-slate-400 text-xs border-t border-slate-800 pt-4">
-            {post.author_avatar && (
+            {authorAvatar && (
               <Image
-                src={post.author_avatar}
-                alt={post.author_name || 'Author'}
+                src={authorAvatar}
+                alt={authorName}
                 width={24}
                 height={24}
                 className="rounded-full"
               />
             )}
-            <span className="flex-1">{post.author_name || 'Author'}</span>
+            <span className="flex-1">{authorName}</span>
             <time dateTime={post.date}>
               {new Date(post.date).toLocaleDateString('en-US', {
                 month: 'short',

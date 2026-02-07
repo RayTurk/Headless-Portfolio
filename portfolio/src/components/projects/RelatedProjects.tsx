@@ -3,22 +3,27 @@
 import { motion } from 'framer-motion';
 import { ProjectCard } from './ProjectCard';
 
-interface Project {
-  id: number;
+interface RelatedProject {
+  id: string;
   slug: string;
-  title: {
-    rendered: string;
+  title: string;
+  excerpt: string;
+  featuredImage?: {
+    node: {
+      sourceUrl: string;
+      altText?: string;
+    };
   };
-  excerpt: {
-    rendered: string;
+  techStacks?: {
+    nodes: Array<{ id: string; name: string }>;
   };
-  featured_media_url?: string;
-  technologies?: Array<{ id: number; name: string }>;
-  project_type?: Array<{ id: number; name: string; slug: string }>;
+  projectTypes?: {
+    nodes: Array<{ id: string; name: string; slug: string }>;
+  };
 }
 
 interface RelatedProjectsProps {
-  projects: Project[];
+  projects: RelatedProject[];
 }
 
 export function RelatedProjects({ projects }: RelatedProjectsProps) {

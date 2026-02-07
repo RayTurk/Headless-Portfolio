@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/Button'
 
 export function ContactCTA() {
   return (
@@ -55,7 +55,7 @@ export function ContactCTA() {
           </Button>
           <Button
             size="lg"
-            variant="outline"
+            variant="secondary"
             className="border-brand-500/50 text-brand-400 hover:bg-brand-500/10 px-10 py-3 text-lg"
           >
             Schedule a Call

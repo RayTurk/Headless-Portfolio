@@ -4,26 +4,38 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-interface Project {
-  title: {
-    rendered: string;
+interface ProjectIframeData {
+  title: string;
+  projectFields?: {
+    iframeEmbedUrl?: string;
+    projectGif?: { url: string };
   };
+  featuredImage?: {
+    node: {
+      sourceUrl: string;
+      altText?: string;
+    };
+  };
+  // Support legacy flat format
   iframe_url?: string;
   demo_gif_url?: string;
   featured_media_url?: string;
 }
 
 interface ProjectIframeProps {
-  project: Project;
+  project: ProjectIframeData;
 }
 
 export function ProjectIframe({ project }: ProjectIframeProps) {
   const [isLoading, setIsLoading] = useState(true);
 
-  // Prioritize: iframe > GIF > featured image
-  const hasIframe = !!project.iframe_url;
-  const hasGif = !!project.demo_gif_url;
-  const hasImage = !!project.featured_media_url;
+  const iframeUrl = project.projectFields?.iframeEmbedUrl || project.iframe_url;
+  const gifUrl = project.projectFields?.projectGif?.url || project.demo_gif_url;
+  const imageUrl = project.featuredImage?.node?.sourceUrl || project.featured_media_url;
+
+  const hasIframe = !!iframeUrl;
+  const hasGif = !!gifUrl;
+  const hasImage = !!imageUrl;
 
   return (
     <motion.div
@@ -42,7 +54,7 @@ export function ProjectIframe({ project }: ProjectIframeProps) {
             <div className="w-3 h-3 rounded-full bg-green-500" />
           </div>
           <div className="flex-1 ml-4 px-3 py-1 bg-slate-700 rounded text-xs text-slate-300 truncate">
-            {project.iframe_url || 'project preview'}
+            {iframeUrl || 'project preview'}
           </div>
         </div>
 
@@ -56,24 +68,24 @@ export function ProjectIframe({ project }: ProjectIframeProps) {
                 </div>
               )}
               <iframe
-                src={project.iframe_url!}
-                title={project.title.rendered}
+                src={iframeUrl!}
+                title={project.title}
                 className="w-full h-full border-none"
                 onLoad={() => setIsLoading(false)}
               />
             </>
           ) : hasGif ? (
             <Image
-              src={project.demo_gif_url!}
-              alt={`${project.title.rendered} demo`}
+              src={gifUrl!}
+              alt={`${project.title} demo`}
               fill
               className="object-cover"
               onLoad={() => setIsLoading(false)}
             />
           ) : hasImage ? (
             <Image
-              src={project.featured_media_url!}
-              alt={project.title.rendered}
+              src={imageUrl!}
+              alt={project.title}
               fill
               className="object-cover"
               onLoad={() => setIsLoading(false)}

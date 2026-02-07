@@ -37,7 +37,7 @@ export const GET_ALL_PROJECTS = gql`
 // ============================================================================
 
 export const GET_PROJECT_BY_SLUG = gql`
-  query GetProjectBySlug($slug: String!) {
+  query GetProjectBySlug($slug: ID!) {
     project(id: $slug, idType: SLUG) {
       ...ProjectFragment
     }
@@ -157,7 +157,7 @@ export const GET_PROJECTS_BY_TECH_STACK = gql`
 // ============================================================================
 
 export const GET_PROJECT_WITH_RELATED = gql`
-  query GetProjectWithRelated($slug: String!) {
+  query GetProjectWithRelated($slug: ID!) {
     project(id: $slug, idType: SLUG) {
       ...ProjectFragment
     }

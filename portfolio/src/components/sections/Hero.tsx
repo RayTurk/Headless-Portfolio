@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/Button'
 import { AnimatedText } from '@/components/ui/animated-text'
 import { TypingText } from '@/components/ui/typing-text'
 import { SiteSettings } from '@/types/wordpress'
@@ -44,7 +44,11 @@ export function Hero({ settings }: HeroProps) {
     { label: 'Happy Clients', value: '100+' },
   ]
 
-  const stats = settings?.stats || defaultStats
+  const settingsStats = settings?.homepageSettings?.stats?.map((s) => ({
+    label: s.statLabel,
+    value: s.statNumber,
+  }))
+  const stats = settingsStats?.length ? settingsStats : defaultStats
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-surface-950 via-surface-900 to-surface-950 flex flex-col items-center justify-center">
@@ -107,7 +111,7 @@ export function Hero({ settings }: HeroProps) {
           </Button>
           <Button
             size="lg"
-            variant="outline"
+            variant="secondary"
             className="border-brand-500/50 text-brand-400 hover:bg-brand-500/10 px-8"
           >
             Get in Touch

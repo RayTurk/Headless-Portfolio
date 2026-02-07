@@ -142,7 +142,7 @@ export default async function HomePage() {
       />
 
       <Suspense fallback={<HeroSkeleton />}>
-        <Hero settings={siteSettings} />
+        <Hero settings={siteSettings || undefined} />
       </Suspense>
 
       <SkillsMarquee />

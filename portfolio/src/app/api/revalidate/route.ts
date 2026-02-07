@@ -1,53 +1,95 @@
 import { revalidatePath } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 
-const REVALIDATE_SECRET = process.env.REVALIDATE_SECRET || 'your-secret-key';
+const REVALIDATE_SECRET = process.env.REVALIDATION_SECRET || '';
 
 export async function POST(request: NextRequest) {
   try {
-    // Validate secret
-    const { secret, slug, type } = await request.json();
+    // Validate secret from header (sent by WordPress ISR webhook plugin)
+    const headerSecret = request.headers.get('X-ISR-Secret');
 
-    if (secret !== REVALIDATE_SECRET) {
+    // Also support secret in body for backwards compatibility
+    const body = await request.json();
+    const secret = headerSecret || body.secret;
+
+    if (!secret || secret !== REVALIDATE_SECRET) {
       return NextResponse.json(
         { error: 'Invalid secret' },
         { status: 401 }
       );
     }
 
-    // Validate inputs
+    // Handle payload from WordPress ISR webhook plugin
+    // Plugin sends: { type, post_id, post_type, paths, timestamp }
+    const { paths, post_type, type: eventType } = body;
+
+    // If paths array is provided (from webhook plugin), revalidate each path
+    if (paths && Array.isArray(paths)) {
+      for (const path of paths) {
+        revalidatePath(path);
+      }
+
+      return NextResponse.json(
+        {
+          success: true,
+          message: `Revalidated ${paths.length} path(s)`,
+          paths,
+          timestamp: new Date().toISOString(),
+        },
+        { status: 200 }
+      );
+    }
+
+    // Fallback: handle simple { slug, type } payload
+    const { slug, type } = body;
+
     if (!slug || !type) {
       return NextResponse.json(
-        { error: 'Missing slug or type' },
+        { error: 'Missing paths array or slug/type' },
         { status: 400 }
       );
     }
 
-    // Revalidate the appropriate path based on type
-    let path = '';
+    const revalidatedPaths: string[] = [];
 
     switch (type) {
       case 'project':
-        path = `/projects/${slug}`;
-        revalidatePath('/projects'); // Also revalidate projects listing
+        revalidatePath(`/projects/${slug}`);
+        revalidatePath('/projects');
+        revalidatedPaths.push(`/projects/${slug}`, '/projects');
         break;
       case 'post':
-        path = `/blog/${slug}`;
-        revalidatePath('/blog'); // Also revalidate blog listing
+        revalidatePath(`/blog/${slug}`);
+        revalidatePath('/blog');
+        revalidatedPaths.push(`/blog/${slug}`, '/blog');
+        break;
+      case 'service':
+        revalidatePath(`/services/${slug}`);
+        revalidatePath('/services');
+        revalidatedPaths.push(`/services/${slug}`, '/services');
+        break;
+      case 'testimonial':
+        revalidatePath('/');
+        revalidatedPaths.push('/');
         break;
       default:
         return NextResponse.json(
-          { error: 'Invalid type. Must be "project" or "post"' },
+          { error: `Invalid type: ${type}` },
           { status: 400 }
         );
     }
 
-    revalidatePath(path);
+    // Always revalidate homepage
+    if (!revalidatedPaths.includes('/')) {
+      revalidatePath('/');
+      revalidatedPaths.push('/');
+    }
 
     return NextResponse.json(
       {
         success: true,
-        message: `Revalidated ${path}`,
+        message: `Revalidated ${revalidatedPaths.length} path(s)`,
+        paths: revalidatedPaths,
         timestamp: new Date().toISOString(),
       },
       { status: 200 }
@@ -61,7 +103,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Optional: Add GET handler for health check
+// Health check
 export async function GET() {
   return NextResponse.json(
     { message: 'Revalidation endpoint is running' },

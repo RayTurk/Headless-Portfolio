@@ -172,4 +172,5 @@ const Header = () => {
   );
 };
 
+export { Header };
 export default Header;

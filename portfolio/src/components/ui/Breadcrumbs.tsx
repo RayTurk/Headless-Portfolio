@@ -137,4 +137,5 @@ const Breadcrumbs = ({ items, className }: BreadcrumbsProps) => {
   );
 };
 
+export { Breadcrumbs };
 export default Breadcrumbs;

@@ -34,7 +34,7 @@ export function formatDate(
 ): string {
   const date = new Date(dateString);
 
-  const options: Intl.DateTimeFormatOptions = {
+  const formatMap: Record<string, Intl.DateTimeFormatOptions> = {
     short: { month: '2-digit', day: '2-digit', year: '2-digit' },
     long: { month: 'long', day: 'numeric', year: 'numeric' },
     full: {
@@ -43,7 +43,8 @@ export function formatDate(
       day: 'numeric',
       year: 'numeric',
     },
-  }[format] || { month: 'long', day: 'numeric', year: 'numeric' };
+  };
+  const options = formatMap[format] || formatMap.long;
 
   return date.toLocaleDateString('en-US', options);
 }

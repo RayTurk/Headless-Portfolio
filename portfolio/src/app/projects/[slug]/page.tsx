@@ -1,4 +1,4 @@
-import { Metadata, MetadataRoute } from 'next';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import {
   getProjectBySlug,
@@ -8,8 +8,7 @@ import {
 import { ProjectIframe } from '@/components/projects/ProjectIframe';
 import { ProjectGallery } from '@/components/projects/ProjectGallery';
 import { RelatedProjects } from '@/components/projects/RelatedProjects';
-import { Breadcrumbs } from '@/components/ui/breadcrumbs';
-import { motion } from 'framer-motion';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import Image from 'next/image';
 
 export async function generateStaticParams() {
@@ -30,28 +29,32 @@ export async function generateMetadata(
     };
   }
 
+  const description = project.projectFields?.seoDescription ||
+    project.excerpt?.replace(/<[^>]*>/g, '') || '';
+  const imageUrl = project.featuredImage?.node?.sourceUrl;
+
   return {
-    title: `${project.title.rendered} | Projects`,
-    description: project.excerpt.rendered.replace(/<[^>]*>/g, ''),
+    title: project.projectFields?.seoTitle || `${project.title} | Projects`,
+    description,
     openGraph: {
-      title: project.title.rendered,
-      description: project.excerpt.rendered.replace(/<[^>]*>/g, ''),
+      title: project.title,
+      description,
       type: 'website',
-      images: project.featured_media_url
+      images: imageUrl
         ? [
             {
-              url: project.featured_media_url,
+              url: imageUrl,
               width: 1200,
               height: 630,
-              alt: project.title.rendered,
+              alt: project.title,
             },
           ]
         : [],
     },
     keywords: [
-      project.title.rendered,
-      ...(project.project_type?.map((pt: any) => pt.name) || []),
-      ...(project.technologies?.map((t: any) => t.name) || []),
+      project.title,
+      ...(project.projectTypes?.nodes?.map((pt) => pt.name) || []),
+      ...(project.techStacks?.nodes?.map((t) => t.name) || []),
     ],
   };
 }
@@ -65,12 +68,15 @@ export default async function ProjectPage(
     notFound();
   }
 
-  const relatedProjects = await getRelatedProjects(project.id, project.project_type?.[0]?.id);
+  const projectTypeId = project.projectTypes?.nodes?.[0]?.id;
+  const relatedProjects = await getRelatedProjects(project.id, projectTypeId);
+
+  const imageUrl = project.featuredImage?.node?.sourceUrl;
+  const technologies = project.techStacks?.nodes || [];
 
   const breadcrumbItems = [
-    { label: 'Home', href: '/' },
     { label: 'Projects', href: '/projects' },
-    { label: project.title.rendered, href: `/projects/${params.slug}`, current: true },
+    { label: project.title },
   ];
 
   return (
@@ -80,51 +86,46 @@ export default async function ProjectPage(
         <Breadcrumbs items={breadcrumbItems} />
 
         {/* Hero Section */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto mb-16 mt-8"
-        >
+        <section className="max-w-4xl mx-auto mb-16 mt-8">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-emerald-400 bg-clip-text text-transparent">
-            {project.title.rendered}
+            {project.title}
           </h1>
 
           {/* Project Meta */}
           <div className="flex flex-wrap gap-6 mb-8 text-slate-300">
-            {project.client_name && (
+            {project.projectFields?.clientName && (
               <div>
                 <p className="text-sm text-slate-400 uppercase tracking-wide">Client</p>
-                <p className="text-lg font-semibold text-white">{project.client_name}</p>
+                <p className="text-lg font-semibold text-white">{project.projectFields.clientName}</p>
               </div>
             )}
-            {project.completion_date && (
+            {project.projectFields?.projectDate && (
               <div>
                 <p className="text-sm text-slate-400 uppercase tracking-wide">Completed</p>
                 <p className="text-lg font-semibold text-white">
-                  {new Date(project.completion_date).toLocaleDateString('en-US', {
+                  {new Date(project.projectFields.projectDate).toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
                   })}
                 </p>
               </div>
             )}
-            {project.project_duration && (
+            {project.projectFields?.projectDuration && (
               <div>
                 <p className="text-sm text-slate-400 uppercase tracking-wide">Duration</p>
-                <p className="text-lg font-semibold text-white">{project.project_duration}</p>
+                <p className="text-lg font-semibold text-white">{project.projectFields.projectDuration}</p>
               </div>
             )}
           </div>
 
           {/* Tech Stack */}
-          {project.technologies && project.technologies.length > 0 && (
+          {technologies.length > 0 && (
             <div className="mb-8">
               <p className="text-sm text-slate-400 uppercase tracking-wide mb-3">
                 Technologies
               </p>
               <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech: any) => (
+                {technologies.map((tech) => (
                   <span
                     key={tech.id}
                     className="px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full text-sm font-medium border border-indigo-500/30"
@@ -138,9 +139,9 @@ export default async function ProjectPage(
 
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-4">
-            {project.live_url && (
+            {project.projectFields?.liveUrl && (
               <a
-                href={project.live_url}
+                href={project.projectFields.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-lg transition-colors"
@@ -148,9 +149,9 @@ export default async function ProjectPage(
                 View Live Site
               </a>
             )}
-            {project.github_url && (
+            {project.projectFields?.githubUrl && (
               <a
-                href={project.github_url}
+                href={project.projectFields.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-colors"
@@ -159,76 +160,61 @@ export default async function ProjectPage(
               </a>
             )}
           </div>
-        </motion.section>
+        </section>
 
         {/* Project Iframe / Preview */}
-        {(project.iframe_url || project.demo_gif_url || project.featured_media_url) && (
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="max-w-5xl mx-auto mb-20"
-          >
+        {(project.projectFields?.iframeEmbedUrl || project.projectFields?.projectGif || imageUrl) && (
+          <section className="max-w-5xl mx-auto mb-20">
             <ProjectIframe project={project} />
-          </motion.section>
+          </section>
         )}
 
         {/* Description */}
-        {project.content.rendered && (
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-3xl mx-auto mb-16"
-          >
+        {project.content && (
+          <section className="max-w-3xl mx-auto mb-16">
             <div className="prose prose-invert prose-lg max-w-none text-slate-300">
               <div
-                dangerouslySetInnerHTML={{ __html: project.content.rendered }}
+                dangerouslySetInnerHTML={{ __html: project.content }}
               />
             </div>
-          </motion.section>
+          </section>
         )}
 
         {/* Gallery */}
-        {project.gallery_images && project.gallery_images.length > 0 && (
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="max-w-5xl mx-auto mb-20"
-          >
+        {project.projectFields?.projectGallery && project.projectFields.projectGallery.length > 0 && (
+          <section className="max-w-5xl mx-auto mb-20">
             <h2 className="text-3xl font-bold mb-8 text-white">Project Gallery</h2>
-            <ProjectGallery images={project.gallery_images} />
-          </motion.section>
+            <ProjectGallery
+              images={project.projectFields.projectGallery.map((img) => ({
+                url: img.sourceUrl,
+                alt: img.altText || project.title,
+              }))}
+            />
+          </section>
         )}
 
         {/* Testimonial */}
-        {project.client_testimonial && (
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="max-w-3xl mx-auto mb-20 p-8 rounded-xl bg-gradient-to-br from-indigo-500/10 to-emerald-500/10 border border-indigo-500/20"
-          >
+        {project.projectFields?.projectTestimonial && (
+          <section className="max-w-3xl mx-auto mb-20 p-8 rounded-xl bg-gradient-to-br from-indigo-500/10 to-emerald-500/10 border border-indigo-500/20">
             <div className="text-lg text-slate-300 italic mb-4">
-              "{project.client_testimonial}"
+              &ldquo;{project.projectFields.projectTestimonial}&rdquo;
             </div>
-            {project.client_name && (
-              <div className="text-slate-400">— {project.client_name}</div>
+            {project.projectFields.testimonialAuthor && (
+              <div className="text-slate-400">
+                &mdash; {project.projectFields.testimonialAuthor}
+                {project.projectFields.testimonialRole && (
+                  <span className="text-slate-500">, {project.projectFields.testimonialRole}</span>
+                )}
+              </div>
             )}
-          </motion.section>
+          </section>
         )}
 
         {/* Related Projects */}
         {relatedProjects && relatedProjects.length > 0 && (
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="max-w-5xl mx-auto"
-          >
+          <section className="max-w-5xl mx-auto">
             <RelatedProjects projects={relatedProjects} />
-          </motion.section>
+          </section>
         )}
       </div>
 
@@ -239,12 +225,12 @@ export default async function ProjectPage(
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'CreativeWork',
-            name: project.title.rendered,
-            description: project.excerpt.rendered.replace(/<[^>]*>/g, ''),
-            image: project.featured_media_url,
+            name: project.title,
+            description: project.excerpt?.replace(/<[^>]*>/g, '') || '',
+            image: imageUrl,
             creator: {
               '@type': 'Person',
-              name: 'Portfolio Owner',
+              name: 'Ray Turk',
             },
             dateCreated: project.date,
             dateModified: project.modified,

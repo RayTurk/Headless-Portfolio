@@ -113,7 +113,10 @@ export async function getAllProjects(
     };
   } catch (error) {
     console.error('Error fetching all projects:', error);
-    throw handleError(error);
+    return {
+      projects: [],
+      pageInfo: { hasNextPage: false, hasPreviousPage: false },
+    };
   }
 }
 
@@ -250,8 +253,8 @@ export async function getProjectsByTechStack(
  * Get related projects by taxonomy
  */
 export async function getRelatedProjects(
-  projectId: number,
-  typeId?: number,
+  projectId: string | number,
+  typeId?: string | number,
   first: number = 3
 ): Promise<Project[]> {
   try {
@@ -303,7 +306,10 @@ export async function getAllPosts(
     };
   } catch (error) {
     console.error('Error fetching all posts:', error);
-    throw handleError(error);
+    return {
+      posts: [],
+      pageInfo: { hasNextPage: false, hasPreviousPage: false },
+    };
   }
 }
 

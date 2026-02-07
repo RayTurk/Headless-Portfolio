@@ -11,7 +11,10 @@ interface BlogPostCardProps {
 }
 
 export function BlogPostCard({ post }: BlogPostCardProps) {
-  const readingTime = post.readingTime || Math.ceil(post.content?.length / 200) || 5
+  const readingTime = post.readingTime || post.blogFields?.readingTimeOverride || Math.ceil((post.content?.length || 0) / 200) || 5
+  const imageUrl = post.featuredImage?.node?.sourceUrl
+  const category = post.categories?.nodes?.[0]
+  const cleanExcerpt = post.excerpt?.replace(/<[^>]*>/g, '') || ''
 
   return (
     <Link href={`/blog/${post.slug}`}>
@@ -21,15 +24,15 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
         transition={{ duration: 0.3 }}
       >
         {/* Featured image */}
-        {post.featuredImage && (
+        {imageUrl && (
           <motion.div
             className="relative h-48 overflow-hidden bg-surface-900"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.4 }}
           >
             <Image
-              src={post.featuredImage}
-              alt={post.title}
+              src={imageUrl}
+              alt={post.featuredImage?.node?.altText || post.title}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -42,7 +45,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
         {/* Content */}
         <div className="flex flex-col flex-grow p-6">
           {/* Category badge */}
-          {post.category && (
+          {category && (
             <motion.div
               className="inline-flex items-center gap-1 mb-3 w-fit"
               initial={{ opacity: 0 }}
@@ -50,7 +53,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
               transition={{ delay: 0.1 }}
             >
               <span className="text-xs font-semibold text-brand-400 bg-brand-500/20 px-2 py-1 rounded-full">
-                {post.category}
+                {category.name}
               </span>
             </motion.div>
           )}
@@ -66,14 +69,14 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
           </motion.h3>
 
           {/* Excerpt */}
-          {post.excerpt && (
+          {cleanExcerpt && (
             <motion.p
               className="text-sm text-surface-300 mb-4 line-clamp-2"
               initial={{ y: 10, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              {post.excerpt}
+              {cleanExcerpt}
             </motion.p>
           )}
 
@@ -84,11 +87,11 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.25 }}
           >
-            {post.publishedDate && (
+            {post.date && (
               <div className="flex items-center gap-1">
                 <Calendar className="w-3 h-3" />
-                <time dateTime={post.publishedDate}>
-                  {new Date(post.publishedDate).toLocaleDateString('en-US', {
+                <time dateTime={post.date}>
+                  {new Date(post.date).toLocaleDateString('en-US', {
                     month: 'short',
                     day: 'numeric',
                     year: 'numeric',

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Check, ShieldAlert, Zap, RotateCw, Activity, Lock } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/Button'
 
 const maintenanceFeatures = [
   {

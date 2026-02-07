@@ -37,7 +37,7 @@ export const GET_ALL_POSTS = gql`
 // ============================================================================
 
 export const GET_POST_BY_SLUG = gql`
-  query GetPostBySlug($slug: String!) {
+  query GetPostBySlug($slug: ID!) {
     post(id: $slug, idType: SLUG) {
       ...PostFragment
     }

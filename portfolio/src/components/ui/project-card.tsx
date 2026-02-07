@@ -19,6 +19,10 @@ export function ProjectCard({
 }: ProjectCardProps) {
   const heightClass =
     size === 'large' ? 'h-96' : size === 'standard' ? 'h-72' : 'h-56'
+  const imageUrl = project.featuredImage?.node?.sourceUrl
+  const projectType = project.projectTypes?.nodes?.[0]?.name
+  const technologies = project.techStacks?.nodes?.map((n) => n.name) || []
+  const cleanExcerpt = project.excerpt?.replace(/<[^>]*>/g, '') || ''
 
   return (
     <Link href={`/projects/${project.slug}`}>
@@ -40,7 +44,7 @@ export function ProjectCard({
         )}
 
         {/* Background image */}
-        {project.featuredImage && (
+        {imageUrl && (
           <motion.div
             className="absolute inset-0 overflow-hidden"
             initial={{ scale: 1 }}
@@ -48,8 +52,8 @@ export function ProjectCard({
             transition={{ duration: 0.4 }}
           >
             <Image
-              src={project.featuredImage}
-              alt={project.title}
+              src={imageUrl}
+              alt={project.featuredImage?.node?.altText || project.title}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -63,7 +67,7 @@ export function ProjectCard({
         {/* Content */}
         <div className="absolute inset-0 p-6 flex flex-col justify-end">
           {/* Type badge */}
-          {project.type && (
+          {projectType && (
             <motion.div
               className="inline-flex items-center gap-2 mb-3"
               initial={{ opacity: 0 }}
@@ -71,7 +75,7 @@ export function ProjectCard({
               transition={{ delay: 0.1 }}
             >
               <span className="text-xs font-semibold text-brand-400 bg-brand-500/20 px-2 py-1 rounded-full">
-                {project.type}
+                {projectType}
               </span>
             </motion.div>
           )}
@@ -87,26 +91,26 @@ export function ProjectCard({
           </motion.h3>
 
           {/* Description */}
-          {project.excerpt && (
+          {cleanExcerpt && (
             <motion.p
               className="text-sm text-surface-200 mb-3 line-clamp-2"
               initial={{ y: 10, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              {project.excerpt}
+              {cleanExcerpt}
             </motion.p>
           )}
 
           {/* Tech stack */}
-          {project.technologies && project.technologies.length > 0 && (
+          {technologies.length > 0 && (
             <motion.div
               className="flex gap-2 flex-wrap mb-3"
               initial={{ y: 10, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.25 }}
             >
-              {project.technologies.slice(0, 3).map((tech) => (
+              {technologies.slice(0, 3).map((tech) => (
                 <span
                   key={tech}
                   className="text-xs text-surface-300 bg-surface-900/50 px-2 py-1 rounded border border-surface-700"
@@ -114,9 +118,9 @@ export function ProjectCard({
                   {tech}
                 </span>
               ))}
-              {project.technologies.length > 3 && (
+              {technologies.length > 3 && (
                 <span className="text-xs text-surface-400">
-                  +{project.technologies.length - 3}
+                  +{technologies.length - 3}
                 </span>
               )}
             </motion.div>

@@ -3,14 +3,13 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { Testimonial } from '@/types/wordpress'
-import { TestimonialCard } from '@/components/ui/testimonial-card'
+import { TestimonialCard, DisplayTestimonial } from '@/components/ui/testimonial-card'
 
 interface TestimonialsSliderProps {
-  testimonials: Testimonial[]
+  testimonials: any[] // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
-const defaultTestimonials: Testimonial[] = [
+const defaultTestimonials: DisplayTestimonial[] = [
   {
     id: '1',
     author: 'Sarah Johnson',
@@ -43,8 +42,17 @@ const defaultTestimonials: Testimonial[] = [
 export function TestimonialsSlider({
   testimonials = [],
 }: TestimonialsSliderProps) {
+  // Map WordPress Testimonial objects to DisplayTestimonial format
+  const mappedTestimonials: DisplayTestimonial[] = testimonials.map((t) => ({
+    id: t.id || '',
+    author: t.author || t.testimonialFields?.testimonialAuthorName || t.title || '',
+    company: t.company || t.testimonialFields?.testimonialCompany || '',
+    content: t.content?.replace(/<[^>]*>/g, '') || '',
+    rating: t.rating || t.testimonialFields?.testimonialRating || 5,
+    image: t.image || t.featuredImage?.node?.sourceUrl || '',
+  }))
   const displayTestimonials =
-    testimonials.length > 0 ? testimonials : defaultTestimonials
+    mappedTestimonials.length > 0 ? mappedTestimonials : defaultTestimonials
   const [current, setCurrent] = useState(0)
   const [direction, setDirection] = useState(0)
 

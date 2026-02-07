@@ -18,7 +18,7 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://rayturk.dev'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://2k26portfolio.netlify.app'),
   title: {
     default: 'Ray Turk | Cleveland WordPress & Full Stack Developer',
     template: '%s | Ray Turk',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     'Next.js',
     'PHP',
   ],
-  authors: [{ name: 'Ray Turk', url: 'https://rayturk.dev' }],
+  authors: [{ name: 'Ray Turk', url: process.env.NEXT_PUBLIC_SITE_URL || 'https://2k26portfolio.netlify.app' }],
   creator: 'Ray Turk',
   publisher: 'Ray Turk',
   robots: {
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://rayturk.dev',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://2k26portfolio.netlify.app',
     siteName: 'Ray Turk',
     title: 'Ray Turk | Cleveland WordPress & Full Stack Developer',
     description:

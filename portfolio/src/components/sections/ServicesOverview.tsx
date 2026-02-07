@@ -1,15 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Service } from '@/types/wordpress'
-import { ServiceCard } from '@/components/ui/service-card'
+import { ServiceCard, DisplayService } from '@/components/ui/service-card'
 import { BentoGrid } from '@/components/ui/bento-grid'
 
 interface ServicesOverviewProps {
-  services: Service[]
+  // Accept both WordPress Service type and DisplayService
+  services: any[] // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
-const defaultServices: Service[] = [
+const defaultServices: DisplayService[] = [
   {
     id: '1',
     title: 'WordPress Maintenance & Support',
@@ -65,7 +65,17 @@ const defaultServices: Service[] = [
 ]
 
 export function ServicesOverview({ services = [] }: ServicesOverviewProps) {
-  const displayServices = services.length > 0 ? services : defaultServices
+  // Map WordPress Service objects to DisplayService format
+  const mappedServices: DisplayService[] = services.map((s) => ({
+    id: s.id || s.databaseId?.toString() || '',
+    title: s.title || '',
+    description: s.description || s.serviceFields?.serviceDescription || s.excerpt?.replace(/<[^>]*>/g, '') || '',
+    icon: s.icon || s.serviceFields?.serviceIcon || '',
+    features: s.features || s.serviceFields?.serviceFeatures || [],
+    price: s.price || s.serviceFields?.servicePricingText || '',
+    slug: s.slug,
+  }))
+  const displayServices = mappedServices.length > 0 ? mappedServices : defaultServices
 
   const containerVariants = {
     hidden: { opacity: 0 },

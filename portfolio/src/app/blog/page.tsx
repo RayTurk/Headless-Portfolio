@@ -32,7 +32,7 @@ async function BlogContent({ page }: { page?: string }) {
   // Extract unique categories
   const categoryMap = new Map<string, { name: string; slug: string; count: number }>();
   allPosts.forEach((post) => {
-    post.categories?.forEach((cat: any) => {
+    post.categories?.nodes?.forEach((cat) => {
       if (!categoryMap.has(cat.slug)) {
         categoryMap.set(cat.slug, { name: cat.name, slug: cat.slug, count: 0 });
       }

@@ -46,16 +46,16 @@ const Section = ({
   return (
     <motion.section
       id={id}
-      initial={animate ? { opacity: 0 } : false}
-      whileInView={animate ? { opacity: 1 } : false}
+      initial={animate ? { opacity: 0 } : undefined}
+      whileInView={animate ? { opacity: 1 } : undefined}
       viewport={animate ? { once: true, margin: '-100px' } : undefined}
       transition={animate ? { duration: 0.6 } : undefined}
       className={cn(paddingMap[padding], backgroundPatterns[background], className)}
     >
       {(heading || subheading) && (
         <motion.div
-          initial={animate ? { opacity: 0, y: 20 } : false}
-          whileInView={animate ? { opacity: 1, y: 0 } : false}
+          initial={animate ? { opacity: 0, y: 20 } : undefined}
+          whileInView={animate ? { opacity: 1, y: 0 } : undefined}
           viewport={animate ? { once: true } : undefined}
           transition={animate ? { delay: 0.1, duration: 0.5 } : undefined}
           className="text-center mb-12 md:mb-16"

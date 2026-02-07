@@ -3,10 +3,18 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Star } from 'lucide-react'
-import { Testimonial } from '@/types/wordpress'
+
+export interface DisplayTestimonial {
+  id: string;
+  author: string;
+  company?: string;
+  content: string;
+  rating?: number;
+  image?: string;
+}
 
 interface TestimonialCardProps {
-  testimonial: Testimonial
+  testimonial: DisplayTestimonial
 }
 
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
@@ -46,7 +54,7 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
-        "{testimonial.content}"
+        &ldquo;{testimonial.content}&rdquo;
       </motion.blockquote>
 
       {/* Author info */}

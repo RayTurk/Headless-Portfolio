@@ -12,8 +12,8 @@
 
 # Redirect www to non-www (adjust if you prefer www)
 [[redirects]]
-  from = "https://www.yourdomain.com/*"
-  to = "https://yourdomain.com/:splat"
+  from = "https://www.2k26portfolio.netlify.app/*"
+  to = "https://2k26portfolio.netlify.app/:splat"
   status = 301
   force = true
 

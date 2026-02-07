@@ -10,17 +10,22 @@ interface ProjectType {
 }
 
 interface Project {
-  id: number;
+  id: string;
   slug: string;
-  title: {
-    rendered: string;
+  title: string;
+  excerpt: string;
+  featuredImage?: {
+    node: {
+      sourceUrl: string;
+      altText?: string;
+    };
   };
-  excerpt: {
-    rendered: string;
+  techStacks?: {
+    nodes: Array<{ id: string; name: string }>;
   };
-  featured_media_url?: string;
-  technologies?: Array<{ id: number; name: string }>;
-  project_type?: Array<{ id: number; name: string; slug: string }>;
+  projectTypes?: {
+    nodes: Array<{ id: string; name: string; slug: string }>;
+  };
 }
 
 interface ProjectFilterProps {
@@ -33,7 +38,7 @@ export function ProjectFilter({ projectTypes, projects }: ProjectFilterProps) {
 
   const filteredProjects = projects.filter((project) => {
     if (activeFilter === 'all') return true;
-    return project.project_type?.some((pt) => pt.slug === activeFilter);
+    return project.projectTypes?.nodes?.some((pt) => pt.slug === activeFilter);
   });
 
   return (

@@ -6,17 +6,22 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 interface Project {
-  id: number;
+  id: string;
   slug: string;
-  title: {
-    rendered: string;
+  title: string;
+  excerpt: string;
+  featuredImage?: {
+    node: {
+      sourceUrl: string;
+      altText?: string;
+    };
   };
-  excerpt: {
-    rendered: string;
+  techStacks?: {
+    nodes: Array<{ id: string; name: string }>;
   };
-  featured_media_url?: string;
-  technologies?: Array<{ id: number; name: string }>;
-  project_type?: Array<{ id: number; name: string; slug: string }>;
+  projectTypes?: {
+    nodes: Array<{ id: string; name: string; slug: string }>;
+  };
 }
 
 interface ProjectCardProps {
@@ -26,12 +31,12 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Show max 3 technologies, hide others
-  const visibleTechs = project.technologies?.slice(0, 3) || [];
-  const hiddenTechCount = (project.technologies?.length || 0) - 3;
-
-  // Get first project type for badge
-  const projectType = project.project_type?.[0]?.name || 'Project';
+  const imageUrl = project.featuredImage?.node?.sourceUrl;
+  const technologies = project.techStacks?.nodes || [];
+  const visibleTechs = technologies.slice(0, 3);
+  const hiddenTechCount = technologies.length - 3;
+  const projectType = project.projectTypes?.nodes?.[0]?.name || 'Project';
+  const cleanExcerpt = project.excerpt?.replace(/<[^>]*>/g, '') || '';
 
   return (
     <Link href={`/projects/${project.slug}`}>
@@ -43,15 +48,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
       >
         {/* Image Container */}
         <div className="relative h-48 md:h-64 overflow-hidden bg-slate-800">
-          {project.featured_media_url ? (
+          {imageUrl ? (
             <motion.div
               animate={isHovered ? { scale: 1.1 } : { scale: 1 }}
               transition={{ duration: 0.4, ease: 'easeOut' }}
               className="w-full h-full"
             >
               <Image
-                src={project.featured_media_url}
-                alt={project.title.rendered}
+                src={imageUrl}
+                alt={project.featuredImage?.node?.altText || project.title}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -83,12 +88,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="p-6">
           {/* Title */}
           <h3 className="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors line-clamp-2">
-            {project.title.rendered}
+            {project.title}
           </h3>
 
           {/* Excerpt */}
           <p className="text-slate-400 text-sm mb-4 line-clamp-2">
-            {project.excerpt.rendered.replace(/<[^>]*>/g, '')}
+            {cleanExcerpt}
           </p>
 
           {/* Tech Stack */}
@@ -119,7 +124,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           >
             View Project
             <motion.span animate={isHovered ? { x: 4 } : { x: 0 }}>
-              →
+              &rarr;
             </motion.span>
           </motion.div>
         </div>

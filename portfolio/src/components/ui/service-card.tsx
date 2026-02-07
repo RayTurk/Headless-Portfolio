@@ -2,12 +2,21 @@
 
 import { motion } from 'framer-motion'
 import { getLucideIcon } from '@/lib/utils'
-import { Service } from '@/types/wordpress'
-import { Button } from './button'
+import { Button } from './Button'
 import { ArrowRight } from 'lucide-react'
 
+export interface DisplayService {
+  id: string;
+  title: string;
+  description?: string;
+  icon?: string;
+  features?: string[];
+  price?: string;
+  slug?: string;
+}
+
 interface ServiceCardProps {
-  service: Service
+  service: DisplayService
   featured?: boolean
   size?: 'small' | 'standard' | 'large'
 }
@@ -73,7 +82,7 @@ export function ServiceCard({
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.05 }}
               >
-                <span className="text-brand-400 font-bold">•</span>
+                <span className="text-brand-400 font-bold">&bull;</span>
                 <span>{feature}</span>
               </motion.li>
             ))}
@@ -98,7 +107,7 @@ export function ServiceCard({
           transition={{ delay: 0.2 }}
         >
           <Button
-            variant={featured ? 'default' : 'outline'}
+            variant={featured ? 'primary' : 'secondary'}
             className={`w-full group/btn ${
               featured
                 ? 'bg-brand-600 hover:bg-brand-700'

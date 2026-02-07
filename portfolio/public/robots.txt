@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Host
+Host: https://2k26portfolio.netlify.app
+
+# Sitemaps
+Sitemap: https://2k26portfolio.netlify.app/sitemap.xml
