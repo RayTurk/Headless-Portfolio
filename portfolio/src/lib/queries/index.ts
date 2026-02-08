@@ -35,16 +35,6 @@ export {
   SEARCH_POSTS,
 } from './posts';
 
-// Service Queries
-export {
-  GET_ALL_SERVICES,
-  GET_SERVICE_BY_SLUG,
-  GET_FEATURED_SERVICES,
-  GET_ALL_SERVICE_SLUGS,
-  GET_SERVICES_COUNT,
-  SEARCH_SERVICES,
-} from './services';
-
 // Testimonial Queries
 export {
   GET_ALL_TESTIMONIALS,

@@ -250,59 +250,6 @@ export const POST_FRAGMENT_MINIMAL = gql`
 `;
 
 // ============================================================================
-// SERVICE FRAGMENTS
-// ============================================================================
-
-export const SERVICE_FRAGMENT = gql`
-  fragment ServiceFragment on Service {
-    id
-    databaseId
-    title
-    slug
-    content
-    excerpt
-    featuredImage {
-      node {
-        ...ImageFragment
-      }
-    }
-    serviceDetails {
-      serviceIcon
-      serviceFeatures {
-        featureText
-      }
-      servicePricingText
-      serviceCtaText
-      serviceCtaUrl
-      isFeaturedService
-      serviceOrder
-    }
-  }
-  ${IMAGE_FRAGMENT}
-`;
-
-export const SERVICE_FRAGMENT_MINIMAL = gql`
-  fragment ServiceFragmentMinimal on Service {
-    id
-    databaseId
-    title
-    slug
-    excerpt
-    featuredImage {
-      node {
-        ...ImageFragment
-      }
-    }
-    serviceDetails {
-      serviceIcon
-      isFeaturedService
-      serviceOrder
-    }
-  }
-  ${IMAGE_FRAGMENT}
-`;
-
-// ============================================================================
 // TESTIMONIAL FRAGMENTS
 // ============================================================================
 

@@ -18,10 +18,6 @@ import {
   GET_POSTS_BY_CATEGORY,
   GET_POSTS_BY_TAG,
   GET_RELATED_POSTS,
-  GET_ALL_SERVICES,
-  GET_SERVICE_BY_SLUG,
-  GET_FEATURED_SERVICES,
-  GET_ALL_SERVICE_SLUGS,
   GET_ALL_TESTIMONIALS,
   GET_FEATURED_TESTIMONIALS,
   GET_SITE_SETTINGS,
@@ -34,7 +30,6 @@ import {
 import {
   Project,
   BlogPost,
-  Service,
   Testimonial,
   MenuItem,
   SiteSettings,
@@ -474,95 +469,6 @@ export async function getRelatedPosts(
 }
 
 // ============================================================================
-// SERVICE API FUNCTIONS
-// ============================================================================
-
-/**
- * Get all services
- */
-export async function getAllServices(): Promise<Service[]> {
-  try {
-    const client = getApolloClient();
-    const { data } = await client.query({
-      query: GET_ALL_SERVICES,
-      variables: { first: 100 },
-    });
-
-    checkForErrors(data);
-
-    return data.services?.nodes || [];
-  } catch (error) {
-    console.error('Error fetching all services:', error);
-    return [];
-  }
-}
-
-/**
- * Get a single service by slug
- */
-export async function getServiceBySlug(slug: string): Promise<Service | null> {
-  try {
-    const client = getApolloClient();
-    const { data } = await client.query({
-      query: GET_SERVICE_BY_SLUG,
-      variables: { slug },
-    });
-
-    checkForErrors(data);
-
-    return data.service || null;
-  } catch (error) {
-    console.error(`Error fetching service with slug ${slug}:`, error);
-    return null;
-  }
-}
-
-/**
- * Get featured services
- */
-export async function getFeaturedServices(): Promise<Service[]> {
-  try {
-    const client = getApolloClient();
-    const { data } = await client.query({
-      query: GET_FEATURED_SERVICES,
-    });
-
-    checkForErrors(data);
-
-    const allServices: Service[] = data.services?.nodes || [];
-    // Filter to featured services and sort by serviceOrder client-side
-    const featured = allServices
-      .filter((s) => s.serviceDetails?.isFeaturedService)
-      .sort((a, b) => (a.serviceDetails?.serviceOrder ?? 99) - (b.serviceDetails?.serviceOrder ?? 99))
-      .slice(0, 3);
-
-    return featured;
-  } catch (error) {
-    console.error('Error fetching featured services:', error);
-    return [];
-  }
-}
-
-/**
- * Get all service slugs for static generation
- */
-export async function getAllServiceSlugs(): Promise<string[]> {
-  try {
-    const client = getApolloClient();
-    const { data } = await client.query({
-      query: GET_ALL_SERVICE_SLUGS,
-    });
-
-    checkForErrors(data);
-
-    return data.services?.nodes?.map((s: Service) => s.slug) || [];
-  } catch (error) {
-    console.error('Error fetching service slugs:', error);
-    return [];
-  }
-}
-
-// ============================================================================
 // TESTIMONIAL API FUNCTIONS
 // ============================================================================
 
@@ -742,12 +648,6 @@ export const api = {
   getPostsByCategory,
   getPostsByTag,
   getRelatedPosts,
-
-  // Services
-  getAllServices,
-  getServiceBySlug,
-  getFeaturedServices,
-  getAllServiceSlugs,
 
   // Testimonials
   getAllTestimonials,

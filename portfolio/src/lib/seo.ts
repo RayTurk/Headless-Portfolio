@@ -4,7 +4,7 @@
  */
 
 import { Metadata } from 'next';
-import { Project, BlogPost, Service } from '@/types/wordpress';
+import { Project, BlogPost } from '@/types/wordpress';
 import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, DEFAULT_OG_IMAGE } from './constants';
 import { stripHtml, truncateText, absoluteUrl } from './utils';
 
@@ -170,16 +170,3 @@ export function generatePostMetadata(post: BlogPost): Metadata {
   });
 }
 
-export function generateServiceMetadata(service: Service): Metadata {
-  const description =
-    truncateText(stripHtml(service.excerpt || service.content), 160);
-  const title = `${service.title} - Services`;
-  const image = service.featuredImage?.node?.sourceUrl || DEFAULT_OG_IMAGE;
-
-  return generatePageMetadata({
-    title,
-    description,
-    path: `/services/${service.slug}`,
-    image,
-  });
-}

@@ -10,7 +10,6 @@ import { BlogPreview } from '@/components/sections/BlogPreview'
 import { ContactCTA } from '@/components/sections/ContactCTA'
 import {
   getFeaturedProjects,
-  getFeaturedServices,
   getFeaturedTestimonials,
   getRecentPosts,
   getSiteSettings,
@@ -120,13 +119,11 @@ export default async function HomePage() {
   // Fetch data in parallel
   const [
     featuredProjects,
-    featuredServices,
     featuredTestimonials,
     recentPosts,
     siteSettings,
   ] = await Promise.all([
     getFeaturedProjects().catch(() => []),
-    getFeaturedServices().catch(() => []),
     getFeaturedTestimonials().catch(() => []),
     getRecentPosts().catch(() => []),
     getSiteSettings().catch(() => null),
@@ -151,7 +148,7 @@ export default async function HomePage() {
         <FeaturedProjects projects={featuredProjects} />
       </Suspense>
 
-      <ServicesOverview services={featuredServices} />
+      <ServicesOverview services={[]} />
 
       <MaintenanceCTA />
 

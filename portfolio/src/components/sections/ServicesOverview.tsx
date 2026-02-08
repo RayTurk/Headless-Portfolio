@@ -5,8 +5,7 @@ import { ServiceCard, DisplayService } from '@/components/ui/service-card'
 import { BentoGrid } from '@/components/ui/bento-grid'
 
 interface ServicesOverviewProps {
-  // Accept both WordPress Service type and DisplayService
-  services: any[] // eslint-disable-line @typescript-eslint/no-explicit-any
+  services?: DisplayService[]
 }
 
 const defaultServices: DisplayService[] = [
@@ -65,17 +64,7 @@ const defaultServices: DisplayService[] = [
 ]
 
 export function ServicesOverview({ services = [] }: ServicesOverviewProps) {
-  // Map WordPress Service objects to DisplayService format
-  const mappedServices: DisplayService[] = services.map((s) => ({
-    id: s.id || s.databaseId?.toString() || '',
-    title: s.title || '',
-    description: s.description || s.serviceDetails?.serviceDescription || s.excerpt?.replace(/<[^>]*>/g, '') || '',
-    icon: s.icon || s.serviceDetails?.serviceIcon || '',
-    features: s.features || s.serviceDetails?.serviceFeatures || [],
-    price: s.price || s.serviceDetails?.servicePricingText || '',
-    slug: s.slug,
-  }))
-  const displayServices = mappedServices.length > 0 ? mappedServices : defaultServices
+  const displayServices = services.length > 0 ? services : defaultServices
 
   const containerVariants = {
     hidden: { opacity: 0 },

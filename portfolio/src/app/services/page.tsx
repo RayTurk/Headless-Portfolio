@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import { getAllServices } from '@/lib/api';
 import { generatePageMetadata } from '@/lib/seo';
 import { generateFAQSchema, generateServiceSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -81,14 +80,7 @@ const faqItems = [
   },
 ];
 
-export default async function ServicesPage() {
-  let services;
-  try {
-    services = await getAllServices();
-  } catch {
-    services = [];
-  }
-
+export default function ServicesPage() {
   const schemas = [
     generateServiceSchema({
       name: 'WordPress Maintenance Plans',

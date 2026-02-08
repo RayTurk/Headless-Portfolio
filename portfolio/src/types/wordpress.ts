@@ -121,31 +121,6 @@ export interface BlogPost {
 export type BlogPostConnection = Connection<BlogPost>;
 
 // ============================================================================
-// SERVICE TYPES
-// ============================================================================
-
-export interface Service {
-  id: string;
-  databaseId: number;
-  title: string;
-  slug: string;
-  content: string;
-  excerpt: string;
-  featuredImage?: { node: WPImage };
-  serviceDetails?: {
-    serviceIcon?: string;
-    serviceFeatures?: { featureText: string }[];
-    servicePricingText?: string;
-    serviceCtaText?: string;
-    serviceCtaUrl?: string;
-    isFeaturedService?: boolean;
-    serviceOrder?: number;
-  };
-}
-
-export type ServiceConnection = Connection<Service>;
-
-// ============================================================================
 // TESTIMONIAL TYPES
 // ============================================================================
 
