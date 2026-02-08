@@ -50,14 +50,12 @@ export const GET_PROJECT_BY_SLUG = gql`
 // ============================================================================
 
 export const GET_FEATURED_PROJECTS = gql`
-  query GetFeaturedProjects($first: Int = 6) {
+  query GetFeaturedProjects($first: Int = 100) {
     projects(
       first: $first
       where: {
         status: PUBLISH
-        metaKey: "projectFields_isFeatured"
-        metaValue: "1"
-        orderby: [{ field: META, key: "projectFields_projectOrder", order: ASC }]
+        orderby: { field: MENU_ORDER, order: ASC }
       }
     ) {
       nodes {

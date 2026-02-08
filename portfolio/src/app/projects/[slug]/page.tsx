@@ -6,7 +6,6 @@ import {
   getRelatedProjects,
 } from '@/lib/api';
 import { ProjectIframe } from '@/components/projects/ProjectIframe';
-import { ProjectGallery } from '@/components/projects/ProjectGallery';
 import { RelatedProjects } from '@/components/projects/RelatedProjects';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import Image from 'next/image';
@@ -29,12 +28,12 @@ export async function generateMetadata(
     };
   }
 
-  const description = project.projectFields?.seoDescription ||
+  const description = project.projectInfo?.projectExcerpt ||
     project.excerpt?.replace(/<[^>]*>/g, '') || '';
   const imageUrl = project.featuredImage?.node?.sourceUrl;
 
   return {
-    title: project.projectFields?.seoTitle || `${project.title} | Projects`,
+    title: `${project.title} | Projects`,
     description,
     openGraph: {
       title: project.title,
@@ -93,27 +92,27 @@ export default async function ProjectPage(
 
           {/* Project Meta */}
           <div className="flex flex-wrap gap-6 mb-8 text-slate-300">
-            {project.projectFields?.clientName && (
+            {project.projectDetails?.clientName && (
               <div>
                 <p className="text-sm text-slate-400 uppercase tracking-wide">Client</p>
-                <p className="text-lg font-semibold text-white">{project.projectFields.clientName}</p>
+                <p className="text-lg font-semibold text-white">{project.projectDetails.clientName}</p>
               </div>
             )}
-            {project.projectFields?.projectDate && (
+            {project.projectDetails?.projectDate && (
               <div>
                 <p className="text-sm text-slate-400 uppercase tracking-wide">Completed</p>
                 <p className="text-lg font-semibold text-white">
-                  {new Date(project.projectFields.projectDate).toLocaleDateString('en-US', {
+                  {new Date(project.projectDetails.projectDate).toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
                   })}
                 </p>
               </div>
             )}
-            {project.projectFields?.projectDuration && (
+            {project.projectDetails?.projectDuration && (
               <div>
                 <p className="text-sm text-slate-400 uppercase tracking-wide">Duration</p>
-                <p className="text-lg font-semibold text-white">{project.projectFields.projectDuration}</p>
+                <p className="text-lg font-semibold text-white">{project.projectDetails.projectDuration}</p>
               </div>
             )}
           </div>
@@ -139,9 +138,9 @@ export default async function ProjectPage(
 
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-4">
-            {project.projectFields?.liveUrl && (
+            {project.projectInfo?.projectUrl && (
               <a
-                href={project.projectFields.liveUrl}
+                href={project.projectInfo.projectUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-lg transition-colors"
@@ -149,9 +148,9 @@ export default async function ProjectPage(
                 View Live Site
               </a>
             )}
-            {project.projectFields?.githubUrl && (
+            {project.projectInfo?.githubUrl && (
               <a
-                href={project.projectFields.githubUrl}
+                href={project.projectInfo.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-colors"
@@ -162,8 +161,8 @@ export default async function ProjectPage(
           </div>
         </section>
 
-        {/* Project Iframe / Preview */}
-        {(project.projectFields?.iframeEmbedUrl || project.projectFields?.projectGif || imageUrl) && (
+        {/* Project Preview */}
+        {imageUrl && (
           <section className="max-w-5xl mx-auto mb-20">
             <ProjectIframe project={project} />
           </section>
@@ -177,36 +176,6 @@ export default async function ProjectPage(
                 dangerouslySetInnerHTML={{ __html: project.content }}
               />
             </div>
-          </section>
-        )}
-
-        {/* Gallery */}
-        {project.projectFields?.projectGallery && project.projectFields.projectGallery.length > 0 && (
-          <section className="max-w-5xl mx-auto mb-20">
-            <h2 className="text-3xl font-bold mb-8 text-white">Project Gallery</h2>
-            <ProjectGallery
-              images={project.projectFields.projectGallery.map((img) => ({
-                url: img.sourceUrl,
-                alt: img.altText || project.title,
-              }))}
-            />
-          </section>
-        )}
-
-        {/* Testimonial */}
-        {project.projectFields?.projectTestimonial && (
-          <section className="max-w-3xl mx-auto mb-20 p-8 rounded-xl bg-gradient-to-br from-indigo-500/10 to-emerald-500/10 border border-indigo-500/20">
-            <div className="text-lg text-slate-300 italic mb-4">
-              &ldquo;{project.projectFields.projectTestimonial}&rdquo;
-            </div>
-            {project.projectFields.testimonialAuthor && (
-              <div className="text-slate-400">
-                &mdash; {project.projectFields.testimonialAuthor}
-                {project.projectFields.testimonialRole && (
-                  <span className="text-slate-500">, {project.projectFields.testimonialRole}</span>
-                )}
-              </div>
-            )}
           </section>
         )}
 

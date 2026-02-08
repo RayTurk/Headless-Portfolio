@@ -3,7 +3,7 @@
  */
 
 import { gql } from '@apollo/client';
-import { IMAGE_FRAGMENT, MENU_ITEM_FRAGMENT } from './fragments';
+import { MENU_ITEM_FRAGMENT } from './fragments';
 
 // ============================================================================
 // GET SITE SETTINGS (ACF Options Pages)
@@ -11,60 +11,13 @@ import { IMAGE_FRAGMENT, MENU_ITEM_FRAGMENT } from './fragments';
 
 export const GET_SITE_SETTINGS = gql`
   query GetSiteSettings {
-    siteSettings: settingsOptions {
-      headerSettings: headerSettings {
-        headerCtaText
-        headerCtaUrl
-        announcementBarText
-        announcementBarActive
-      }
-      footerSettings: footerSettings {
-        footerTagline
-        socialLinks {
-          platform
-          url
-        }
-        footerCtaHeading
-        footerCtaText
-        footerCtaUrl
-      }
-      homepageSettings: homepageSettings {
-        heroHeading
-        heroSubheading
-        heroCtaPrimaryText
-        heroCtaPrimaryUrl
-        heroCtaSecondaryText
-        heroCtaSecondaryUrl
-        stats {
-          statNumber
-          statLabel
-        }
-        maintenanceSectionHeading
-        maintenanceSectionText
-        maintenanceFeatures {
-          featureIcon
-          featureTitle
-          featureDescription
-        }
-      }
-      seoDefaults: seoDefaults {
-        defaultOgImage {
-          ...ImageFragment
-        }
-        googleSiteVerification
-        schemaOrgType
-        schemaSameAs {
-          profileUrl
-        }
-        localBusinessName
-        localBusinessCity
-        localBusinessState
-        localBusinessPhone
-        localBusinessEmail
-      }
+    siteSettings {
+      siteName
+      siteDescription
+      siteUrl
+      homeUrl
     }
   }
-  ${IMAGE_FRAGMENT}
 `;
 
 // ============================================================================
@@ -188,25 +141,13 @@ export const GET_SITE_INFO = gql`
       description
       url
     }
-    siteSettings: settingsOptions {
-      seoDefaults: seoDefaults {
-        defaultOgImage {
-          ...ImageFragment
-        }
-        googleSiteVerification
-        schemaOrgType
-        schemaSameAs {
-          profileUrl
-        }
-        localBusinessName
-        localBusinessCity
-        localBusinessState
-        localBusinessPhone
-        localBusinessEmail
-      }
+    siteSettings {
+      siteName
+      siteDescription
+      siteUrl
+      homeUrl
     }
   }
-  ${IMAGE_FRAGMENT}
 `;
 
 // ============================================================================
@@ -215,13 +156,9 @@ export const GET_SITE_INFO = gql`
 
 export const GET_HEADER_SETTINGS = gql`
   query GetHeaderSettings {
-    headerSettings: settingsOptions {
-      headerSettings: headerSettings {
-        headerCtaText
-        headerCtaUrl
-        announcementBarText
-        announcementBarActive
-      }
+    siteSettings {
+      siteName
+      siteUrl
     }
     primaryMenu: menu(id: "PRIMARY", idType: LOCATION) {
       menuItems(first: 100) {
@@ -240,17 +177,9 @@ export const GET_HEADER_SETTINGS = gql`
 
 export const GET_FOOTER_SETTINGS = gql`
   query GetFooterSettings {
-    footerSettings: settingsOptions {
-      footerSettings: footerSettings {
-        footerTagline
-        socialLinks {
-          platform
-          url
-        }
-        footerCtaHeading
-        footerCtaText
-        footerCtaUrl
-      }
+    siteSettings {
+      siteName
+      siteUrl
     }
     footerMenu: menu(id: "FOOTER", idType: LOCATION) {
       menuItems(first: 100) {

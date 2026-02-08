@@ -45,10 +45,10 @@ export function TestimonialsSlider({
   // Map WordPress Testimonial objects to DisplayTestimonial format
   const mappedTestimonials: DisplayTestimonial[] = testimonials.map((t) => ({
     id: t.id || '',
-    author: t.author || t.testimonialFields?.testimonialAuthorName || t.title || '',
-    company: t.company || t.testimonialFields?.testimonialCompany || '',
+    author: t.author || t.testimonialDetails?.testimonialAuthorName || t.title || '',
+    company: t.company || t.testimonialDetails?.testimonialCompany || '',
     content: t.content?.replace(/<[^>]*>/g, '') || '',
-    rating: t.rating || t.testimonialFields?.testimonialRating || 5,
+    rating: t.rating || t.testimonialDetails?.testimonialRating || 5,
     image: t.image || t.featuredImage?.node?.sourceUrl || '',
   }))
   const displayTestimonials =

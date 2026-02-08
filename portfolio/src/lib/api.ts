@@ -148,12 +148,19 @@ export async function getFeaturedProjects(): Promise<Project[]> {
     const client = getApolloClient();
     const { data } = await client.query({
       query: GET_FEATURED_PROJECTS,
-      variables: { first: FEATURED_PROJECTS_COUNT },
     });
 
     checkForErrors(data);
 
-    return data.projects?.nodes || [];
+    const allProjects: Project[] = data.projects?.nodes || [];
+    // Filter to featured projects and sort by projectOrder client-side
+    // since WPGraphQL doesn't support metaKey/metaValue on custom post types
+    const featured = allProjects
+      .filter((p) => p.projectDetails?.isFeatured)
+      .sort((a, b) => (a.projectDetails?.projectOrder ?? 99) - (b.projectDetails?.projectOrder ?? 99))
+      .slice(0, FEATURED_PROJECTS_COUNT);
+
+    return featured;
   } catch (error) {
     console.error('Error fetching featured projects:', error);
     return [];
@@ -518,12 +525,18 @@ export async function getFeaturedServices(): Promise<Service[]> {
     const client = getApolloClient();
     const { data } = await client.query({
       query: GET_FEATURED_SERVICES,
-      variables: { first: 3 },
     });
 
     checkForErrors(data);
 
-    return data.services?.nodes || [];
+    const allServices: Service[] = data.services?.nodes || [];
+    // Filter to featured services and sort by serviceOrder client-side
+    const featured = allServices
+      .filter((s) => s.serviceDetails?.isFeaturedService)
+      .sort((a, b) => (a.serviceDetails?.serviceOrder ?? 99) - (b.serviceDetails?.serviceOrder ?? 99))
+      .slice(0, 3);
+
+    return featured;
   } catch (error) {
     console.error('Error fetching featured services:', error);
     return [];
@@ -581,12 +594,17 @@ export async function getFeaturedTestimonials(): Promise<Testimonial[]> {
     const client = getApolloClient();
     const { data } = await client.query({
       query: GET_FEATURED_TESTIMONIALS,
-      variables: { first: 6 },
     });
 
     checkForErrors(data);
 
-    return data.testimonials?.nodes || [];
+    const allTestimonials: Testimonial[] = data.testimonials?.nodes || [];
+    // Filter to featured testimonials client-side
+    const featured = allTestimonials
+      .filter((t) => t.testimonialDetails?.isFeaturedTestimonial)
+      .slice(0, 6);
+
+    return featured;
   } catch (error) {
     console.error('Error fetching featured testimonials:', error);
     return [];

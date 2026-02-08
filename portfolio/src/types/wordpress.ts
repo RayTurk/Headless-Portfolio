@@ -66,24 +66,19 @@ export interface Project {
   date: string;
   modified: string;
   featuredImage?: { node: WPImage };
-  projectFields: {
-    liveUrl?: string;
+  projectInfo?: {
+    projectType?: string[];
+    projectScope?: string;
+    projectUrl?: string;
+    projectExcerpt?: string;
     githubUrl?: string;
-    iframeEmbedUrl?: string;
-    projectGif?: { url: string; mimeType: string };
-    projectGallery?: WPImage[];
-    projectColor?: string;
+  };
+  projectDetails?: {
     clientName?: string;
     projectDate?: string;
     projectDuration?: string;
-    isFeatured: boolean;
-    projectOrder: number;
-    projectTestimonial?: string;
-    testimonialAuthor?: string;
-    testimonialRole?: string;
-    seoTitle?: string;
-    seoDescription?: string;
-    seoKeywords?: string;
+    isFeatured?: boolean;
+    projectOrder?: number;
   };
   projectTypes?: { nodes: TaxonomyTerm[] };
   techStacks?: { nodes: TaxonomyTerm[] };
@@ -137,17 +132,14 @@ export interface Service {
   content: string;
   excerpt: string;
   featuredImage?: { node: WPImage };
-  serviceFields: {
+  serviceDetails?: {
     serviceIcon?: string;
     serviceFeatures?: { featureText: string }[];
     servicePricingText?: string;
     serviceCtaText?: string;
     serviceCtaUrl?: string;
-    isFeaturedService: boolean;
-    serviceOrder: number;
-    seoTitle?: string;
-    seoDescription?: string;
-    seoKeywords?: string;
+    isFeaturedService?: boolean;
+    serviceOrder?: number;
   };
 }
 
@@ -162,13 +154,13 @@ export interface Testimonial {
   databaseId: number;
   title: string;
   content: string;
-  testimonialFields: {
+  testimonialDetails?: {
     testimonialAuthorName?: string;
     testimonialAuthorRole?: string;
     testimonialCompany?: string;
     testimonialCompanyUrl?: string;
     testimonialRating?: number;
-    isFeaturedTestimonial: boolean;
+    isFeaturedTestimonial?: boolean;
   };
   featuredImage?: { node: WPImage };
 }
@@ -195,46 +187,10 @@ export interface MenuItem {
 // ============================================================================
 
 export interface SiteSettings {
-  headerSettings: {
-    headerCtaText: string;
-    headerCtaUrl: string;
-    announcementBarText?: string;
-    announcementBarActive: boolean;
-  };
-  footerSettings: {
-    footerTagline?: string;
-    socialLinks?: { platform: string; url: string }[];
-    footerCtaHeading: string;
-    footerCtaText: string;
-    footerCtaUrl: string;
-  };
-  homepageSettings: {
-    heroHeading: string;
-    heroSubheading?: string;
-    heroCtaPrimaryText: string;
-    heroCtaPrimaryUrl: string;
-    heroCtaSecondaryText: string;
-    heroCtaSecondaryUrl: string;
-    stats?: { statNumber: string; statLabel: string }[];
-    maintenanceSectionHeading: string;
-    maintenanceSectionText?: string;
-    maintenanceFeatures?: {
-      featureIcon: string;
-      featureTitle: string;
-      featureDescription: string;
-    }[];
-  };
-  seoDefaults: {
-    defaultOgImage?: WPImage;
-    googleSiteVerification?: string;
-    schemaOrgType: 'Person' | 'Organization';
-    schemaSameAs?: { profileUrl: string }[];
-    localBusinessName: string;
-    localBusinessCity: string;
-    localBusinessState: string;
-    localBusinessPhone?: string;
-    localBusinessEmail?: string;
-  };
+  siteName?: string;
+  siteDescription?: string;
+  siteUrl?: string;
+  homeUrl?: string;
 }
 
 // ============================================================================

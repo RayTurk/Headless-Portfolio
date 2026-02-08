@@ -44,11 +44,7 @@ export function Hero({ settings }: HeroProps) {
     { label: 'Happy Clients', value: '100+' },
   ]
 
-  const settingsStats = settings?.homepageSettings?.stats?.map((s) => ({
-    label: s.statLabel,
-    value: s.statNumber,
-  }))
-  const stats = settingsStats?.length ? settingsStats : defaultStats
+  const stats = defaultStats
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-surface-950 via-surface-900 to-surface-950 flex flex-col items-center justify-center">

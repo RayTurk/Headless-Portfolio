@@ -25,13 +25,11 @@ export const GET_ALL_TESTIMONIALS = gql`
 // ============================================================================
 
 export const GET_FEATURED_TESTIMONIALS = gql`
-  query GetFeaturedTestimonials($first: Int = 6) {
+  query GetFeaturedTestimonials($first: Int = 100) {
     testimonials(
       first: $first
       where: {
         status: PUBLISH
-        metaKey: "testimonialFields_isFeaturedTestimonial"
-        metaValue: "1"
       }
     ) {
       nodes {
@@ -76,12 +74,11 @@ export const GET_TESTIMONIALS_COUNT = gql`
 // ============================================================================
 
 export const GET_TOP_RATED_TESTIMONIALS = gql`
-  query GetTopRatedTestimonials($first: Int = 5) {
+  query GetTopRatedTestimonials($first: Int = 100) {
     testimonials(
       first: $first
       where: {
         status: PUBLISH
-        orderby: { field: META, key: "testimonialFields_testimonialRating", order: DESC }
       }
     ) {
       nodes {

@@ -44,14 +44,12 @@ export const GET_SERVICE_BY_SLUG = gql`
 // ============================================================================
 
 export const GET_FEATURED_SERVICES = gql`
-  query GetFeaturedServices($first: Int = 3) {
+  query GetFeaturedServices($first: Int = 100) {
     services(
       first: $first
       where: {
         status: PUBLISH
-        metaKey: "serviceFields_isFeaturedService"
-        metaValue: "1"
-        orderby: [{ field: META, key: "serviceFields_serviceOrder", order: ASC }]
+        orderby: { field: MENU_ORDER, order: ASC }
       }
     ) {
       nodes {
@@ -111,7 +109,7 @@ export const SEARCH_SERVICES = gql`
             altText
           }
         }
-        serviceFields {
+        serviceDetails {
           serviceIcon
           isFeaturedService
         }

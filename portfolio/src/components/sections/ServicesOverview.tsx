@@ -69,10 +69,10 @@ export function ServicesOverview({ services = [] }: ServicesOverviewProps) {
   const mappedServices: DisplayService[] = services.map((s) => ({
     id: s.id || s.databaseId?.toString() || '',
     title: s.title || '',
-    description: s.description || s.serviceFields?.serviceDescription || s.excerpt?.replace(/<[^>]*>/g, '') || '',
-    icon: s.icon || s.serviceFields?.serviceIcon || '',
-    features: s.features || s.serviceFields?.serviceFeatures || [],
-    price: s.price || s.serviceFields?.servicePricingText || '',
+    description: s.description || s.serviceDetails?.serviceDescription || s.excerpt?.replace(/<[^>]*>/g, '') || '',
+    icon: s.icon || s.serviceDetails?.serviceIcon || '',
+    features: s.features || s.serviceDetails?.serviceFeatures || [],
+    price: s.price || s.serviceDetails?.servicePricingText || '',
     slug: s.slug,
   }))
   const displayServices = mappedServices.length > 0 ? mappedServices : defaultServices

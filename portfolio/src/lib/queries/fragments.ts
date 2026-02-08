@@ -108,29 +108,19 @@ export const PROJECT_FRAGMENT = gql`
         ...ImageFragment
       }
     }
-    projectFields {
-      liveUrl
+    projectInfo {
+      projectType
+      projectScope
+      projectUrl
+      projectExcerpt
       githubUrl
-      iframeEmbedUrl
-      projectGif {
-        url
-        mimeType
-      }
-      projectGallery {
-        ...ImageFragment
-      }
-      projectColor
+    }
+    projectDetails {
       clientName
       projectDate
       projectDuration
       isFeatured
       projectOrder
-      projectTestimonial
-      testimonialAuthor
-      testimonialRole
-      seoTitle
-      seoDescription
-      seoKeywords
     }
     projectTypes {
       nodes {
@@ -165,11 +155,13 @@ export const PROJECT_FRAGMENT_MINIMAL = gql`
         ...ImageFragment
       }
     }
-    projectFields {
-      liveUrl
+    projectInfo {
+      projectUrl
+      projectExcerpt
+    }
+    projectDetails {
       isFeatured
       projectOrder
-      projectColor
       clientName
     }
     projectTypes {
@@ -274,7 +266,7 @@ export const SERVICE_FRAGMENT = gql`
         ...ImageFragment
       }
     }
-    serviceFields {
+    serviceDetails {
       serviceIcon
       serviceFeatures {
         featureText
@@ -284,9 +276,6 @@ export const SERVICE_FRAGMENT = gql`
       serviceCtaUrl
       isFeaturedService
       serviceOrder
-      seoTitle
-      seoDescription
-      seoKeywords
     }
   }
   ${IMAGE_FRAGMENT}
@@ -304,7 +293,7 @@ export const SERVICE_FRAGMENT_MINIMAL = gql`
         ...ImageFragment
       }
     }
-    serviceFields {
+    serviceDetails {
       serviceIcon
       isFeaturedService
       serviceOrder
@@ -328,7 +317,7 @@ export const TESTIMONIAL_FRAGMENT = gql`
         ...ImageFragment
       }
     }
-    testimonialFields {
+    testimonialDetails {
       testimonialAuthorName
       testimonialAuthorRole
       testimonialCompany

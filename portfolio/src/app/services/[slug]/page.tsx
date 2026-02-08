@@ -37,7 +37,7 @@ export default async function SingleServicePage({ params }: ServicePageProps) {
       name: service.title,
       description: service.excerpt || service.title,
       url: `${SITE_URL}/services/${service.slug}`,
-      price: service.serviceFields?.servicePricingText,
+      price: service.serviceDetails?.servicePricingText,
     }),
     generateBreadcrumbSchema([
       { name: 'Home', url: '/' },
@@ -46,7 +46,7 @@ export default async function SingleServicePage({ params }: ServicePageProps) {
     ]),
   ];
 
-  const features = service.serviceFields?.serviceFeatures || [];
+  const features = service.serviceDetails?.serviceFeatures || [];
 
   return (
     <>
@@ -66,9 +66,9 @@ export default async function SingleServicePage({ params }: ServicePageProps) {
             <h1 className="text-4xl md:text-5xl font-bold text-surface-50 mb-4">
               {service.title}
             </h1>
-            {service.serviceFields?.servicePricingText && (
+            {service.serviceDetails?.servicePricingText && (
               <p className="text-brand-400 font-semibold text-lg">
-                {service.serviceFields.servicePricingText}
+                {service.serviceDetails?.servicePricingText}
               </p>
             )}
           </RevealOnScroll>
@@ -112,13 +112,13 @@ export default async function SingleServicePage({ params }: ServicePageProps) {
           <RevealOnScroll preset="scale" className="mb-16">
             <div className="rounded-2xl border border-brand-500/30 bg-gradient-to-br from-brand-950/50 to-surface-900 p-10 text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-surface-50 mb-4">
-                {service.serviceFields?.serviceCtaText || 'Ready to Get Started?'}
+                {service.serviceDetails?.serviceCtaText || 'Ready to Get Started?'}
               </h2>
               <a
-                href={service.serviceFields?.serviceCtaUrl || '/contact'}
+                href={service.serviceDetails?.serviceCtaUrl || '/contact'}
                 className="inline-flex items-center justify-center px-8 py-4 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-all duration-300 shadow-glow hover:shadow-glow-lg"
               >
-                {service.serviceFields?.serviceCtaText || 'Get Started'}
+                {service.serviceDetails?.serviceCtaText || 'Get Started'}
               </a>
             </div>
           </RevealOnScroll>
@@ -135,8 +135,8 @@ export default async function SingleServicePage({ params }: ServicePageProps) {
                     className="rounded-xl border border-surface-700 bg-surface-800/50 p-6 hover:border-brand-500/30 transition-colors duration-300"
                   >
                     <h3 className="text-lg font-semibold text-surface-50 mb-2">{s.title}</h3>
-                    {s.serviceFields?.servicePricingText && (
-                      <p className="text-brand-400 text-sm">{s.serviceFields.servicePricingText}</p>
+                    {s.serviceDetails?.servicePricingText && (
+                      <p className="text-brand-400 text-sm">{s.serviceDetails?.servicePricingText}</p>
                     )}
                   </a>
                 ))}

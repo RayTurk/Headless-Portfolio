@@ -22,7 +22,7 @@ export function ProjectCard({
   const imageUrl = project.featuredImage?.node?.sourceUrl
   const projectType = project.projectTypes?.nodes?.[0]?.name
   const technologies = project.techStacks?.nodes?.map((n) => n.name) || []
-  const cleanExcerpt = project.excerpt?.replace(/<[^>]*>/g, '') || ''
+  const cleanExcerpt = project.excerpt?.replace(/<[^>]*>/g, '') || project.projectInfo?.projectExcerpt || ''
 
   return (
     <Link href={`/projects/${project.slug}`}>

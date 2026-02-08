@@ -133,10 +133,9 @@ export function generatePageMetadata(options: {
 
 export function generateProjectMetadata(project: Project): Metadata {
   const description =
-    project.projectFields.seoDescription ||
+    project.projectInfo?.projectExcerpt ||
     truncateText(stripHtml(project.excerpt || project.content), 160);
-  const title =
-    project.projectFields.seoTitle || `${project.title} - Project`;
+  const title = `${project.title} - Project`;
   const image = project.featuredImage?.node?.sourceUrl || DEFAULT_OG_IMAGE;
   const techs =
     project.techStacks?.nodes?.map((t) => t.name) || [];
@@ -173,10 +172,8 @@ export function generatePostMetadata(post: BlogPost): Metadata {
 
 export function generateServiceMetadata(service: Service): Metadata {
   const description =
-    service.serviceFields?.seoDescription ||
     truncateText(stripHtml(service.excerpt || service.content), 160);
-  const title =
-    service.serviceFields?.seoTitle || `${service.title} - Services`;
+  const title = `${service.title} - Services`;
   const image = service.featuredImage?.node?.sourceUrl || DEFAULT_OG_IMAGE;
 
   return generatePageMetadata({
