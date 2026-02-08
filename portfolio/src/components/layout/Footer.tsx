@@ -29,33 +29,28 @@ const Footer = () => {
     {
       title: 'About',
       links: [
-        { label: 'About Me', href: '/#about' },
-        { label: 'Resume', href: '/resume' },
-        { label: 'Testimonials', href: '/#testimonials' },
+        { label: 'About Me', href: '/about' },
+        { label: 'Projects', href: '/projects' },
       ],
     },
     {
       title: 'Services',
       links: [
-        { label: 'Web Development', href: '/#services' },
-        { label: 'WordPress', href: '/#services' },
-        { label: 'Consulting', href: '/#services' },
+        { label: 'All Services', href: '/services' },
       ],
     },
     {
       title: 'Resources',
       links: [
         { label: 'Blog', href: '/blog' },
-        { label: 'Projects', href: '/#projects' },
-        { label: 'Case Studies', href: '/case-studies' },
+        { label: 'Projects', href: '/projects' },
       ],
     },
     {
       title: 'Contact',
       links: [
-        { label: 'Email', href: 'mailto:ray@example.com' },
+        { label: 'Get in Touch', href: '/contact' },
         { label: 'LinkedIn', href: 'https://linkedin.com/in/rayturk' },
-        { label: 'Schedule Call', href: '/#contact' },
       ],
     },
   ];
@@ -126,7 +121,7 @@ const Footer = () => {
               transition={{ delay: 0.3, duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <Button href="/#contact" variant="primary" size="lg">
+              <Button href="/contact" variant="primary" size="lg">
                 Get Started Today
               </Button>
             </motion.div>

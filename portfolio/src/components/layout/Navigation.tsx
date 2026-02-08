@@ -12,12 +12,12 @@ interface NavigationProps {
 
 const Navigation = ({ isOpen, onClose }: NavigationProps) => {
   const navItems = [
-    { label: 'Home', href: '/#home' },
-    { label: 'Projects', href: '/#projects' },
+    { label: 'Home', href: '/' },
+    { label: 'Projects', href: '/projects' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Services', href: '/#services' },
-    { label: 'About', href: '/#about' },
-    { label: 'Contact', href: '/#contact' },
+    { label: 'Services', href: '/services' },
+    { label: 'About', href: '/about' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   const socialLinks = [

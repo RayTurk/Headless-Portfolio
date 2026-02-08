@@ -23,12 +23,12 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { label: 'Home', href: '/#home', id: 'home' },
-    { label: 'Projects', href: '/#projects', id: 'projects' },
+    { label: 'Home', href: '/', id: 'home' },
+    { label: 'Projects', href: '/projects', id: 'projects' },
     { label: 'Blog', href: '/blog', id: 'blog' },
-    { label: 'Services', href: '/#services', id: 'services' },
-    { label: 'About', href: '/#about', id: 'about' },
-    { label: 'Contact', href: '/#contact', id: 'contact' },
+    { label: 'Services', href: '/services', id: 'services' },
+    { label: 'About', href: '/about', id: 'about' },
+    { label: 'Contact', href: '/contact', id: 'contact' },
   ];
 
   return (
@@ -104,7 +104,7 @@ const Header = () => {
             <div className="flex items-center gap-2 md:gap-4">
               <div className="hidden sm:block">
                 <Button
-                  href="/#contact"
+                  href="/contact"
                   variant="primary"
                   size="md"
                   className="relative group"
