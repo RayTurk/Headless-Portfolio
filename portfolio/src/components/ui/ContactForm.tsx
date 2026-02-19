@@ -116,7 +116,7 @@ const ContactForm = () => {
     setFormState({ status: 'loading' });
 
     try {
-      const response = await fetch('/', {
+      const response = await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
@@ -175,8 +175,6 @@ const ContactForm = () => {
     <motion.form
       onSubmit={handleSubmit}
       name="contact"
-      method="POST"
-      data-netlify="true"
       className="space-y-6"
       initial="hidden"
       whileInView="visible"
