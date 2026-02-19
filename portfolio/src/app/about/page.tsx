@@ -16,9 +16,9 @@ export const metadata: Metadata = generatePageMetadata({
 });
 
 const stats = [
-  { number: 100, suffix: '+', label: 'Sites Maintained' },
-  { number: 7, suffix: '+', label: 'Years Experience' },
-  { number: 99.9, suffix: '%', label: 'Uptime Average' },
+  { number: 4, suffix: '+', label: 'Years in Web Dev' },
+  { number: 3, suffix: '', label: 'Agencies & Studios' },
+  { number: 10, suffix: '+', label: 'Years in Tech' },
   { number: 50, suffix: '+', label: 'Happy Clients' },
 ];
 
@@ -78,19 +78,22 @@ export default function AboutPage() {
             </h1>
             <div className="space-y-4 text-surface-300 leading-relaxed">
               <p>
-                I&apos;m a Cleveland-based WordPress and Full Stack Developer who genuinely believes
-                that the best websites are the ones that just work — reliably, securely, and fast.
+                I&apos;m a Greater Cleveland-area WordPress and Full Stack Developer currently working at
+                Neon Goldfish Marketing Solutions. I started my tech career in customer service —
+                six years as a Service Coordinator at Classic BMW — before making a full leap into
+                web development in 2021.
               </p>
               <p>
-                After years of building and managing hundreds of WordPress sites, I learned something
-                important: <strong className="text-surface-100">most website problems are preventable.</strong>{' '}
-                That&apos;s why I focus on ongoing maintenance and proactive care. An ounce of prevention really is
-                worth a pound of cure.
+                That background isn&apos;t a detour; it&apos;s a superpower.{' '}
+                <strong className="text-surface-100">I understand clients, not just code.</strong>{' '}
+                Since 2021 I&apos;ve worked at three agencies — Company 119, Full Spectrum Marketing,
+                and now Neon Goldfish — growing from WordPress theme work into full-stack React and
+                Next.js development.
               </p>
               <p>
-                When I&apos;m not keeping the web running, I&apos;m exploring headless WordPress architectures,
-                building with React and Next.js, or helping small businesses understand why that $5/month
-                hosting plan might not be the bargain it seems.
+                I&apos;m a perpetual learner with a degree in Web Design from Lakeland Community College
+                and a genuine curiosity that keeps me chasing the next thing: headless CMS, modern
+                JavaScript tooling, and websites that are fast, accessible, and built to last.
               </p>
             </div>
           </RevealOnScroll>
@@ -121,7 +124,7 @@ export default function AboutPage() {
               Skills & Expertise
             </h2>
             <p className="text-surface-400 max-w-2xl mx-auto">
-              A decade of learning, building, and maintaining has given me a well-rounded toolkit.
+              From Help Desk to BMW Service Desk to Web Dev — each role added something to the toolkit.
             </p>
           </RevealOnScroll>
           <SkillsVisualization />

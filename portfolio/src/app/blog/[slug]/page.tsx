@@ -70,7 +70,7 @@ export default async function BlogPostPage(
   const readingTime = post.blogFields?.readingTimeOverride || calculateReadingTime(post.content || '');
   const authorName = post.author?.node?.name || 'Ray Turk';
   const authorAvatar = post.author?.node?.avatar?.url;
-  const authorBio = post.author?.node?.description || 'Full Stack Developer specializing in WordPress and modern web technologies. Building creative solutions for the digital world.';
+  const authorBio = post.author?.node?.description || 'Full-stack developer at Neon Goldfish Marketing Solutions. WordPress specialist with a background in customer service and a passion for building fast, reliable websites.';
   const imageUrl = post.featuredImage?.node?.sourceUrl;
 
   // Extract headings for TOC
@@ -275,7 +275,7 @@ export default async function BlogPostPage(
                       </div>
                     )}
                     <h3 className="font-bold text-white text-sm">{authorName}</h3>
-                    <p className="text-xs text-slate-500 mb-3">Full Stack Developer</p>
+                    <p className="text-xs text-slate-500 mb-3">Full-stack Developer · Neon Goldfish</p>
                     <p className="text-xs text-slate-400 leading-relaxed mb-4">{authorBio}</p>
                     <Link
                       href="/about"

@@ -39,9 +39,9 @@ export function Hero({ settings }: HeroProps) {
   }, [])
 
   const defaultStats = [
-    { label: 'Projects', value: '50+' },
-    { label: 'Years Experience', value: '8+' },
-    { label: 'Happy Clients', value: '100+' },
+    { label: 'Years in Web Dev', value: '4+' },
+    { label: 'Agencies & Studios', value: '3' },
+    { label: 'Happy Clients', value: '50+' },
   ]
 
   const stats = defaultStats

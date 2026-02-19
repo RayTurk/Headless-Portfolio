@@ -66,10 +66,10 @@ export default function ContactPage() {
                       Email
                     </h3>
                     <a
-                      href="mailto:hello@rayturk.com"
+                      href="mailto:rturk.me@gmail.com"
                       className="text-surface-200 hover:text-brand-400 transition-colors"
                     >
-                      hello@rayturk.com
+                      rturk.me@gmail.com
                     </a>
                   </div>
 

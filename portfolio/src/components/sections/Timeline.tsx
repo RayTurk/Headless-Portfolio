@@ -12,46 +12,34 @@ interface TimelineItem {
 
 const timelineData: TimelineItem[] = [
   {
-    year: '2018',
-    title: 'Started WordPress Development',
+    year: '2014–2020',
+    title: 'Lakeland Community College',
     description:
-      'Dove headfirst into the WordPress ecosystem, building themes and plugins while learning the ins and outs of PHP and MySQL.',
+      'Earned an Associate\'s degree in Web Page, Digital/Multimedia and Information Resources Design — where the passion for building on the web first took root.',
   },
   {
-    year: '2019',
-    title: 'First Agency Role',
+    year: '2015–2021',
+    title: 'Service Coordinator · Classic BMW',
     description:
-      'Joined a digital agency, managing dozens of client sites and learning the value of systematic maintenance and proactive care.',
+      'Six years at a high-volume BMW dealership mastering scheduling, customer communication, and database management. Built the people skills and detail-orientation that now shape every client relationship.',
   },
   {
-    year: '2020',
-    title: 'Went Freelance',
+    year: '2021–2024',
+    title: 'Web Developer · Company 119',
     description:
-      'Launched my own practice, focusing on what I loved most: keeping websites healthy and building custom solutions for small businesses.',
+      'Made the full leap into professional web development. Built and maintained WordPress sites for a range of clients out of Chardon, Ohio — learning the full lifecycle of a client project from kickoff to launch to long-term care.',
   },
   {
-    year: '2021',
-    title: '100+ Sites Maintained',
+    year: '2024–2025',
+    title: 'WordPress Developer · Full Spectrum Marketing',
     description:
-      'Hit a milestone of over 100 WordPress sites under active maintenance, proving that reliability and consistency build trust.',
+      'Joined FSM in Akron to deepen WordPress expertise in an agency environment — custom themes, plugins, and ongoing client site management across diverse industries.',
   },
   {
-    year: '2022',
-    title: 'Full Stack Expansion',
+    year: '2025–Present',
+    title: 'Full-stack Developer · Neon Goldfish',
     description:
-      'Expanded into React, Next.js, and modern JavaScript frameworks to offer clients the best of both worlds: WordPress CMS power with cutting-edge frontends.',
-  },
-  {
-    year: '2023',
-    title: 'Headless WordPress Pioneer',
-    description:
-      'Built some of the first headless WordPress + Next.js sites in the Cleveland area, combining CMS flexibility with blazing-fast performance.',
-  },
-  {
-    year: '2024',
-    title: 'Growing the Practice',
-    description:
-      'Focused on scaling maintenance operations and building lasting client relationships. Every site deserves someone who genuinely cares about keeping it running.',
+      'Currently building full-spectrum web solutions at Neon Goldfish Marketing Solutions in Toledo. Expanding into React, Next.js, and headless architectures to deliver modern, performant web experiences.',
   },
 ];
 

@@ -53,7 +53,7 @@ function jsonLdSchema() {
         name: 'Ray Turk',
         url: 'https://rayturk.dev',
         sameAs: [
-          'https://linkedin.com/in/rayturk',
+          'https://www.linkedin.com/in/raymondturk-625097137',
           'https://twitter.com/rayturk',
           'https://github.com/rayturk',
         ],
@@ -96,8 +96,7 @@ function jsonLdSchema() {
           'Ohio',
           'United States',
         ],
-        telephone: '+1-216-xxx-xxxx',
-        email: 'ray@example.com',
+        email: 'rturk.me@gmail.com',
         priceRange: '$$',
         serviceType: [
           'WordPress Development',
@@ -106,7 +105,7 @@ function jsonLdSchema() {
           'Full Stack Development',
         ],
         sameAs: [
-          'https://linkedin.com/in/rayturk',
+          'https://www.linkedin.com/in/raymondturk-625097137',
           'https://twitter.com/rayturk',
           'https://github.com/rayturk',
         ],

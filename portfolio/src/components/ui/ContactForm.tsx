@@ -240,7 +240,7 @@ const ContactForm = () => {
             'focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500/50 hover:border-surface-700/50',
             errors.email && 'border-red-500/50 focus:ring-red-500/50'
           )}
-          placeholder="ray@example.com"
+          placeholder="your@email.com"
           whileFocus={{ scale: 1.01 }}
         />
         {errors.email && (

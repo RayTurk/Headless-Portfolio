@@ -18,7 +18,7 @@ export function generatePersonSchema() {
     url: SITE_URL,
     sameAs: [
       'https://github.com/rayturk',
-      'https://linkedin.com/in/rayturk',
+      'https://www.linkedin.com/in/raymondturk-625097137',
       'https://twitter.com/rayturk',
     ],
     address: {

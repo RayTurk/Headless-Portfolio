@@ -71,8 +71,8 @@ export function ContactCTA() {
           className="text-surface-400 text-sm mt-8"
         >
           Questions? Email me at{' '}
-          <a href="mailto:ray@example.com" className="text-brand-400 hover:text-brand-300">
-            ray@example.com
+          <a href="mailto:rturk.me@gmail.com" className="text-brand-400 hover:text-brand-300">
+            rturk.me@gmail.com
           </a>
         </motion.p>
       </div>

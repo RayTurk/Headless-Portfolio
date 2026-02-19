@@ -50,7 +50,7 @@ const Footer = () => {
       title: 'Contact',
       links: [
         { label: 'Get in Touch', href: '/contact' },
-        { label: 'LinkedIn', href: 'https://linkedin.com/in/rayturk' },
+        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/raymondturk-625097137' },
       ],
     },
   ];
@@ -63,7 +63,7 @@ const Footer = () => {
     },
     {
       icon: Linkedin,
-      href: 'https://linkedin.com/in/rayturk',
+      href: 'https://www.linkedin.com/in/raymondturk-625097137',
       label: 'LinkedIn',
     },
     {

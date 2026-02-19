@@ -29,7 +29,7 @@ const Navigation = ({ isOpen, onClose }: NavigationProps) => {
     },
     {
       icon: Linkedin,
-      href: 'https://linkedin.com/in/rayturk',
+      href: 'https://www.linkedin.com/in/raymondturk-625097137',
       label: 'LinkedIn',
       color: 'hover:text-brand-400',
     },
