@@ -103,7 +103,7 @@ export function MaintenanceCTA() {
             Keep your site secure, fast, and up-to-date without the headache
           </p>
           <p className="text-brand-300 text-lg mt-4 font-semibold">
-            Plans starting at $99/month
+            Plans starting at $50/month
           </p>
         </motion.div>
 

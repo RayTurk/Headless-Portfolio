@@ -22,10 +22,10 @@ interface PricingTier {
 
 const tiers: PricingTier[] = [
   {
-    name: 'Basic',
-    price: '$99',
+    name: 'Starter',
+    price: '$50',
     period: '/mo',
-    description: 'Essential maintenance for small business sites that need to stay secure and updated.',
+    description: 'Perfect for small business sites that just need the basics covered each month.',
     features: [
       { text: '1 WordPress site', included: true },
       { text: 'Monthly core & plugin updates', included: true },
@@ -41,7 +41,7 @@ const tiers: PricingTier[] = [
   },
   {
     name: 'Pro',
-    price: '$299',
+    price: '$120',
     period: '/mo',
     description: 'Complete care for growing businesses that depend on their web presence.',
     features: [
@@ -60,7 +60,7 @@ const tiers: PricingTier[] = [
   },
   {
     name: 'Enterprise',
-    price: '$499',
+    price: '$250',
     period: '/mo',
     description: 'White-glove service for businesses that need everything handled.',
     features: [

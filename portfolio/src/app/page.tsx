@@ -148,7 +148,7 @@ export default async function HomePage() {
         <FeaturedProjects projects={featuredProjects} />
       </Suspense>
 
-      <ServicesOverview services={[]} />
+      <ServicesOverview />
 
       <MaintenanceCTA />
 

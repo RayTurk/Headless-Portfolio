@@ -10,7 +10,7 @@ import { SITE_URL } from '@/lib/constants';
 export const metadata: Metadata = generatePageMetadata({
   title: 'WordPress Maintenance & Development Services',
   description:
-    'Professional WordPress maintenance, hosting, updates, security, and custom development services. Keep your site secure, fast, and up-to-date with ongoing care plans starting at $149/mo.',
+    'Professional WordPress maintenance, hosting, updates, security, and custom development services. Keep your site secure, fast, and up-to-date with ongoing care plans starting at $50/mo.',
   path: '/services',
 });
 
@@ -84,9 +84,9 @@ export default function ServicesPage() {
   const schemas = [
     generateServiceSchema({
       name: 'WordPress Maintenance Plans',
-      description: 'Ongoing WordPress maintenance, security, and support plans starting at $149/month.',
+      description: 'Ongoing WordPress maintenance, security, and support plans starting at $50/month.',
       url: `${SITE_URL}/services`,
-      price: '149',
+      price: '50',
     }),
     generateFAQSchema(faqItems),
   ];
