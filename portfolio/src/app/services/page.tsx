@@ -189,10 +189,10 @@ export default function ServicesPage() {
                 performance, SEO, and more — completely free, no strings attached.
               </p>
               <a
-                href="/contact"
+                href="/audit"
                 className="inline-flex items-center justify-center px-8 py-4 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl transition-all duration-300 shadow-glow hover:shadow-glow-lg"
               >
-                Request Free Audit
+                Run Free Audit Now
               </a>
             </div>
           </RevealOnScroll>

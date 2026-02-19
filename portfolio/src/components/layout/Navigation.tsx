@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Github, Linkedin, Twitter, Code2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -11,6 +12,8 @@ interface NavigationProps {
 }
 
 const Navigation = ({ isOpen, onClose }: NavigationProps) => {
+  const pathname = usePathname();
+
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Projects', href: '/projects' },
@@ -119,19 +122,29 @@ const Navigation = ({ isOpen, onClose }: NavigationProps) => {
                 exit="exit"
                 className="space-y-2"
               >
-                {navItems.map((item) => (
-                  <motion.div key={item.href} variants={itemVariants}>
-                    <Link href={item.href} onClick={onClose}>
-                      <motion.span
-                        whileHover={{ x: 6 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="block px-4 py-3 text-lg font-medium text-surface-200 hover:text-brand-400 hover:bg-surface-900/50 rounded-lg transition-colors"
-                      >
-                        {item.label}
-                      </motion.span>
-                    </Link>
-                  </motion.div>
-                ))}
+                {navItems.map((item) => {
+                  const isActive = item.href === '/'
+                    ? pathname === '/'
+                    : pathname.startsWith(item.href);
+                  return (
+                    <motion.div key={item.href} variants={itemVariants}>
+                      <Link href={item.href} onClick={onClose}>
+                        <motion.span
+                          whileHover={{ x: 6 }}
+                          whileTap={{ scale: 0.98 }}
+                          className={cn(
+                            'block px-4 py-3 text-lg font-medium rounded-lg transition-colors',
+                            isActive
+                              ? 'text-brand-400 bg-brand-500/10'
+                              : 'text-surface-200 hover:text-brand-400 hover:bg-surface-900/50'
+                          )}
+                        >
+                          {item.label}
+                        </motion.span>
+                      </Link>
+                    </motion.div>
+                  );
+                })}
               </motion.div>
             </div>
 

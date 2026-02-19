@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -11,7 +12,7 @@ import Navigation from '@/components/layout/Navigation';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('home');
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,38 +67,42 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-1">
-              {navItems.map((item) => (
-                <motion.div key={item.id} whileHover="hover" whileTap="tap">
-                  <Link href={item.href}>
-                    <motion.span
-                      onClick={() => setActiveLink(item.id)}
-                      className={cn(
-                        'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative',
-                        activeLink === item.id
-                          ? 'text-brand-400'
-                          : 'text-surface-400 hover:text-surface-200'
-                      )}
-                      variants={{
-                        hover: { y: -2 },
-                        tap: { scale: 0.95 },
-                      }}
-                    >
-                      {item.label}
-                      {activeLink === item.id && (
-                        <motion.div
-                          layoutId="active-nav"
-                          className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-brand-500 to-accent-500"
-                          transition={{
-                            type: 'spring',
-                            stiffness: 380,
-                            damping: 30,
-                          }}
-                        />
-                      )}
-                    </motion.span>
-                  </Link>
-                </motion.div>
-              ))}
+              {navItems.map((item) => {
+                const isActive = item.href === '/'
+                  ? pathname === '/'
+                  : pathname.startsWith(item.href);
+                return (
+                  <motion.div key={item.id} whileHover="hover" whileTap="tap">
+                    <Link href={item.href}>
+                      <motion.span
+                        className={cn(
+                          'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative',
+                          isActive
+                            ? 'text-brand-400'
+                            : 'text-surface-400 hover:text-surface-200'
+                        )}
+                        variants={{
+                          hover: { y: -2 },
+                          tap: { scale: 0.95 },
+                        }}
+                      >
+                        {item.label}
+                        {isActive && (
+                          <motion.div
+                            layoutId="active-nav"
+                            className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-brand-500 to-accent-500"
+                            transition={{
+                              type: 'spring',
+                              stiffness: 380,
+                              damping: 30,
+                            }}
+                          />
+                        )}
+                      </motion.span>
+                    </Link>
+                  </motion.div>
+                );
+              })}
             </nav>
 
             {/* Desktop CTA + Mobile Menu Button */}

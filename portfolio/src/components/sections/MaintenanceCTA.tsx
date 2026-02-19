@@ -175,6 +175,7 @@ export function MaintenanceCTA() {
           className="text-center"
         >
           <Button
+            href="/audit"
             size="lg"
             className="bg-brand-600 hover:bg-brand-700 text-white px-10 py-3 text-lg"
           >

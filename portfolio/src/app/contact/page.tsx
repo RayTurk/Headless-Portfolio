@@ -104,13 +104,12 @@ export default function ContactPage() {
 
                 {/* Quick Info Cards */}
                 <div className="space-y-4 pt-4">
-                  <div className="rounded-xl border border-surface-700 bg-surface-800/50 p-4">
-                    <h4 className="text-surface-200 font-medium mb-1">Free Site Audit</h4>
+                  <a href="/audit" className="block rounded-xl border border-brand-500/30 bg-brand-500/5 hover:bg-brand-500/10 p-4 transition-colors group">
+                    <h4 className="text-brand-400 font-medium mb-1 group-hover:text-brand-300">Free Site Audit →</h4>
                     <p className="text-surface-400 text-sm">
-                      Not sure what your site needs? Mention &quot;free audit&quot; in your message and
-                      I&apos;ll review your site at no cost.
+                      Not sure what your site needs? Run an instant automated audit — no sign-up required.
                     </p>
-                  </div>
+                  </a>
                   <div className="rounded-xl border border-surface-700 bg-surface-800/50 p-4">
                     <h4 className="text-surface-200 font-medium mb-1">Prefer a Call?</h4>
                     <p className="text-surface-400 text-sm">
