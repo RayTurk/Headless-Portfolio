@@ -150,7 +150,7 @@ export default function AuditPage() {
     }, 900);
 
     // Submit to Netlify for lead capture
-    fetch('/__forms.html', {
+    fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({ 'form-name': 'audit', name, email, website: url }).toString(),
