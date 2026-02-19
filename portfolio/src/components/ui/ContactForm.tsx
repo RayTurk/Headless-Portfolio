@@ -116,18 +116,17 @@ const ContactForm = () => {
     setFormState({ status: 'loading' });
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
           name: formData.name,
           email: formData.email,
           service: formData.service,
           budget: formData.budget,
           message: formData.message,
-        }),
+        }).toString(),
       });
 
       if (!response.ok) {
@@ -175,11 +174,17 @@ const ContactForm = () => {
   return (
     <motion.form
       onSubmit={handleSubmit}
+      name="contact"
+      method="POST"
+      data-netlify="true"
       className="space-y-6"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
     >
+      {/* Required by Netlify for JS-rendered forms */}
+      <input type="hidden" name="form-name" value="contact" />
+
       {/* Honeypot field */}
       <input
         type="text"

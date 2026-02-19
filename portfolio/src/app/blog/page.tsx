@@ -3,6 +3,8 @@ import { getAllPosts } from '@/lib/api';
 import { BlogPostCard } from '@/components/blog/PostCard';
 import { Suspense } from 'react';
 
+export const revalidate = 3600 // Revalidate every hour
+
 export const metadata: Metadata = {
   title: 'Blog | Portfolio',
   description: 'Insights on WordPress, web development, and digital strategy. Tips and best practices for building modern websites.',

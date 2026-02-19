@@ -38,7 +38,7 @@ export function ServiceCard({
 
   return (
     <motion.div
-      className={`relative group h-full rounded-lg border p-6 sm:p-8 transition-all duration-300 ${borderClass} ${shadowClass}`}
+      className={`relative group h-full flex flex-col rounded-lg border p-6 sm:p-8 transition-all duration-300 ${borderClass} ${shadowClass}`}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3 }}
     >
@@ -47,7 +47,7 @@ export function ServiceCard({
         <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-brand-600/20 to-brand-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       )}
 
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col flex-1">
         {/* Icon */}
         <motion.div
           className={`inline-flex items-center justify-center rounded-lg mb-4 ${
@@ -73,7 +73,7 @@ export function ServiceCard({
 
         {/* Features list */}
         {service.features && service.features.length > 0 && (
-          <ul className="space-y-2 mb-6">
+          <ul className="space-y-2 mb-6 flex-1">
             {service.features.map((feature, index) => (
               <motion.li
                 key={feature}

@@ -23,7 +23,7 @@ interface PricingTier {
 const tiers: PricingTier[] = [
   {
     name: 'Basic',
-    price: '$149',
+    price: '$99',
     period: '/mo',
     description: 'Essential maintenance for small business sites that need to stay secure and updated.',
     features: [
