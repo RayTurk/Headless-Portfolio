@@ -180,7 +180,7 @@ export async function POST(req: NextRequest) {
     const h1Matches = html.match(/<h1[^>]*>[\s\S]*?<\/h1>/gi) || [];
     const h1Count = h1Matches.length;
     const h1Text = h1Count > 0
-      ? decodeEntities(h1Matches[0].replace(/<[^>]+>/g, '').trim()).substring(0, 60)
+      ? decodeEntities(h1Matches[0]!.replace(/<[^>]+>/g, '').trim()).substring(0, 60)
       : null;
     checks.push({
       id: 'h1',
