@@ -18,13 +18,13 @@ interface ButtonProps {
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    'bg-indigo-600 hover:bg-indigo-500 text-white shadow-glow-brand font-semibold',
+    'bg-orange-600 hover:bg-orange-500 text-white shadow-glow-brand font-semibold',
   secondary:
     'bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-semibold',
   ghost:
     'text-slate-300 hover:text-white hover:bg-slate-800/60 font-medium',
   outline:
-    'border border-indigo-500 text-indigo-400 hover:bg-indigo-950/60 hover:text-indigo-300 font-semibold',
+    'border border-orange-500 text-orange-400 hover:bg-orange-950/60 hover:text-orange-300 font-semibold',
 };
 
 const sizes: Record<ButtonSize, string> = {

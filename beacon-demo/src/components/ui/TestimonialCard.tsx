@@ -22,10 +22,10 @@ export default function TestimonialCard({ testimonial, className }: TestimonialC
         className
       )}
     >
-      <Quote className="w-6 h-6 text-indigo-500/60 mb-4 flex-shrink-0" />
+      <Quote className="w-6 h-6 text-orange-500/60 mb-4 flex-shrink-0" />
       <p className="text-slate-300 text-sm leading-relaxed flex-1 mb-6">&ldquo;{testimonial.quote}&rdquo;</p>
       <div className="flex items-center gap-3 pt-4 border-t border-slate-800">
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-600 to-amber-600 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
           {initials}
         </div>
         <div>

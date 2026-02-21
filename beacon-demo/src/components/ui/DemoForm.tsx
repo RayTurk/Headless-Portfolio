@@ -56,7 +56,7 @@ export default function DemoForm() {
             className={cn(
               'w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-2.5',
               'text-white placeholder-slate-500 text-sm',
-              'focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500',
+              'focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500',
               'transition-colors'
             )}
           />
@@ -76,7 +76,7 @@ export default function DemoForm() {
             className={cn(
               'w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-2.5',
               'text-white placeholder-slate-500 text-sm',
-              'focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500',
+              'focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500',
               'transition-colors'
             )}
           />
@@ -96,7 +96,7 @@ export default function DemoForm() {
           className={cn(
             'w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-2.5',
             'text-white placeholder-slate-500 text-sm',
-            'focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500',
+            'focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500',
             'transition-colors'
           )}
         />
@@ -112,7 +112,7 @@ export default function DemoForm() {
           className={cn(
             'w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-2.5',
             'text-white text-sm',
-            'focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500',
+            'focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500',
             'transition-colors'
           )}
         >
@@ -137,7 +137,7 @@ export default function DemoForm() {
           className={cn(
             'w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-2.5',
             'text-white placeholder-slate-500 text-sm',
-            'focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500',
+            'focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500',
             'transition-colors resize-none'
           )}
         />
@@ -152,7 +152,7 @@ export default function DemoForm() {
         className={cn(
           'w-full inline-flex items-center justify-center gap-2',
           'px-6 py-3 rounded-lg text-sm font-semibold text-white',
-          'bg-indigo-600 hover:bg-indigo-500 transition-colors',
+          'bg-orange-600 hover:bg-orange-500 transition-colors',
           'disabled:opacity-60 disabled:cursor-not-allowed',
           'shadow-glow-brand'
         )}

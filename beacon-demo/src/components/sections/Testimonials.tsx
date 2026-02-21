@@ -6,7 +6,7 @@ export default function Testimonials() {
     <section className="py-24 bg-slate-900/40 border-y border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <p className="text-sm font-semibold uppercase tracking-widest text-indigo-400 mb-3">
+          <p className="text-sm font-semibold uppercase tracking-widest text-orange-400 mb-3">
             Trusted by builders
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">

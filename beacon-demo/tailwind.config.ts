@@ -14,25 +14,25 @@ const config: Config = {
           850: '#172033',
           950: '#0c1322',
         },
-        // Indigo — primary brand
+        // Orange — primary brand
         brand: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
+          50: '#fff7ed',
+          100: '#ffedd5',
+          200: '#fed7aa',
+          300: '#fdba74',
+          400: '#fb923c',
+          500: '#f97316',
+          600: '#ea580c',
+          700: '#c2410c',
+          800: '#9a3412',
+          900: '#7c2d12',
         },
-        // Violet — secondary accent
+        // Amber — secondary accent
         accent: {
-          300: '#c4b5fd',
-          400: '#a78bfa',
-          500: '#8b5cf6',
-          600: '#7c3aed',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b',
+          600: '#d97706',
         },
       },
       fontFamily: {
@@ -49,10 +49,10 @@ const config: Config = {
         '4xl': '2rem',
       },
       boxShadow: {
-        'glow-brand': '0 0 30px rgba(99,102,241,0.25)',
-        'glow-accent': '0 0 30px rgba(139,92,246,0.2)',
+        'glow-brand': '0 0 30px rgba(249,115,22,0.3)',
+        'glow-accent': '0 0 30px rgba(245,158,11,0.2)',
         'card-dark': '0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3)',
-        'card-dark-hover': '0 10px 30px -5px rgba(0,0,0,0.5), 0 4px 10px -5px rgba(99,102,241,0.2)',
+        'card-dark-hover': '0 10px 30px -5px rgba(0,0,0,0.5), 0 4px 10px -5px rgba(249,115,22,0.2)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',

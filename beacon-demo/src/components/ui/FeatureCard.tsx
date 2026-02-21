@@ -26,8 +26,8 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 const categoryColors: Record<string, string> = {
-  monitoring: 'text-indigo-400 bg-indigo-950/60',
-  alerting: 'text-violet-400 bg-violet-950/60',
+  monitoring: 'text-orange-400 bg-orange-950/60',
+  alerting: 'text-amber-400 bg-amber-950/60',
   reporting: 'text-emerald-400 bg-emerald-950/40',
   infrastructure: 'text-sky-400 bg-sky-950/40',
 };
@@ -39,7 +39,7 @@ interface FeatureCardProps {
 
 export default function FeatureCard({ feature, className }: FeatureCardProps) {
   const Icon = iconMap[feature.icon] ?? ShieldCheck;
-  const colorClasses = categoryColors[feature.category] ?? 'text-indigo-400 bg-indigo-950/60';
+  const colorClasses = categoryColors[feature.category] ?? 'text-orange-400 bg-orange-950/60';
 
   return (
     <div
@@ -52,7 +52,7 @@ export default function FeatureCard({ feature, className }: FeatureCardProps) {
       <div className={cn('w-11 h-11 rounded-xl flex items-center justify-center mb-4', colorClasses)}>
         <Icon className="w-5 h-5" />
       </div>
-      <h3 className="font-semibold text-white mb-2 group-hover:text-indigo-300 transition-colors">
+      <h3 className="font-semibold text-white mb-2 group-hover:text-orange-300 transition-colors">
         {feature.title}
       </h3>
       <p className="text-sm text-slate-400 leading-relaxed">{feature.description}</p>

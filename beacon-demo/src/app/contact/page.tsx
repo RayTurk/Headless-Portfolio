@@ -35,9 +35,9 @@ export default function ContactPage() {
       {/* Page header */}
       <section className="pt-32 pb-16 relative overflow-hidden border-b border-slate-800">
         <div className="absolute inset-0 bg-grid-slate opacity-100" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-indigo-900/15 blur-3xl pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-orange-900/15 blur-3xl pointer-events-none" />
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-indigo-400 mb-3">
+          <p className="text-sm font-semibold uppercase tracking-widest text-orange-400 mb-3">
             Get in touch
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
@@ -67,13 +67,13 @@ export default function ContactPage() {
                   const Icon = item.icon;
                   return (
                     <div key={item.title} className="flex items-start gap-4 p-4 rounded-xl bg-slate-900 border border-slate-800">
-                      <div className="w-9 h-9 rounded-lg bg-indigo-950/60 flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-4 h-4 text-indigo-400" />
+                      <div className="w-9 h-9 rounded-lg bg-orange-950/60 flex items-center justify-center flex-shrink-0">
+                        <Icon className="w-4 h-4 text-orange-400" />
                       </div>
                       <div>
                         <p className="text-sm font-medium text-white mb-0.5">{item.title}</p>
                         {item.href ? (
-                          <a href={item.href} className="text-sm text-slate-400 hover:text-indigo-400 transition-colors">
+                          <a href={item.href} className="text-sm text-slate-400 hover:text-orange-400 transition-colors">
                             {item.value}
                           </a>
                         ) : (
@@ -85,8 +85,8 @@ export default function ContactPage() {
                 })}
               </div>
 
-              <div className="p-5 rounded-xl bg-indigo-950/30 border border-indigo-800/30">
-                <p className="text-sm font-semibold text-indigo-300 mb-2">Start immediately</p>
+              <div className="p-5 rounded-xl bg-orange-950/30 border border-orange-800/30">
+                <p className="text-sm font-semibold text-orange-300 mb-2">Start immediately</p>
                 <p className="text-sm text-slate-400">
                   Don&rsquo;t need a demo? Sign up free and have your first monitor running in under 60 seconds. No credit card.
                 </p>

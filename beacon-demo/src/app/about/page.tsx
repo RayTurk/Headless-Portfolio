@@ -36,16 +36,16 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="pt-32 pb-20 relative overflow-hidden border-b border-slate-800">
         <div className="absolute inset-0 bg-grid-slate opacity-100" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-indigo-900/15 blur-3xl pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-orange-900/15 blur-3xl pointer-events-none" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 rounded-2xl bg-indigo-600/80 flex items-center justify-center shadow-glow-brand">
+            <div className="w-16 h-16 rounded-2xl bg-orange-600/80 flex items-center justify-center shadow-glow-brand">
               <Radio className="w-8 h-8 text-white" />
             </div>
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5">
             We got paged after the customer did.{' '}
-            <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
               Never again.
             </span>
           </h1>
@@ -91,8 +91,8 @@ export default function AboutPage() {
               const Icon = value.icon;
               return (
                 <div key={value.title} className="p-6 rounded-2xl bg-slate-900 border border-slate-800">
-                  <div className="w-10 h-10 rounded-xl bg-indigo-950/60 border border-indigo-800/40 flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5 text-indigo-400" />
+                  <div className="w-10 h-10 rounded-xl bg-orange-950/60 border border-orange-800/40 flex items-center justify-center mb-4">
+                    <Icon className="w-5 h-5 text-orange-400" />
                   </div>
                   <h3 className="font-semibold text-white mb-2">{value.title}</h3>
                   <p className="text-sm text-slate-400 leading-relaxed">{value.description}</p>
@@ -121,11 +121,11 @@ export default function AboutPage() {
 
               return (
                 <div key={member.id} className="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center text-white font-bold text-lg mb-4 flex-shrink-0">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-orange-600 to-amber-600 flex items-center justify-center text-white font-bold text-lg mb-4 flex-shrink-0">
                     {initials}
                   </div>
                   <h3 className="font-semibold text-white mb-0.5">{member.name}</h3>
-                  <p className="text-sm text-indigo-400 mb-3">{member.title}</p>
+                  <p className="text-sm text-orange-400 mb-3">{member.title}</p>
                   <p className="text-sm text-slate-400 leading-relaxed">{member.bio}</p>
                 </div>
               );

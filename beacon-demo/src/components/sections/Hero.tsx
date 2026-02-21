@@ -19,21 +19,21 @@ export default function Hero() {
       <div className="absolute inset-0 bg-grid-slate opacity-100" />
 
       {/* Gradient orbs */}
-      <div className="absolute top-1/4 -left-64 w-[600px] h-[600px] rounded-full bg-indigo-900/20 blur-3xl pointer-events-none" />
-      <div className="absolute top-1/3 -right-64 w-[500px] h-[500px] rounded-full bg-violet-900/15 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 -left-64 w-[600px] h-[600px] rounded-full bg-orange-900/20 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 -right-64 w-[500px] h-[500px] rounded-full bg-amber-900/15 blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: copy */}
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-950/40 text-xs font-medium text-indigo-300 mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-950/40 text-xs font-medium text-orange-300 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               30-second check intervals now available
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6">
               Know before{' '}
-              <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
                 your customers
               </span>{' '}
               do
@@ -46,7 +46,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-base transition-colors shadow-glow-brand"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-semibold text-base transition-colors shadow-glow-brand"
               >
                 Start Free Trial
                 <ArrowRight className="w-4 h-4" />
@@ -82,7 +82,7 @@ export default function Hero() {
           {/* Right: CSS dashboard mockup */}
           <div className="relative">
             {/* Outer glow */}
-            <div className="absolute inset-0 rounded-2xl bg-indigo-600/10 blur-xl" />
+            <div className="absolute inset-0 rounded-2xl bg-orange-600/10 blur-xl" />
 
             <div className="relative rounded-2xl border border-slate-700/80 bg-slate-900/90 backdrop-blur-sm overflow-hidden shadow-2xl">
               {/* Dashboard header */}
@@ -126,7 +126,7 @@ export default function Hero() {
                     {/* Response */}
                     <span
                       className={`text-xs font-mono w-14 text-right ${
-                        monitor.status === 'up' ? 'text-indigo-400' : 'text-red-400'
+                        monitor.status === 'up' ? 'text-orange-400' : 'text-red-400'
                       }`}
                     >
                       {monitor.response}
@@ -139,13 +139,13 @@ export default function Hero() {
               <div className="px-5 py-4 border-t border-slate-800">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs text-slate-500">Response time — last 15 checks</span>
-                  <span className="text-xs text-indigo-400 font-mono">avg 93ms</span>
+                  <span className="text-xs text-orange-400 font-mono">avg 93ms</span>
                 </div>
                 <div className="flex items-end gap-0.5 h-10">
                   {chartBars.map((height, i) => (
                     <div
                       key={i}
-                      className="flex-1 rounded-sm bg-indigo-600/70 hover:bg-indigo-500/80 transition-colors"
+                      className="flex-1 rounded-sm bg-orange-600/70 hover:bg-orange-500/80 transition-colors"
                       style={{ height: `${height}%` }}
                     />
                   ))}

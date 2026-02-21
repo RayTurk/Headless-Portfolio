@@ -65,9 +65,9 @@ export default function PricingPage() {
       {/* Page header */}
       <section className="pt-32 pb-16 border-b border-slate-800 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-slate opacity-100" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-indigo-900/15 blur-3xl pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-orange-900/15 blur-3xl pointer-events-none" />
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-indigo-400 mb-3">
+          <p className="text-sm font-semibold uppercase tracking-widest text-orange-400 mb-3">
             Pricing
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5">
@@ -85,8 +85,8 @@ export default function PricingPage() {
             <button
               onClick={() => setAnnual(!annual)}
               className={cn(
-                'relative inline-flex h-7 w-12 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-950',
-                annual ? 'bg-indigo-600' : 'bg-slate-700'
+                'relative inline-flex h-7 w-12 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-slate-950',
+                annual ? 'bg-orange-600' : 'bg-slate-700'
               )}
               role="switch"
               aria-checked={annual}
@@ -124,7 +124,7 @@ export default function PricingPage() {
               All plans include SSL monitoring, public status pages, and 24/7 email support.
               <br />
               Need a custom plan?{' '}
-              <a href="/contact" className="text-indigo-400 hover:text-indigo-300 transition-colors">
+              <a href="/contact" className="text-orange-400 hover:text-orange-300 transition-colors">
                 Talk to us
               </a>
               .
@@ -137,7 +137,7 @@ export default function PricingPage() {
       <section className="py-20 bg-slate-900/40 border-y border-slate-800">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-10">
-            <HelpCircle className="w-5 h-5 text-indigo-400" />
+            <HelpCircle className="w-5 h-5 text-orange-400" />
             <h2 className="text-2xl font-bold text-white">Frequently asked questions</h2>
           </div>
 

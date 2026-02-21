@@ -30,7 +30,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center group-hover:bg-indigo-500 transition-colors">
+              <div className="w-8 h-8 rounded-lg bg-orange-600 flex items-center justify-center group-hover:bg-orange-500 transition-colors">
                 <Radio className="w-4 h-4 text-white" />
               </div>
               <span className="font-bold text-lg text-white">Beacon</span>

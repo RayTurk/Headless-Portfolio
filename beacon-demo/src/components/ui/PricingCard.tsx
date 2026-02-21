@@ -18,14 +18,14 @@ export default function PricingCard({ tier, annual, className }: PricingCardProp
       className={cn(
         'relative flex flex-col rounded-2xl border transition-all duration-300',
         tier.highlighted
-          ? 'bg-indigo-950/40 border-indigo-500/60 shadow-glow-brand'
+          ? 'bg-orange-950/40 border-orange-500/60 shadow-glow-brand'
           : 'bg-slate-900 border-slate-800 hover:border-slate-700',
         className
       )}
     >
       {tier.highlighted && (
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-          <span className="inline-flex items-center px-4 py-1 rounded-full text-xs font-semibold bg-indigo-600 text-white shadow">
+          <span className="inline-flex items-center px-4 py-1 rounded-full text-xs font-semibold bg-orange-600 text-white shadow">
             Most popular
           </span>
         </div>

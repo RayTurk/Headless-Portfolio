@@ -16,7 +16,7 @@ export default function PricingSection({ showToggle = true }: PricingSectionProp
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <p className="text-sm font-semibold uppercase tracking-widest text-indigo-400 mb-3">
+          <p className="text-sm font-semibold uppercase tracking-widest text-orange-400 mb-3">
             Pricing
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -35,8 +35,8 @@ export default function PricingSection({ showToggle = true }: PricingSectionProp
               <button
                 onClick={() => setAnnual(!annual)}
                 className={cn(
-                  'relative inline-flex h-7 w-12 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-950',
-                  annual ? 'bg-indigo-600' : 'bg-slate-700'
+                  'relative inline-flex h-7 w-12 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-slate-950',
+                  annual ? 'bg-orange-600' : 'bg-slate-700'
                 )}
                 role="switch"
                 aria-checked={annual}

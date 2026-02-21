@@ -41,7 +41,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group" aria-label="Beacon home">
-            <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center shadow-glow-brand group-hover:bg-indigo-500 transition-colors">
+            <div className="w-8 h-8 rounded-lg bg-orange-600 flex items-center justify-center shadow-glow-brand group-hover:bg-orange-500 transition-colors">
               <Radio className="w-4 h-4 text-white" />
             </div>
             <span className="font-bold text-lg tracking-tight text-white">Beacon</span>
@@ -56,7 +56,7 @@ export default function Header() {
                 className={cn(
                   'px-4 py-2 rounded-lg text-sm font-medium transition-colors',
                   pathname === link.href
-                    ? 'text-indigo-400 bg-indigo-950/60'
+                    ? 'text-orange-400 bg-orange-950/60'
                     : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
                 )}
               >
@@ -75,7 +75,7 @@ export default function Header() {
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-colors shadow-glow-brand"
+              className="inline-flex items-center px-4 py-2 rounded-lg bg-orange-600 hover:bg-orange-500 text-white text-sm font-semibold transition-colors shadow-glow-brand"
             >
               Start Free Trial
             </Link>
@@ -104,7 +104,7 @@ export default function Header() {
                 className={cn(
                   'px-4 py-3 rounded-lg text-sm font-medium transition-colors',
                   pathname === link.href
-                    ? 'text-indigo-400 bg-indigo-950/60'
+                    ? 'text-orange-400 bg-orange-950/60'
                     : 'text-slate-300 hover:text-white hover:bg-slate-800'
                 )}
               >
@@ -120,7 +120,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/contact"
-                className="px-4 py-3 rounded-lg text-sm font-semibold text-center bg-indigo-600 hover:bg-indigo-500 text-white transition-colors"
+                className="px-4 py-3 rounded-lg text-sm font-semibold text-center bg-orange-600 hover:bg-orange-500 text-white transition-colors"
               >
                 Start Free Trial
               </Link>
