@@ -7,6 +7,7 @@ import { ServicesOverview } from '@/components/sections/ServicesOverview'
 import { MaintenanceCTA } from '@/components/sections/MaintenanceCTA'
 import { TestimonialsSlider } from '@/components/sections/TestimonialsSlider'
 import { BlogPreview } from '@/components/sections/BlogPreview'
+import { DemoProjects } from '@/components/sections/DemoProjects'
 import { ContactCTA } from '@/components/sections/ContactCTA'
 import {
   getFeaturedProjects,
@@ -146,6 +147,8 @@ export default async function HomePage() {
       <Suspense fallback={<ProjectsSkeleton />}>
         <FeaturedProjects projects={featuredProjects} />
       </Suspense>
+
+      <DemoProjects />
 
       <ServicesOverview />
 

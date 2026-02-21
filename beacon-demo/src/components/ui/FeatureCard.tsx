@@ -28,8 +28,8 @@ const iconMap: Record<string, LucideIcon> = {
 const categoryColors: Record<string, string> = {
   monitoring: 'text-orange-400 bg-orange-950/60',
   alerting: 'text-amber-400 bg-amber-950/60',
-  reporting: 'text-emerald-400 bg-emerald-950/40',
-  infrastructure: 'text-sky-400 bg-sky-950/40',
+  reporting: 'text-amber-300 bg-amber-950/40',
+  infrastructure: 'text-orange-300 bg-orange-950/40',
 };
 
 interface FeatureCardProps {
