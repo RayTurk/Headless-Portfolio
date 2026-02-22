@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, Sparkles } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { siteConfig } from '@/lib/data';
 import { cn } from '@/lib/utils';
 
@@ -27,7 +27,7 @@ export default function Header() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         scrolled
-          ? 'bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800/60 shadow-lg'
+          ? 'bg-black/95 backdrop-blur-md border-b border-zinc-900 shadow-lg'
           : 'bg-transparent'
       )}
     >
@@ -35,12 +35,10 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center border border-cyan-500/30 group-hover:border-cyan-400/50 transition-colors">
-              <Sparkles className="w-4 h-4 text-cyan-400" />
+            <div className="flex items-center gap-1">
+              <span className="font-black text-white text-xl tracking-tight">REVIVE</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mb-0.5" />
             </div>
-            <span className="font-bold text-white text-lg leading-tight">
-              Revive<span className="text-cyan-400">.</span>
-            </span>
           </Link>
 
           {/* Desktop nav */}
@@ -57,17 +55,17 @@ export default function Header() {
           </nav>
 
           {/* Desktop right side */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-5">
             <a
               href={`tel:${siteConfig.phone}`}
-              className="flex items-center gap-2 text-zinc-400 hover:text-cyan-400 text-sm font-medium transition-colors"
+              className="flex items-center gap-2 text-zinc-500 hover:text-amber-400 text-sm font-medium transition-colors"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-3.5 h-3.5" />
               {siteConfig.phoneDisplay}
             </a>
             <Link
               href="/booking"
-              className="bg-cyan-600 hover:bg-cyan-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors shadow-cyan-glow"
+              className="bg-amber-500 hover:bg-amber-400 text-black text-sm font-bold px-5 py-2.5 rounded-xl transition-colors"
             >
               Book Now
             </Link>
@@ -76,7 +74,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
+            className="md:hidden p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-900 transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -86,7 +84,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-zinc-950/98 border-t border-zinc-800">
+        <div className="md:hidden bg-black/98 border-t border-zinc-900">
           <div className="px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <Link
@@ -96,8 +94,8 @@ export default function Header() {
                 className={cn(
                   'block px-4 py-3 rounded-xl text-sm font-medium transition-colors',
                   link.label === 'Book Now'
-                    ? 'bg-cyan-600 hover:bg-cyan-500 text-white text-center mt-2'
-                    : 'text-zinc-300 hover:text-white hover:bg-zinc-800'
+                    ? 'bg-amber-500 hover:bg-amber-400 text-black font-bold text-center mt-2'
+                    : 'text-zinc-300 hover:text-white hover:bg-zinc-900'
                 )}
               >
                 {link.label}
@@ -105,7 +103,7 @@ export default function Header() {
             ))}
             <a
               href={`tel:${siteConfig.phone}`}
-              className="flex items-center gap-2 px-4 py-3 text-sm text-zinc-400 hover:text-cyan-400 transition-colors"
+              className="flex items-center gap-2 px-4 py-3 text-sm text-zinc-500 hover:text-amber-400 transition-colors"
             >
               <Phone className="w-4 h-4" />
               {siteConfig.phoneDisplay}

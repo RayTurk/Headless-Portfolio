@@ -1,4 +1,5 @@
 import Hero from '@/components/sections/Hero';
+import WorkStrip from '@/components/sections/WorkStrip';
 import ServicesStrip from '@/components/sections/ServicesStrip';
 import Packages from '@/components/sections/Packages';
 import Process from '@/components/sections/Process';
@@ -9,6 +10,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <WorkStrip />
       <ServicesStrip />
       <Packages />
       <Process />

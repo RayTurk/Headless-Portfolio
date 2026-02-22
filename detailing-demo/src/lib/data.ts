@@ -56,7 +56,7 @@ export const services: DetailingService[] = [
     fullDescription:
       'Our exterior hand wash is the foundation of every detail. We use pH-neutral soap, a two-bucket wash method with grit guards, and microfiber mitts to safely lift dirt without scratching your clear coat. Every vehicle is pre-rinsed, hand washed panel by panel, rinsed again, and dried with plush waffle-weave towels. Wheels, wheel wells, and door jambs are cleaned separately. This is how detailing should be done — not how the drive-through does it.',
     icon: 'droplets',
-    accentColor: 'bg-cyan-500/15 text-cyan-400',
+    accentColor: 'bg-zinc-700/40 text-white',
     features: [
       'Two-bucket wash with grit guards',
       'pH-neutral foam pre-wash',

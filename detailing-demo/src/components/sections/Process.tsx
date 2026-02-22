@@ -1,65 +1,81 @@
-import { Search, CloudRain, Droplets, Layers, ShieldCheck, CheckCircle } from 'lucide-react';
 import { processSteps } from '@/lib/data';
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  search: Search,
-  'cloud-rain': CloudRain,
-  droplets: Droplets,
-  layers: Layers,
-  'shield-check': ShieldCheck,
-  'check-circle': CheckCircle,
-};
 
 export default function Process() {
   return (
-    <section className="py-20 lg:py-24 bg-zinc-950">
+    <section className="py-16 lg:py-28 bg-zinc-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
-        <div className="text-center mb-14">
-          <p className="text-cyan-400 text-sm font-semibold tracking-wider uppercase mb-3">
-            The Process
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Six steps to a perfect finish
-          </h2>
-          <p className="text-zinc-400 max-w-xl mx-auto">
-            Every vehicle goes through the same meticulous process. No shortcuts, no rushing — just results you can see.
-          </p>
-        </div>
+        <div className="lg:grid lg:grid-cols-[1fr_1.3fr] lg:gap-20 xl:gap-32">
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {processSteps.map((step, idx) => {
-            const Icon = iconMap[step.icon] ?? ShieldCheck;
-            return (
+          {/* ── Left: Sticky section header ─────────────────────── */}
+          <div className="mb-12 lg:mb-0">
+            <div className="lg:sticky lg:top-28">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-8 h-px bg-amber-400" />
+                <p className="text-amber-400 text-xs font-semibold tracking-[0.22em] uppercase">The Process</p>
+              </div>
+
+              <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-6">
+                Six steps
+                <br />
+                to a perfect
+                <br />
+                <span className="text-amber-400 font-light italic">finish.</span>
+              </h2>
+
+              <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
+                Every vehicle goes through the same meticulous process. No shortcuts, no rushing —
+                just results you can see.
+              </p>
+
+              {/*
+                📸 IMAGE SLOT — Process section accent
+                Optionally add a small portrait image here:
+                  <div className="mt-10 rounded-xl overflow-hidden aspect-[4/3]">
+                    <Image src="/images/process-detail.jpg" width={400} height={300} className="object-cover" alt="Detailer at work" />
+                  </div>
+              */}
+
+              {/* Decorative large number */}
+              <div
+                className="mt-10 text-[7rem] font-black leading-none select-none hidden lg:block"
+                style={{ color: 'rgba(39,39,42,0.8)' }}
+                aria-hidden="true"
+              >
+                06
+              </div>
+            </div>
+          </div>
+
+          {/* ── Right: Numbered steps ────────────────────────────── */}
+          <div className="divide-y divide-zinc-900">
+            {processSteps.map((step, idx) => (
               <div
                 key={step.step}
-                className="relative bg-zinc-900 border border-zinc-800 rounded-2xl p-6 hover:border-zinc-700 transition-all duration-300 group"
+                className="flex gap-5 py-8 first:pt-0 last:pb-0 group"
               >
-                {/* Step number */}
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center group-hover:border-cyan-500/40 transition-colors">
-                    <Icon className="w-5 h-5 text-cyan-400" />
-                  </div>
-                  <span className="text-zinc-600 font-bold text-4xl leading-none">
+                {/* Large step number */}
+                <div className="flex-shrink-0 w-10 text-right">
+                  <span className="text-3xl font-black text-zinc-800 group-hover:text-zinc-700 transition-colors leading-none">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
                 </div>
 
-                <h3 className="text-white font-bold text-lg mb-2 group-hover:text-cyan-400 transition-colors">
-                  {step.title}
-                </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">
-                  {step.description}
-                </p>
+                {/* Amber vertical tick */}
+                <div className="flex-shrink-0 pt-2.5">
+                  <div className="w-px h-3 bg-zinc-800 group-hover:bg-amber-400/60 transition-colors rounded-full" />
+                </div>
 
-                {/* Connector line (not on last item in each row or last item overall) */}
-                {idx < processSteps.length - 1 && (idx + 1) % 3 !== 0 && (
-                  <div className="hidden lg:block absolute top-8 -right-3 w-6 h-px bg-zinc-700" />
-                )}
+                {/* Content */}
+                <div className="flex-1 pt-0.5">
+                  <h3 className="text-white font-bold text-base mb-2 group-hover:text-amber-400 transition-colors">
+                    {step.title}
+                  </h3>
+                  <p className="text-zinc-500 text-sm leading-relaxed">{step.description}</p>
+                </div>
               </div>
-            );
-          })}
+            ))}
+          </div>
+
         </div>
       </div>
     </section>

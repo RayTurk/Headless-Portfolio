@@ -32,6 +32,8 @@ const config: Config = {
         'card-hover': '0 10px 25px -5px rgba(0,0,0,0.5), 0 4px 10px -5px rgba(0,0,0,0.3)',
         'cyan-glow': '0 0 30px rgba(6,182,212,0.25)',
         'cyan-glow-lg': '0 0 50px rgba(6,182,212,0.3)',
+        'amber-glow': '0 0 30px rgba(251,191,36,0.2)',
+        'amber-glow-lg': '0 0 60px rgba(251,191,36,0.25)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ExternalLink, Wrench, Radio } from 'lucide-react'
+import { ExternalLink, Wrench, Radio, Sparkles } from 'lucide-react'
 
 interface DemoProject {
   name: string
@@ -53,6 +53,22 @@ const demos: DemoProject[] = [
     icon: <Radio className="w-5 h-5" />,
     demoUrl: 'https://beacon-demo.netlify.app',
   },
+  {
+    name: 'Revive Auto Detailing',
+    slug: 'revive-detailing',
+    industry: 'Auto Detailing',
+    description:
+      'Cinematic dark-themed site for a premium auto detailing shop. Package-based pricing with dollar amounts shown, CSS before/after showcase, and an online booking form.',
+    theme: 'dark',
+    primaryCta: 'Book Online',
+    techStack: ['Next.js 14', 'Tailwind CSS', 'TypeScript', 'Netlify'],
+    accentFrom: 'from-zinc-700',
+    accentTo: 'to-cyan-600',
+    badgeBg: 'bg-cyan-500/20',
+    badgeText: 'text-cyan-400',
+    icon: <Sparkles className="w-5 h-5" />,
+    demoUrl: 'https://revive-detailing-demo.netlify.app',
+  },
 ]
 
 export function DemoProjects() {
@@ -79,7 +95,7 @@ export function DemoProjects() {
         </motion.div>
 
         {/* Demo cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {demos.map((demo, i) => (
             <motion.div
               key={demo.slug}
