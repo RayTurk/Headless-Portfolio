@@ -25,9 +25,9 @@ const variantStyles = {
   gradient:
     'bg-gradient-to-br from-surface-900/80 to-surface-950/80 border border-brand-500/20 hover:border-brand-500/40',
   bordered:
-    'bg-surface-950/40 border border-accent-500/30 hover:border-accent-500/60',
+    'bg-surface-950/40 border border-steel-500/30 hover:border-steel-500/60',
   accent:
-    'bg-gradient-to-br from-accent-500/10 to-brand-500/10 border border-accent-500/30 hover:border-accent-500/60',
+    'bg-gradient-to-br from-steel-500/10 to-brand-500/10 border border-steel-500/30 hover:border-steel-500/60',
 };
 
 const paddingMap = {

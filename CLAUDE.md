@@ -45,18 +45,20 @@ npm run type-check # TypeScript check without emitting
 
 ## Key Conventions
 
-**Tailwind Theme:**
-- Brand color: indigo (`brand-500` = `#6366f1`)
-- Accent color: emerald (`accent-500` = `#10b981`)
-- Surface/dark: zinc grayscale (`surface-950` bg, `surface-50` text)
-- Custom shadows: `shadow-glow`, `shadow-bento`, `shadow-bento-hover`
+**Tailwind Theme (Forge Brand):**
+- Brand color: forge orange (`brand-500` = `#f97316`), hover: `brand-600` = `#ea6811`
+- Secondary color: industrial steel (`steel-700` = `#334e68`) — depth, nav active, badge fills
+- Surface/dark: warm slag (`surface-950` = `#0f0d0b` page bg, `surface-900` = `#1a1714` cards)
+- Text: `text-cinder` (`#fdf6ee`) primary, `text-ash` (`#e8dfd4`) secondary — not `text-surface-50`
+- Custom shadows: `shadow-glow`, `shadow-glow-lg`, `shadow-glow-brand`, `shadow-glow-steel`, `shadow-forge`, `shadow-bento`, `shadow-bento-hover`
 - Custom grid: `grid-cols-bento` (4-col), `grid-cols-bento-sm` (2-col)
 - **Never use `md:row-span-2` on bento grid items** — causes empty space stretching
+- Use `steel-*` for what used to be `accent-*` (emerald replaced by industrial steel)
 
 **Fonts:**
-- `font-sans` → Inter (`--font-inter`)
-- `font-display` → Cabinet (`--font-cabinet`)
-- `font-mono` → JetBrains Mono (`--font-jetbrains`)
+- `font-sans` → Barlow (`--font-sans`)
+- `font-display` → Barlow Condensed (`--font-display`) — H1s, hero, section titles
+- `font-mono` → IBM Plex Mono (`--font-mono`) — eyebrows, labels, tech tags, code
 
 **Animations:**
 - Use `src/hooks/useReducedMotion.ts` when adding motion

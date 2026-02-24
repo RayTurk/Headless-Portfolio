@@ -45,7 +45,7 @@ const Testimonial = ({
     >
       {/* Gradient border animation */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-brand-500/0 via-brand-500/10 to-accent-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        className="absolute inset-0 bg-gradient-to-r from-brand-500/0 via-brand-500/10 to-steel-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
         animate={{
           backgroundPosition: ['0%', '100%'],
         }}
@@ -115,7 +115,7 @@ const Testimonial = ({
               >
                 <Star
                   size={16}
-                  className="fill-accent-500 text-accent-500"
+                  className="fill-steel-500 text-steel-500"
                 />
               </motion.div>
             ))}

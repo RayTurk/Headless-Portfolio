@@ -65,7 +65,7 @@ const AnimatedText = ({
           key={`${item}-${i}`}
           variants={itemVariants}
           className={cn(
-            gradient && 'bg-gradient-to-r from-brand-400 to-accent-400 bg-clip-text text-transparent'
+            gradient && 'bg-gradient-to-r from-brand-400 to-steel-400 bg-clip-text text-transparent'
           )}
         >
           {item}

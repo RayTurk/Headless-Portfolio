@@ -28,9 +28,9 @@ const variantStyles = {
   glass:
     'bg-surface-950/40 backdrop-blur-xl border border-surface-900/30 hover:border-surface-700/50 hover:bg-surface-900/50',
   gradient:
-    'bg-gradient-to-br from-brand-500/10 to-accent-500/10 border border-brand-500/20 hover:border-brand-500/40 hover:shadow-lg hover:shadow-brand-500/20',
+    'bg-gradient-to-br from-brand-500/10 to-steel-500/10 border border-brand-500/20 hover:border-brand-500/40 hover:shadow-lg hover:shadow-brand-500/20',
   accent:
-    'bg-gradient-to-br from-accent-500/10 to-brand-500/5 border border-accent-500/30 hover:border-accent-500/60 hover:shadow-lg hover:shadow-accent-500/20',
+    'bg-gradient-to-br from-steel-500/10 to-brand-500/5 border border-steel-500/30 hover:border-steel-500/60 hover:shadow-lg hover:shadow-steel-500/20',
   dark: 'bg-surface-950/60 border border-surface-800/30 hover:border-surface-700/50',
 };
 

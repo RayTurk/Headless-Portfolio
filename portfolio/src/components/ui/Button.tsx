@@ -31,7 +31,7 @@ const variantStyles = {
   secondary:
     'bg-transparent border border-surface-700 text-surface-200 hover:border-brand-500 hover:text-brand-400 hover:bg-surface-900/50',
   accent:
-    'bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-400 hover:to-accent-500 text-white shadow-lg hover:shadow-accent-500/50 border border-accent-500/50',
+    'bg-gradient-to-r from-steel-500 to-steel-600 hover:from-steel-400 hover:to-steel-500 text-white shadow-lg hover:shadow-steel-500/50 border border-steel-500/50',
   ghost:
     'bg-surface-900/50 hover:bg-surface-800 text-surface-200 hover:text-surface-100 border border-transparent',
   link: 'bg-transparent text-brand-400 hover:text-brand-300 underline-offset-4 hover:underline',

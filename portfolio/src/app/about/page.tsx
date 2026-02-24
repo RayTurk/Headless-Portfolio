@@ -62,7 +62,7 @@ export default function AboutPage() {
       <section className="pt-32 pb-16 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <RevealOnScroll preset="fade-right">
-            <div className="aspect-square max-w-md mx-auto md:mx-0 rounded-2xl bg-gradient-to-br from-brand-500/20 to-accent-500/20 border border-surface-700 flex items-center justify-center overflow-hidden">
+            <div className="aspect-square max-w-md mx-auto md:mx-0 rounded-2xl bg-gradient-to-br from-brand-500/20 to-steel-500/20 border border-surface-700 flex items-center justify-center overflow-hidden">
               {/* Placeholder for photo — replace with next/image */}
               <div className="w-full h-full bg-surface-800 flex items-center justify-center">
                 <span className="text-6xl">👨‍💻</span>

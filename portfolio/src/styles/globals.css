@@ -13,7 +13,7 @@
   }
 
   body {
-    @apply bg-surface-950 text-surface-50;
+    @apply bg-surface-950 text-cinder;
   }
 }
 
@@ -51,7 +51,7 @@
 
   /* Gradient text utility */
   .gradient-text {
-    @apply bg-gradient-to-r from-brand-400 to-brand-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-brand-400 to-brand-700 bg-clip-text text-transparent;
   }
 
   /* Smooth transitions */

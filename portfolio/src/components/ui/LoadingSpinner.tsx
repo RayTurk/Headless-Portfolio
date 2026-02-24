@@ -17,7 +17,7 @@ const sizeMap = {
 
 const variantMap = {
   brand: 'from-brand-500 to-brand-400',
-  accent: 'from-accent-500 to-accent-400',
+  accent: 'from-steel-500 to-steel-400',
 };
 
 const LoadingSpinner = ({

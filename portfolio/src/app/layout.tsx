@@ -1,19 +1,28 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Barlow, Barlow_Condensed, IBM_Plex_Mono } from 'next/font/google'
 import { AnimatePresence } from 'framer-motion'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import '@/styles/globals.css'
 
-const inter = Inter({
+const barlow = Barlow({
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['400', '500', '600'],
+  variable: '--font-sans',
   display: 'swap',
 })
 
-const jetbrains = JetBrains_Mono({
+const barlowCondensed = Barlow_Condensed({
   subsets: ['latin'],
-  variable: '--font-jetbrains',
+  weight: ['600', '700', '800', '900'],
+  variable: '--font-display',
+  display: 'swap',
+})
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-mono',
   display: 'swap',
 })
 
@@ -101,16 +110,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrains.variable} scroll-smooth`}
+      className={`${barlow.variable} ${barlowCondensed.variable} ${ibmPlexMono.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>
-        <meta name="theme-color" content="#0f172a" />
+        <meta name="theme-color" content="#0f0d0b" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
-      <body className="dark bg-surface-950 text-surface-50 font-sans antialiased">
+      <body className="dark bg-surface-950 text-cinder font-sans antialiased">
         <Header />
         <main>
           <AnimatePresence mode="wait">

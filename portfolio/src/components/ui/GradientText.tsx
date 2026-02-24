@@ -17,7 +17,7 @@ const GradientText = ({
   return (
     <motion.span
       className={cn(
-        'bg-gradient-to-r from-brand-400 to-accent-400 bg-clip-text text-transparent',
+        'bg-gradient-to-r from-brand-400 to-steel-400 bg-clip-text text-transparent',
         className
       )}
       animate={

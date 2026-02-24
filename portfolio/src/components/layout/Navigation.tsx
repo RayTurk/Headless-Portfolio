@@ -46,7 +46,7 @@ const Navigation = ({ isOpen, onClose }: NavigationProps) => {
       icon: Code2,
       href: 'https://codepen.io/rayturk',
       label: 'CodePen',
-      color: 'hover:text-accent-400',
+      color: 'hover:text-steel-400',
     },
   ];
 

@@ -23,7 +23,7 @@ const variantStyles = {
   brand:
     'bg-brand-500/15 border border-brand-500/30 text-brand-300 hover:border-brand-500/60 hover:bg-brand-500/25',
   accent:
-    'bg-accent-500/15 border border-accent-500/30 text-accent-300 hover:border-accent-500/60 hover:bg-accent-500/25',
+    'bg-steel-500/15 border border-steel-500/30 text-steel-300 hover:border-steel-500/60 hover:bg-steel-500/25',
   outline:
     'bg-transparent border border-surface-600/50 text-surface-300 hover:border-surface-500 hover:bg-surface-900/30',
 };
