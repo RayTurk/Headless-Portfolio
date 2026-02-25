@@ -32,15 +32,15 @@ export function ProjectIframe({ project }: ProjectIframeProps) {
       className="w-full"
     >
       {/* Device Frame */}
-      <div className="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl">
+      <div className="relative rounded-2xl overflow-hidden bg-surface-900 border border-surface-700 shadow-2xl">
         {/* Browser Chrome */}
-        <div className="bg-slate-800 px-6 py-4 border-b border-slate-700 flex items-center gap-2">
+        <div className="bg-surface-800 px-6 py-4 border-b border-surface-700 flex items-center gap-2">
           <div className="flex gap-2">
             <div className="w-3 h-3 rounded-full bg-red-500" />
             <div className="w-3 h-3 rounded-full bg-yellow-500" />
             <div className="w-3 h-3 rounded-full bg-green-500" />
           </div>
-          <div className="flex-1 ml-4 px-3 py-1 bg-slate-700 rounded text-xs text-slate-300 truncate">
+          <div className="flex-1 ml-4 px-3 py-1 bg-surface-700 rounded text-xs text-ash truncate">
             project preview
           </div>
         </div>
@@ -60,7 +60,7 @@ export function ProjectIframe({ project }: ProjectIframeProps) {
       </div>
 
       {/* Caption */}
-      <p className="text-center text-slate-400 text-sm mt-4">
+      <p className="text-center text-surface-400 text-sm mt-4">
         {hasImage && 'Project showcase'}
       </p>
     </motion.div>

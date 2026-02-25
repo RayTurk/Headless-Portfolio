@@ -24,8 +24,8 @@ const skills: Skill[] = [
 
 function getBarColor(percent: number): string {
   if (percent >= 90) return 'from-brand-400 to-brand-600';
-  if (percent >= 80) return 'from-brand-500 to-steel-500';
-  return 'from-steel-400 to-steel-600';
+  if (percent >= 80) return 'from-brand-500 to-brand-700';
+  return 'from-steel-500 to-steel-700';
 }
 
 export default function SkillsVisualization() {

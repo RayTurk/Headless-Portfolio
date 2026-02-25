@@ -39,8 +39,8 @@ export function RelatedProjects({ projects }: RelatedProjectsProps) {
         viewport={{ once: true }}
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-12">
-          <span className="bg-gradient-to-r from-indigo-400 to-emerald-400 bg-clip-text text-transparent">
-            More Projects
+          <span className="text-cinder">
+            More <span className="text-brand-500">Projects</span>
           </span>
         </h2>
 

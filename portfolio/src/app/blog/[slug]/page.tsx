@@ -84,14 +84,14 @@ export default async function BlogPostPage(
   }
 
   return (
-    <main className="min-h-screen bg-slate-950">
+    <main className="min-h-screen bg-surface-950">
       <div className="pt-28 pb-20 px-4 md:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
 
           {/* Back link */}
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-slate-200 transition-colors mb-10 group"
+            className="inline-flex items-center gap-2 text-sm text-surface-400 hover:text-ash transition-colors mb-10 group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
             Back to Blog
@@ -109,7 +109,7 @@ export default async function BlogPostPage(
                     <Link
                       key={cat.id}
                       href={`/blog?category=${cat.slug}`}
-                      className="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide bg-indigo-500/15 text-indigo-300 border border-indigo-500/25 hover:border-indigo-400/50 transition-colors"
+                      className="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide bg-steel-700/20 text-steel-300 border border-steel-700/30 hover:border-steel-500/50 transition-colors"
                     >
                       {cat.name}
                     </Link>
@@ -118,19 +118,19 @@ export default async function BlogPostPage(
               )}
 
               {/* Title */}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-cinder leading-tight mb-4">
                 {post.title}
               </h1>
 
               {/* Subtitle */}
               {post.blogFields?.postSubtitle && (
-                <p className="text-xl text-slate-400 mb-6 leading-relaxed">
+                <p className="text-xl text-surface-400 mb-6 leading-relaxed">
                   {post.blogFields.postSubtitle}
                 </p>
               )}
 
               {/* Meta row */}
-              <div className="flex flex-wrap items-center gap-5 text-sm text-slate-400 mb-8 pb-8 border-b border-slate-800">
+              <div className="flex flex-wrap items-center gap-5 text-sm text-surface-400 mb-8 pb-8 border-b border-surface-700">
                 <span className="flex items-center gap-2">
                   {authorAvatar ? (
                     <Image src={authorAvatar} alt={authorName} width={28} height={28} className="rounded-full" />
@@ -175,17 +175,17 @@ export default async function BlogPostPage(
 
               {/* Article body */}
               <div className="prose prose-invert prose-lg max-w-none
-                prose-headings:text-white prose-headings:font-bold
+                prose-headings:text-cinder prose-headings:font-bold
                 prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
                 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-                prose-p:text-slate-300 prose-p:leading-relaxed
-                prose-a:text-indigo-400 hover:prose-a:text-indigo-300
-                prose-strong:text-white
-                prose-li:text-slate-300
+                prose-p:text-ash prose-p:leading-relaxed
+                prose-a:text-brand-400 hover:prose-a:text-brand-300
+                prose-strong:text-cinder
+                prose-li:text-ash
                 prose-ul:my-4 prose-ol:my-4
-                prose-code:bg-slate-800 prose-code:text-emerald-300 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
-                prose-pre:bg-slate-900 prose-pre:border prose-pre:border-slate-700 prose-pre:rounded-xl
-                prose-blockquote:border-l-indigo-500 prose-blockquote:text-slate-400
+                prose-code:bg-surface-800 prose-code:text-brand-300 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
+                prose-pre:bg-surface-900 prose-pre:border prose-pre:border-surface-700 prose-pre:rounded-xl
+                prose-blockquote:border-l-brand-500 prose-blockquote:text-surface-400
                 prose-img:rounded-xl mb-10"
               >
                 <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
@@ -193,13 +193,13 @@ export default async function BlogPostPage(
 
               {/* Tags */}
               {post.tags?.nodes && post.tags.nodes.length > 0 && (
-                <div className="flex flex-wrap items-center gap-2 mb-10 pt-6 border-t border-slate-800">
-                  <Tag className="w-4 h-4 text-slate-500" />
+                <div className="flex flex-wrap items-center gap-2 mb-10 pt-6 border-t border-surface-700">
+                  <Tag className="w-4 h-4 text-surface-500" />
                   {post.tags.nodes.map((tag) => (
                     <Link
                       key={tag.id}
                       href={`/blog?tag=${tag.slug}`}
-                      className="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-slate-200 rounded-lg text-sm transition-colors"
+                      className="px-3 py-1 bg-surface-800 hover:bg-surface-700 text-surface-400 hover:text-ash rounded-lg text-sm transition-colors"
                     >
                       #{tag.name}
                     </Link>
@@ -209,27 +209,27 @@ export default async function BlogPostPage(
 
               {/* Share */}
               <div className="flex items-center gap-4 mb-12">
-                <span className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Share</span>
+                <span className="text-sm font-semibold text-surface-400 uppercase tracking-wider">Share</span>
                 <ShareButtons title={post.title} url={`${SITE_URL}/blog/${params.slug}`} />
               </div>
 
               {/* Author bio */}
-              <div className="rounded-xl bg-slate-900 border border-slate-800 p-6 mb-12">
+              <div className="rounded-xl bg-surface-900 border border-surface-700 p-6 mb-12">
                 <div className="flex gap-4 items-start">
                   {authorAvatar ? (
                     <Image src={authorAvatar} alt={authorName} width={56} height={56} className="rounded-full flex-shrink-0" />
                   ) : (
-                    <div className="w-14 h-14 rounded-full bg-indigo-500/20 flex items-center justify-center flex-shrink-0">
-                      <User className="w-6 h-6 text-indigo-400" />
+                    <div className="w-14 h-14 rounded-full bg-steel-700/20 flex items-center justify-center flex-shrink-0">
+                      <User className="w-6 h-6 text-steel-400" />
                     </div>
                   )}
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">Written by</p>
-                    <h3 className="text-lg font-bold text-white mb-2">{authorName}</h3>
-                    <p className="text-sm text-slate-400 leading-relaxed mb-3">{authorBio}</p>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-surface-500 mb-1">Written by</p>
+                    <h3 className="text-lg font-bold text-cinder mb-2">{authorName}</h3>
+                    <p className="text-sm text-surface-400 leading-relaxed mb-3">{authorBio}</p>
                     <Link
                       href="/about"
-                      className="text-sm text-indigo-400 hover:text-indigo-300 font-semibold transition-colors inline-flex items-center gap-1"
+                      className="text-sm text-brand-400 hover:text-brand-300 font-semibold transition-colors inline-flex items-center gap-1"
                     >
                       View Profile →
                     </Link>
@@ -240,18 +240,18 @@ export default async function BlogPostPage(
               {/* Related posts (bottom, mobile) */}
               {relatedPosts.length > 0 && (
                 <section className="lg:hidden">
-                  <h2 className="text-xl font-bold text-white mb-5">Related Articles</h2>
+                  <h2 className="text-xl font-bold text-cinder mb-5">Related Articles</h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {relatedPosts.slice(0, 2).map((rp) => (
-                      <Link key={rp.id} href={`/blog/${rp.slug}`} className="group rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-600 overflow-hidden transition-colors">
+                      <Link key={rp.id} href={`/blog/${rp.slug}`} className="group rounded-xl bg-surface-900 border border-surface-700 hover:border-surface-500 overflow-hidden transition-colors">
                         {rp.featuredImage?.node?.sourceUrl && (
                           <div className="relative h-36 overflow-hidden">
                             <Image src={rp.featuredImage.node.sourceUrl} alt={rp.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                           </div>
                         )}
                         <div className="p-4">
-                          <p className="text-sm font-semibold text-white line-clamp-2 group-hover:text-indigo-300 transition-colors">{rp.title}</p>
-                          <p className="text-xs text-slate-500 mt-1">{new Date(rp.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+                          <p className="text-sm font-semibold text-cinder line-clamp-2 group-hover:text-brand-300 transition-colors">{rp.title}</p>
+                          <p className="text-xs text-surface-500 mt-1">{new Date(rp.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
                         </div>
                       </Link>
                     ))}
@@ -265,21 +265,21 @@ export default async function BlogPostPage(
               <div className="sticky top-28 space-y-6">
 
                 {/* Author card */}
-                <div className="rounded-xl bg-slate-900 border border-slate-800 p-5">
+                <div className="rounded-xl bg-surface-900 border border-surface-700 p-5">
                   <div className="flex flex-col items-center text-center">
                     {authorAvatar ? (
                       <Image src={authorAvatar} alt={authorName} width={64} height={64} className="rounded-full mb-3" />
                     ) : (
-                      <div className="w-16 h-16 rounded-full bg-indigo-500/20 flex items-center justify-center mb-3">
-                        <User className="w-7 h-7 text-indigo-400" />
+                      <div className="w-16 h-16 rounded-full bg-steel-700/20 flex items-center justify-center mb-3">
+                        <User className="w-7 h-7 text-steel-400" />
                       </div>
                     )}
-                    <h3 className="font-bold text-white text-sm">{authorName}</h3>
-                    <p className="text-xs text-slate-500 mb-3">Full-stack Developer · Neon Goldfish</p>
-                    <p className="text-xs text-slate-400 leading-relaxed mb-4">{authorBio}</p>
+                    <h3 className="font-bold text-cinder text-sm">{authorName}</h3>
+                    <p className="text-xs text-surface-500 mb-3">Full-stack Developer · Neon Goldfish</p>
+                    <p className="text-xs text-surface-400 leading-relaxed mb-4">{authorBio}</p>
                     <Link
                       href="/about"
-                      className="w-full text-center text-xs font-semibold px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition-colors"
+                      className="w-full text-center text-xs font-semibold px-4 py-2 rounded-lg bg-steel-700 hover:bg-steel-600 text-cinder transition-colors"
                     >
                       View Profile
                     </Link>
@@ -293,8 +293,8 @@ export default async function BlogPostPage(
 
                 {/* Related Articles */}
                 {relatedPosts.length > 0 && (
-                  <div className="rounded-xl bg-slate-900 border border-slate-800 p-5">
-                    <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">Related Articles</h3>
+                  <div className="rounded-xl bg-surface-900 border border-surface-700 p-5">
+                    <h3 className="text-xs font-semibold uppercase tracking-wider text-surface-400 mb-4">Related Articles</h3>
                     <div className="space-y-4">
                       {relatedPosts.map((rp) => (
                         <Link
@@ -312,13 +312,13 @@ export default async function BlogPostPage(
                               />
                             </div>
                           ) : (
-                            <div className="w-16 h-16 rounded-lg bg-slate-800 flex-shrink-0" />
+                            <div className="w-16 h-16 rounded-lg bg-surface-800 flex-shrink-0" />
                           )}
                           <div className="flex-1 min-w-0">
-                            <p className="text-sm text-slate-300 group-hover:text-white line-clamp-2 leading-snug transition-colors">
+                            <p className="text-sm text-ash group-hover:text-cinder line-clamp-2 leading-snug transition-colors">
                               {rp.title}
                             </p>
-                            <p className="text-xs text-slate-500 mt-1">
+                            <p className="text-xs text-surface-500 mt-1">
                               {new Date(rp.date).toLocaleDateString('en-US', {
                                 month: 'short', day: 'numeric', year: 'numeric',
                               })}
@@ -332,14 +332,14 @@ export default async function BlogPostPage(
 
                 {/* Categories */}
                 {post.categories?.nodes && post.categories.nodes.length > 0 && (
-                  <div className="rounded-xl bg-slate-900 border border-slate-800 p-5">
-                    <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Categories</h3>
+                  <div className="rounded-xl bg-surface-900 border border-surface-700 p-5">
+                    <h3 className="text-xs font-semibold uppercase tracking-wider text-surface-400 mb-3">Categories</h3>
                     <div className="flex flex-wrap gap-2">
                       {post.categories.nodes.map((cat) => (
                         <Link
                           key={cat.id}
                           href={`/blog?category=${cat.slug}`}
-                          className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+                          className="px-3 py-1 rounded-full text-xs font-semibold bg-surface-800 hover:bg-surface-700 text-ash transition-colors"
                         >
                           {cat.name}
                         </Link>
@@ -349,17 +349,17 @@ export default async function BlogPostPage(
                 )}
 
                 {/* CTA widget */}
-                <div className="rounded-xl bg-gradient-to-br from-indigo-500/15 to-emerald-500/10 border border-indigo-500/25 p-5">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-indigo-400 mb-2">Ready to build?</p>
-                  <h3 className="text-sm font-bold text-white mb-2">
+                <div className="rounded-xl bg-gradient-to-br from-brand-500/8 to-steel-800/8 border border-brand-700/40 p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-500 mb-2">Ready to build?</p>
+                  <h3 className="text-sm font-bold text-cinder mb-2">
                     {post.blogFields?.ctaText || "Let's build a website that works for you."}
                   </h3>
-                  <p className="text-xs text-slate-400 mb-4 leading-relaxed">
+                  <p className="text-xs text-surface-400 mb-4 leading-relaxed">
                     Let&apos;s collaborate to create a web solution that perfectly aligns with your business goals.
                   </p>
                   <Link
                     href={post.blogFields?.ctaUrl || '/contact'}
-                    className="block w-full text-center text-xs font-semibold px-4 py-2.5 rounded-lg bg-gradient-to-r from-indigo-500 to-emerald-500 hover:opacity-90 text-white transition-opacity"
+                    className="block w-full text-center text-xs font-semibold px-4 py-2.5 rounded-lg bg-brand-500 hover:bg-brand-600 text-white transition-colors"
                   >
                     Let&apos;s Talk →
                   </Link>

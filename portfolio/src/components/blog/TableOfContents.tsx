@@ -50,7 +50,7 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
       {/* Mobile Toggle */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden w-full px-4 py-3 rounded-lg bg-slate-800 text-slate-300 text-sm font-semibold mb-4 flex items-center justify-between hover:bg-slate-700 transition-colors"
+        className="lg:hidden w-full px-4 py-3 rounded-lg bg-surface-800 text-ash text-sm font-semibold mb-4 flex items-center justify-between hover:bg-surface-700 transition-colors"
       >
         Table of Contents
         <motion.span
@@ -68,8 +68,8 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
         transition={{ duration: 0.3 }}
         className="lg:opacity-100 lg:height-auto overflow-hidden lg:overflow-visible mb-8 lg:mb-0"
       >
-        <div className="rounded-lg bg-slate-800/50 border border-slate-700 p-4 lg:sticky lg:top-32">
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">
+        <div className="rounded-lg bg-surface-800/50 border border-surface-700 p-4 lg:sticky lg:top-32">
+          <h3 className="text-xs font-semibold uppercase tracking-wider text-surface-400 mb-4">
             On this page
           </h3>
           <nav className="space-y-2">
@@ -85,8 +85,8 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
                     isLevel3 ? 'pl-4' : ''
                   } ${
                     isActive
-                      ? 'text-indigo-400 font-semibold'
-                      : 'text-slate-400 hover:text-slate-300'
+                      ? 'text-brand-400 font-semibold'
+                      : 'text-surface-400 hover:text-ash'
                   }`}
                   whileHover={{ x: 4 }}
                 >
@@ -97,7 +97,7 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
                       x: isActive ? -8 : 0,
                     }}
                     transition={{ duration: 0.2 }}
-                    className="inline-block mr-2 text-emerald-400"
+                    className="inline-block mr-2 text-brand-400"
                   >
                     ▸
                   </motion.span>
@@ -110,7 +110,7 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
           {/* Indicator Line */}
           <motion.div
             layoutId="tocIndicator"
-            className="absolute left-0 w-1 bg-gradient-to-b from-indigo-400 to-emerald-400"
+            className="absolute left-0 w-1 bg-brand-500"
             initial={false}
             transition={{ type: 'spring', stiffness: 380, damping: 30 }}
           />

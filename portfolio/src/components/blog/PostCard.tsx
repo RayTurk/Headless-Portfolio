@@ -161,8 +161,8 @@ export function BlogPostCard({ post, featured = false }: PostCardProps) {
               />
             </motion.div>
           ) : (
-            <div className="w-full h-full bg-gradient-to-br from-indigo-500/20 to-emerald-500/20 flex items-center justify-center">
-              <span className="text-slate-400">No image</span>
+            <div className="w-full h-full bg-gradient-to-br from-steel-900/50 to-brand-950/30 flex items-center justify-center">
+              <span className="text-surface-400">No image</span>
             </div>
           )}
 
@@ -177,7 +177,7 @@ export function BlogPostCard({ post, featured = false }: PostCardProps) {
           {/* Category Badge */}
           {category && (
             <div className="absolute top-3 right-3">
-              <span className="px-3 py-1 bg-indigo-500 text-white text-xs font-semibold rounded-full">
+              <span className="px-3 py-1 bg-steel-700 text-cinder text-xs font-semibold rounded-full">
                 {category.name}
               </span>
             </div>

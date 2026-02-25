@@ -90,7 +90,7 @@ export function ShareButtons({ title, url }: ShareButtonsProps) {
         <motion.button
           key={button.name}
           onClick={button.onClick}
-          className="p-3 rounded-lg bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-slate-300 transition-colors"
+          className="p-3 rounded-lg bg-surface-800 text-surface-400 hover:bg-surface-700 hover:text-ash transition-colors"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           title={button.name}
@@ -101,7 +101,7 @@ export function ShareButtons({ title, url }: ShareButtonsProps) {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="absolute mt-10 bg-slate-900 text-emerald-400 px-3 py-1 rounded text-sm font-semibold whitespace-nowrap"
+              className="absolute mt-10 bg-surface-900 text-brand-400 px-3 py-1 rounded text-sm font-semibold whitespace-nowrap"
             >
               Copied!
             </motion.span>

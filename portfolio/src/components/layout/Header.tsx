@@ -55,11 +55,11 @@ const Header = () => {
                 whileTap={{ scale: 0.95 }}
                 className="relative"
               >
-                <div className="text-2xl font-bold bg-gradient-to-r from-brand-500 to-steel-500 bg-clip-text text-transparent group-hover:from-brand-400 group-hover:to-steel-400 transition-all duration-300">
-                  RT
+                <div className="text-2xl font-bold transition-all duration-300">
+                  <span className="text-steel-400 group-hover:text-steel-300">R</span><span className="text-brand-500 group-hover:text-brand-400">T</span>
                 </div>
                 <motion.div
-                  className="absolute -inset-2 bg-gradient-to-r from-brand-500/20 to-steel-500/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute -inset-2 bg-brand-500/10 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   layoutId="logo-glow"
                 />
               </motion.div>
@@ -90,7 +90,7 @@ const Header = () => {
                         {isActive && (
                           <motion.div
                             layoutId="active-nav"
-                            className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-brand-500 to-steel-500"
+                            className="absolute bottom-0 left-4 right-4 h-0.5 bg-brand-500"
                             transition={{
                               type: 'spring',
                               stiffness: 380,
@@ -116,7 +116,7 @@ const Header = () => {
                 >
                   <span className="relative z-10">Let's Talk</span>
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-brand-500 to-steel-500 rounded-lg opacity-0 group-hover:opacity-20 blur transition-opacity"
+                    className="absolute inset-0 bg-brand-500 rounded-lg opacity-0 group-hover:opacity-20 blur transition-opacity"
                     animate={{
                       boxShadow: [
                         '0 0 20px rgba(99, 102, 241, 0)',
