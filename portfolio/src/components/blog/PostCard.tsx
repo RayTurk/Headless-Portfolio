@@ -52,10 +52,10 @@ export function BlogPostCard({ post, featured = false }: PostCardProps) {
         <motion.div
           onHoverStart={() => setIsHovered(true)}
           onHoverEnd={() => setIsHovered(false)}
-          className="group cursor-pointer overflow-hidden rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition-colors duration-300 h-full grid grid-cols-1 md:grid-cols-2 gap-0"
+          className="group cursor-pointer overflow-hidden rounded-xl bg-surface-900 border border-surface-700 hover:border-brand-500/30 transition-colors duration-300 h-full grid grid-cols-1 md:grid-cols-2 gap-0"
         >
           {/* Image */}
-          <div className="relative h-64 md:h-full overflow-hidden bg-slate-800">
+          <div className="relative h-64 md:h-full overflow-hidden bg-surface-800">
             {imageUrl ? (
               <motion.div
                 animate={isHovered ? { scale: 1.05 } : { scale: 1 }}
@@ -72,13 +72,13 @@ export function BlogPostCard({ post, featured = false }: PostCardProps) {
                 />
               </motion.div>
             ) : (
-              <div className="w-full h-full bg-gradient-to-br from-indigo-500/20 to-emerald-500/20 flex items-center justify-center">
-                <span className="text-slate-400">No image</span>
+              <div className="w-full h-full bg-gradient-to-br from-steel-900/50 to-brand-950/30 flex items-center justify-center">
+                <span className="text-surface-400">No image</span>
               </div>
             )}
             {category && (
               <div className="absolute top-3 right-3">
-                <span className="px-3 py-1 bg-indigo-500 text-white text-xs font-semibold rounded-full">
+                <span className="px-3 py-1 bg-steel-700 text-cinder text-xs font-semibold rounded-full">
                   {category.name}
                 </span>
               </div>
@@ -87,15 +87,15 @@ export function BlogPostCard({ post, featured = false }: PostCardProps) {
 
           {/* Content */}
           <div className="p-8 flex flex-col justify-center">
-            <h2 className="text-2xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors line-clamp-3">
+            <h2 className="text-2xl font-bold text-cinder mb-3 group-hover:text-brand-400 transition-colors line-clamp-3">
               {post.title}
             </h2>
 
-            <p className="text-slate-400 text-sm mb-6 line-clamp-3">
+            <p className="text-surface-400 text-sm mb-6 line-clamp-3">
               {cleanExcerpt}
             </p>
 
-            <div className="flex items-center gap-4 text-slate-400 text-sm">
+            <div className="flex items-center gap-4 text-surface-400 text-sm">
               {authorAvatar && (
                 <Image
                   src={authorAvatar}
@@ -123,7 +123,7 @@ export function BlogPostCard({ post, featured = false }: PostCardProps) {
               initial={{ opacity: 0, y: 4 }}
               animate={isHovered ? { opacity: 1, y: 0 } : { opacity: 0, y: 4 }}
               transition={{ duration: 0.2 }}
-              className="mt-4 text-indigo-400 text-sm font-semibold flex items-center gap-2"
+              className="mt-4 text-brand-400 text-sm font-semibold flex items-center gap-2"
             >
               Read Article
               <motion.span animate={isHovered ? { x: 4 } : { x: 0 }}>
@@ -142,10 +142,10 @@ export function BlogPostCard({ post, featured = false }: PostCardProps) {
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
         whileHover={{ y: -8 }}
-        className="group cursor-pointer h-full overflow-hidden rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition-colors duration-300 flex flex-col"
+        className="group cursor-pointer h-full overflow-hidden rounded-xl bg-surface-900 border border-surface-700 hover:border-brand-500/30 transition-colors duration-300 flex flex-col"
       >
         {/* Image Container */}
-        <div className="relative h-48 overflow-hidden bg-slate-800">
+        <div className="relative h-48 overflow-hidden bg-surface-800">
           {imageUrl ? (
             <motion.div
               animate={isHovered ? { scale: 1.1 } : { scale: 1 }}
@@ -187,17 +187,17 @@ export function BlogPostCard({ post, featured = false }: PostCardProps) {
         {/* Content */}
         <div className="p-6 flex flex-col flex-1">
           {/* Title */}
-          <h3 className="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors line-clamp-2 flex-1">
+          <h3 className="text-lg font-bold text-cinder mb-2 group-hover:text-brand-400 transition-colors line-clamp-2 flex-1">
             {post.title}
           </h3>
 
           {/* Excerpt */}
-          <p className="text-slate-400 text-sm mb-4 line-clamp-2">
+          <p className="text-surface-400 text-sm mb-4 line-clamp-2">
             {cleanExcerpt}
           </p>
 
           {/* Meta Footer */}
-          <div className="flex items-center gap-3 text-slate-400 text-xs border-t border-slate-800 pt-4">
+          <div className="flex items-center gap-3 text-surface-400 text-xs border-t border-surface-700 pt-4">
             {authorAvatar && (
               <Image
                 src={authorAvatar}

@@ -58,8 +58,8 @@ export function ProjectFilter({ projectTypes, projects }: ProjectFilterProps) {
               onClick={() => setActiveFilter(type.slug)}
               className={`px-4 py-2 rounded-full font-semibold text-sm transition-colors relative ${
                 isActive
-                  ? 'text-white'
-                  : 'text-slate-400 hover:text-slate-300'
+                  ? 'text-cinder'
+                  : 'text-surface-400 hover:text-ash'
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -67,7 +67,7 @@ export function ProjectFilter({ projectTypes, projects }: ProjectFilterProps) {
               {isActive && (
                 <motion.span
                   layoutId="activePill"
-                  className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-emerald-500 rounded-full -z-10"
+                  className="absolute inset-0 bg-steel-700 rounded-full -z-10"
                   transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                 />
               )}
@@ -78,7 +78,7 @@ export function ProjectFilter({ projectTypes, projects }: ProjectFilterProps) {
       </motion.div>
 
       {/* Projects Grid */}
-      <div className="mb-4 text-slate-400">
+      <div className="mb-4 text-surface-400">
         {filteredProjects.length} project{filteredProjects.length !== 1 ? 's' : ''} found
       </div>
 
@@ -111,7 +111,7 @@ export function ProjectFilter({ projectTypes, projects }: ProjectFilterProps) {
           animate={{ opacity: 1 }}
           className="text-center py-12"
         >
-          <p className="text-slate-400 text-lg">
+          <p className="text-surface-400 text-lg">
             No projects found in this category.
           </p>
         </motion.div>

@@ -31,17 +31,18 @@ export default async function ProjectsPage() {
   );
 
   return (
-    <main className="min-h-screen bg-slate-950 pt-32 pb-20 px-4 md:px-8 lg:px-12">
+    <main className="min-h-screen bg-surface-950 pt-32 pb-20 px-4 md:px-8 lg:px-12">
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto mb-16">
         <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-indigo-400 via-emerald-400 to-indigo-400 bg-clip-text text-transparent">
-              Projects
-            </span>
+          <p className="font-mono text-xs tracking-[0.15em] uppercase text-brand-500 mb-4">
+            → Selected Work
+          </p>
+          <h1 className="font-display font-black text-6xl md:text-7xl lg:text-8xl uppercase leading-none tracking-tight text-cinder mb-3">
+            MY <span className="text-brand-500">PROJECTS</span>
           </h1>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-            A selection of recent web design, WordPress, and custom development projects
+          <p className="font-display uppercase tracking-[0.08em] text-surface-400 text-lg mt-3">
+            Web Design · WordPress · Custom Dev
           </p>
         </div>
 

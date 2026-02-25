@@ -44,10 +44,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
         whileHover={{ y: -8 }}
-        className="group cursor-pointer h-full overflow-hidden rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition-colors duration-300"
+        className="group cursor-pointer h-full overflow-hidden rounded-xl bg-surface-900 border border-surface-700 hover:border-brand-500/30 transition-colors duration-300"
       >
         {/* Image Container */}
-        <div className="relative h-48 md:h-64 overflow-hidden bg-slate-800">
+        <div className="relative h-48 md:h-64 overflow-hidden bg-surface-800">
           {imageUrl ? (
             <motion.div
               animate={isHovered ? { scale: 1.1 } : { scale: 1 }}
@@ -63,8 +63,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
               />
             </motion.div>
           ) : (
-            <div className="w-full h-full bg-gradient-to-br from-indigo-500/20 to-emerald-500/20 flex items-center justify-center">
-              <span className="text-slate-400">No image</span>
+            <div className="w-full h-full bg-gradient-to-br from-steel-900/50 to-brand-950/30 flex items-center justify-center">
+              <span className="text-surface-400">No image</span>
             </div>
           )}
 
@@ -78,7 +78,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
           {/* Project Type Badge */}
           <div className="absolute top-3 right-3">
-            <span className="px-3 py-1 bg-indigo-500 text-white text-xs font-semibold rounded-full">
+            <span className="px-3 py-1 bg-steel-700 text-cinder text-xs font-semibold rounded-full">
               {projectType}
             </span>
           </div>
@@ -87,28 +87,28 @@ export function ProjectCard({ project }: ProjectCardProps) {
         {/* Content */}
         <div className="p-6">
           {/* Title */}
-          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors line-clamp-2">
+          <h3 className="text-xl font-bold text-cinder mb-2 group-hover:text-brand-400 transition-colors line-clamp-2">
             {project.title}
           </h3>
 
           {/* Excerpt */}
-          <p className="text-slate-400 text-sm mb-4 line-clamp-2">
+          <p className="text-surface-400 text-sm mb-4 line-clamp-2">
             {cleanExcerpt}
           </p>
 
           {/* Tech Stack */}
           {visibleTechs.length > 0 && (
-            <div className="flex flex-wrap gap-2 pb-4 border-t border-slate-800 pt-4">
+            <div className="flex flex-wrap gap-2 pb-4 border-t border-surface-700 pt-4">
               {visibleTechs.map((tech) => (
                 <span
                   key={tech.id}
-                  className="px-2 py-1 bg-slate-800 text-slate-300 text-xs rounded font-medium"
+                  className="px-2 py-1 bg-surface-700 text-surface-300 text-xs rounded font-medium"
                 >
                   {tech.name}
                 </span>
               ))}
               {hiddenTechCount > 0 && (
-                <span className="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded font-medium">
+                <span className="px-2 py-1 bg-surface-700 text-surface-400 text-xs rounded font-medium">
                   +{hiddenTechCount} more
                 </span>
               )}
@@ -120,7 +120,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             initial={{ opacity: 0, y: 4 }}
             animate={isHovered ? { opacity: 1, y: 0 } : { opacity: 0, y: 4 }}
             transition={{ duration: 0.2 }}
-            className="text-indigo-400 text-sm font-semibold flex items-center gap-2"
+            className="text-brand-400 text-sm font-semibold flex items-center gap-2"
           >
             View Project
             <motion.span animate={isHovered ? { x: 4 } : { x: 0 }}>

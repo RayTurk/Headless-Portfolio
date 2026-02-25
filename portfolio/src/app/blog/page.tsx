@@ -47,17 +47,18 @@ async function BlogContent({ page }: { page?: string }) {
   );
 
   return (
-    <main className="min-h-screen bg-slate-950 pt-32 pb-20 px-4 md:px-8 lg:px-12">
+    <main className="min-h-screen bg-surface-950 pt-32 pb-20 px-4 md:px-8 lg:px-12">
       {/* Hero Section */}
       <section className="max-w-5xl mx-auto mb-16">
         <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-indigo-400 via-emerald-400 to-indigo-400 bg-clip-text text-transparent">
-              Blog
-            </span>
+          <p className="font-mono text-xs tracking-[0.15em] uppercase text-brand-500 mb-4">
+            → Insights &amp; Perspectives
+          </p>
+          <h1 className="font-display font-black text-6xl md:text-7xl lg:text-8xl uppercase leading-none tracking-tight text-cinder mb-3">
+            THE <span className="text-brand-500">BLOG</span>
           </h1>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-            Insights on WordPress, web development, and digital strategy
+          <p className="font-display uppercase tracking-[0.08em] text-surface-400 text-lg mt-3">
+            WordPress · Web Dev · Digital Strategy
           </p>
         </div>
 
@@ -66,7 +67,7 @@ async function BlogContent({ page }: { page?: string }) {
           <div className="flex flex-wrap gap-2 justify-center mb-12">
             <a
               href="/blog"
-              className="px-4 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-emerald-500 text-white font-semibold text-sm"
+              className="px-4 py-2 rounded-full bg-steel-700 text-cinder font-semibold text-sm transition-colors"
             >
               All Posts
             </a>
@@ -74,7 +75,7 @@ async function BlogContent({ page }: { page?: string }) {
               <a
                 key={cat.slug}
                 href={`/blog?category=${cat.slug}`}
-                className="px-4 py-2 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-sm transition-colors"
+                className="px-4 py-2 rounded-full bg-surface-800 hover:bg-surface-700 text-ash font-semibold text-sm transition-colors"
               >
                 {cat.name} ({cat.count})
               </a>
@@ -112,8 +113,8 @@ async function BlogContent({ page }: { page?: string }) {
                     href={`/blog?page=${p}`}
                     className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                       p === pageNum
-                        ? 'bg-gradient-to-r from-indigo-500 to-emerald-500 text-white'
-                        : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                        ? 'bg-steel-700 text-cinder'
+                        : 'bg-surface-800 text-ash hover:bg-surface-700'
                     }`}
                   >
                     {p}
@@ -124,7 +125,7 @@ async function BlogContent({ page }: { page?: string }) {
           </>
         ) : (
           <div className="text-center py-12">
-            <p className="text-slate-400 text-lg">No posts found.</p>
+            <p className="text-surface-400 text-lg">No posts found.</p>
           </div>
         )}
       </section>
@@ -138,7 +139,7 @@ export default function BlogPage({
   searchParams: SearchParams;
 }) {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-slate-950" />}>
+    <Suspense fallback={<div className="min-h-screen bg-surface-950" />}>
       <BlogContent page={searchParams.page} />
     </Suspense>
   );
