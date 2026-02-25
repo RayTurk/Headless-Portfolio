@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ExternalLink, Wrench, Radio, Sparkles } from 'lucide-react'
+import { ExternalLink, Wrench, Radio, Sparkles, Leaf } from 'lucide-react'
 
 interface DemoProject {
   name: string
@@ -51,7 +51,7 @@ const demos: DemoProject[] = [
     badgeBg: 'bg-orange-500/20',
     badgeText: 'text-orange-400',
     icon: <Radio className="w-5 h-5" />,
-    demoUrl: 'https://beacon-demo.netlify.app',
+    demoUrl: 'https://rturk-beacon-demo.netlify.app',
   },
   {
     name: 'Revive Auto Detailing',
@@ -68,6 +68,22 @@ const demos: DemoProject[] = [
     badgeText: 'text-cyan-400',
     icon: <Sparkles className="w-5 h-5" />,
     demoUrl: 'https://revive-detailing-demo.netlify.app',
+  },
+  {
+    name: 'Clover Garden Centre',
+    slug: 'clover-garden',
+    industry: 'Ecommerce / Retail',
+    description:
+      'Editorial ecommerce site for a family-owned garden center. Cream warm palette, product grid with filters, category browsing, seasonal banners, and a newsletter CTA.',
+    theme: 'light',
+    primaryCta: 'Shop / Add to Cart',
+    techStack: ['Next.js 14', 'Tailwind CSS', 'TypeScript', 'Netlify'],
+    accentFrom: 'from-green-800',
+    accentTo: 'to-emerald-500',
+    badgeBg: 'bg-emerald-500/20',
+    badgeText: 'text-emerald-400',
+    icon: <Leaf className="w-5 h-5" />,
+    demoUrl: 'https://clover-garden-demo.netlify.app',
   },
 ]
 
