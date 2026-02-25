@@ -115,7 +115,7 @@ const demos: DemoProject[] = [
     badgeBg: 'bg-amber-500/20',
     badgeText: 'text-amber-400',
     icon: <UtensilsCrossed className="w-5 h-5" />,
-    demoUrl: 'https://ember-oak-demo.netlify.app',
+    demoUrl: 'https://ember-and-oak-demo.netlify.app',
   },
 ]
 

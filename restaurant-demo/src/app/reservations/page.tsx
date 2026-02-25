@@ -10,7 +10,7 @@ export default function ReservationsPage() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    fetch('/', {
+    fetch('/__forms.html', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(new FormData(form) as any).toString(),
@@ -46,7 +46,6 @@ export default function ReservationsPage() {
               <form
                 name="reservations"
                 method="POST"
-                data-netlify="true"
                 onSubmit={handleSubmit}
                 className="space-y-5"
               >

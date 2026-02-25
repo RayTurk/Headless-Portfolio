@@ -9,9 +9,8 @@ export default function BookingPage() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Netlify forms handles the submission
     const form = e.currentTarget;
-    fetch('/', {
+    fetch('/__forms.html', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(new FormData(form) as any).toString(),
@@ -48,7 +47,6 @@ export default function BookingPage() {
               <form
                 name="booking"
                 method="POST"
-                data-netlify="true"
                 onSubmit={handleSubmit}
                 className="space-y-5"
               >
