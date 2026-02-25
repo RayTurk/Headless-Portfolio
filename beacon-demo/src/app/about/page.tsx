@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { teamMembers } from '@/lib/data';
 import CtaBanner from '@/components/sections/CtaBanner';
 import { Radio, Zap, Globe, Heart } from 'lucide-react';
@@ -121,6 +122,19 @@ export default function AboutPage() {
 
               return (
                 <div key={member.id} className="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col">
+                  {/*
+                    📸 IMAGE SLOT — Team member photo
+                    Replace placeholder div with:
+                      <div className="relative w-14 h-14 rounded-full overflow-hidden mb-4 flex-shrink-0">
+                        <Image
+                          src={`/images/team-${member.id}.jpg`}
+                          fill
+                          className="object-cover object-top"
+                          alt={member.name}
+                        />
+                      </div>
+                    Files: /images/team-1.jpg, team-2.jpg, etc. — 200×200px headshots
+                  */}
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-orange-600 to-amber-600 flex items-center justify-center text-white font-bold text-lg mb-4 flex-shrink-0">
                     {initials}
                   </div>

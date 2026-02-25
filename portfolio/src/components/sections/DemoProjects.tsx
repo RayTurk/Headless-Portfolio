@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ExternalLink, Wrench, Radio, Sparkles, Leaf } from 'lucide-react'
+import { ExternalLink, Wrench, Radio, Sparkles, Leaf, Flower2, UtensilsCrossed } from 'lucide-react'
 
 interface DemoProject {
   name: string
@@ -85,6 +85,38 @@ const demos: DemoProject[] = [
     icon: <Leaf className="w-5 h-5" />,
     demoUrl: 'https://clover-garden-demo.netlify.app',
   },
+  {
+    name: 'Luminary Aesthetics',
+    slug: 'luminary-aesthetics',
+    industry: 'Med Spa / Wellness',
+    description:
+      'Luxury med spa site in a warm cream and blush palette. Treatment menu with pricing, before/after results gallery, team profiles, and a multi-step booking consultation form.',
+    theme: 'light',
+    primaryCta: 'Book a Consultation',
+    techStack: ['Next.js 14', 'Tailwind CSS', 'TypeScript', 'Netlify'],
+    accentFrom: 'from-rose-700',
+    accentTo: 'to-amber-400',
+    badgeBg: 'bg-rose-500/20',
+    badgeText: 'text-rose-300',
+    icon: <Flower2 className="w-5 h-5" />,
+    demoUrl: 'https://luminary-aesthetics-demo.netlify.app',
+  },
+  {
+    name: 'Ember & Oak',
+    slug: 'ember-oak',
+    industry: 'Restaurant / Hospitality',
+    description:
+      'Dark editorial site for a wood-fired upscale restaurant. Deep charcoal and aged gold palette, full dinner menu, chef story, press features, and OpenTable-style reservation form.',
+    theme: 'dark',
+    primaryCta: 'Reserve a Table',
+    techStack: ['Next.js 14', 'Tailwind CSS', 'TypeScript', 'Netlify'],
+    accentFrom: 'from-yellow-900',
+    accentTo: 'to-amber-500',
+    badgeBg: 'bg-amber-500/20',
+    badgeText: 'text-amber-400',
+    icon: <UtensilsCrossed className="w-5 h-5" />,
+    demoUrl: 'https://ember-oak-demo.netlify.app',
+  },
 ]
 
 export function DemoProjects() {
@@ -106,7 +138,7 @@ export function DemoProjects() {
             </span>
           </h2>
           <p className="text-lg text-surface-300 max-w-2xl mx-auto">
-            Fully built Next.js demo sites showing range across client types — from local service businesses to SaaS products. Each uses real design patterns for the target audience.
+            Six fully built Next.js demo sites spanning local services, SaaS, automotive, retail, wellness, and hospitality — each designed from the ground up for its audience.
           </p>
         </motion.div>
 

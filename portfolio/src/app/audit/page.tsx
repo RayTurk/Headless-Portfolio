@@ -12,10 +12,10 @@ import type { AuditResult, AuditCheck } from '@/app/api/audit/route';
 type Step = 'form' | 'scanning' | 'results';
 
 const categoryMeta = {
-  seo: { label: 'SEO', icon: Search, color: 'text-violet-400', bg: 'bg-violet-500/10 border-violet-500/20' },
-  technical: { label: 'Technical', icon: Globe, color: 'text-sky-400', bg: 'bg-sky-500/10 border-sky-500/20' },
-  social: { label: 'Social Sharing', icon: Share2, color: 'text-emerald-400', bg: 'bg-emerald-500/10 border-emerald-500/20' },
-  accessibility: { label: 'Accessibility', icon: Smartphone, color: 'text-orange-400', bg: 'bg-orange-500/10 border-orange-500/20' },
+  seo: { label: 'SEO', icon: Search, color: 'text-brand-400', bg: 'bg-brand-500/10 border-brand-500/20' },
+  technical: { label: 'Technical', icon: Globe, color: 'text-steel-400', bg: 'bg-steel-700/20 border-steel-600/20' },
+  social: { label: 'Social Sharing', icon: Share2, color: 'text-brand-300', bg: 'bg-brand-500/5 border-brand-500/15' },
+  accessibility: { label: 'Accessibility', icon: Smartphone, color: 'text-steel-300', bg: 'bg-steel-600/15 border-steel-500/20' },
 } as const;
 
 const scanMessages = [
@@ -33,7 +33,7 @@ const scanMessages = [
 ];
 
 function ScoreGauge({ score }: { score: number }) {
-  const color = score >= 80 ? '#10b981' : score >= 50 ? '#f59e0b' : '#ef4444';
+  const color = score >= 80 ? '#829ab1' : score >= 50 ? '#f59e0b' : '#ef4444';
   const label = score >= 80 ? 'Good' : score >= 50 ? 'Needs Work' : 'Poor';
   const circumference = 2 * Math.PI * 54;
   const dash = (score / 100) * circumference;
@@ -42,7 +42,7 @@ function ScoreGauge({ score }: { score: number }) {
     <div className="flex flex-col items-center">
       <div className="relative w-36 h-36">
         <svg className="w-36 h-36 -rotate-90" viewBox="0 0 120 120">
-          <circle cx="60" cy="60" r="54" fill="none" stroke="#1e293b" strokeWidth="10" />
+          <circle cx="60" cy="60" r="54" fill="none" stroke="#252119" strokeWidth="10" />
           <motion.circle
             cx="60" cy="60" r="54" fill="none"
             stroke={color} strokeWidth="10"
@@ -55,14 +55,14 @@ function ScoreGauge({ score }: { score: number }) {
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <motion.span
-            className="text-3xl font-bold text-white"
+            className="text-3xl font-bold text-cinder"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
             {score}
           </motion.span>
-          <span className="text-xs text-slate-400">/100</span>
+          <span className="text-xs text-surface-400">/100</span>
         </div>
       </div>
       <span className="mt-2 text-sm font-semibold" style={{ color }}>{label}</span>
@@ -73,27 +73,27 @@ function ScoreGauge({ score }: { score: number }) {
 function CheckItem({ check }: { check: AuditCheck }) {
   const [open, setOpen] = useState(false);
   const icon = check.status === 'pass'
-    ? <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+    ? <CheckCircle className="w-4 h-4 text-steel-400 flex-shrink-0" />
     : check.status === 'warning'
     ? <AlertCircle className="w-4 h-4 text-amber-400 flex-shrink-0" />
     : <XCircle className="w-4 h-4 text-red-400 flex-shrink-0" />;
 
   return (
-    <div className="border border-slate-800 rounded-lg overflow-hidden">
+    <div className="border border-surface-700 rounded-lg overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-slate-800/50 transition-colors"
+        className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-surface-800/50 transition-colors"
       >
         {icon}
-        <span className="flex-1 text-sm text-slate-300">{check.name}</span>
+        <span className="flex-1 text-sm text-ash">{check.name}</span>
         <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-          check.status === 'pass' ? 'bg-emerald-500/15 text-emerald-400' :
+          check.status === 'pass' ? 'bg-steel-500/15 text-steel-400' :
           check.status === 'warning' ? 'bg-amber-500/15 text-amber-400' :
           'bg-red-500/15 text-red-400'
         }`}>
           {check.status === 'pass' ? 'Pass' : check.status === 'warning' ? 'Warning' : 'Fail'}
         </span>
-        {open ? <ChevronUp className="w-4 h-4 text-slate-500 flex-shrink-0" /> : <ChevronDown className="w-4 h-4 text-slate-500 flex-shrink-0" />}
+        {open ? <ChevronUp className="w-4 h-4 text-surface-400 flex-shrink-0" /> : <ChevronDown className="w-4 h-4 text-surface-400 flex-shrink-0" />}
       </button>
       <AnimatePresence>
         {open && (
@@ -104,9 +104,9 @@ function CheckItem({ check }: { check: AuditCheck }) {
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <div className="px-4 pb-4 pt-1 border-t border-slate-800">
-              <p className="text-xs text-slate-400 mb-1 font-medium">{check.message}</p>
-              <p className="text-xs text-slate-500 leading-relaxed">{check.detail}</p>
+            <div className="px-4 pb-4 pt-1 border-t border-surface-700">
+              <p className="text-xs text-ash mb-1 font-medium">{check.message}</p>
+              <p className="text-xs text-surface-400 leading-relaxed">{check.detail}</p>
             </div>
           </motion.div>
         )}
@@ -181,7 +181,7 @@ export default function AuditPage() {
   const categories = Object.keys(categoryMeta) as (keyof typeof categoryMeta)[];
 
   return (
-    <main className="min-h-screen bg-slate-950 pt-28 pb-20 px-4 md:px-6">
+    <main className="min-h-screen bg-surface-950 pt-28 pb-20 px-4 md:px-6">
       <div className="max-w-2xl mx-auto">
 
         {/* ── Form step ── */}
@@ -196,16 +196,16 @@ export default function AuditPage() {
             >
               {/* Header */}
               <div className="text-center mb-10">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-emerald-400 mb-4 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/5">
+                <span className="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-widest uppercase text-brand-400 mb-4 px-3 py-1 rounded-full border border-brand-500/30 bg-brand-500/5">
                   <Shield className="w-3.5 h-3.5" /> Free Website Audit
                 </span>
-                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                <h1 className="font-display text-4xl md:text-5xl font-bold text-cinder mb-4">
                   How healthy is<br />
-                  <span className="bg-gradient-to-r from-indigo-400 to-emerald-400 bg-clip-text text-transparent">
+                  <span className="gradient-text">
                     your website?
                   </span>
                 </h1>
-                <p className="text-slate-400 max-w-md mx-auto text-lg">
+                <p className="text-ash max-w-md mx-auto text-lg">
                   Enter your details and we&apos;ll scan your site for SEO, technical,
                   social sharing, and accessibility issues — instantly.
                 </p>
@@ -218,7 +218,7 @@ export default function AuditPage() {
                   return (
                     <div key={cat} className={`rounded-xl border p-3 flex items-center gap-2.5 ${bg}`}>
                       <Icon className={`w-4 h-4 flex-shrink-0 ${color}`} />
-                      <span className="text-sm text-slate-300 font-medium">{label}</span>
+                      <span className="text-sm text-ash font-medium">{label}</span>
                     </div>
                   );
                 })}
@@ -234,7 +234,7 @@ export default function AuditPage() {
                     placeholder="Your name"
                     value={name}
                     onChange={(e) => { setName(e.target.value); setErrors((p) => ({ ...p, name: '' })); }}
-                    className={`w-full px-4 py-3 rounded-xl bg-slate-900 border text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all ${errors.name ? 'border-red-500/50' : 'border-slate-800'}`}
+                    className={`w-full px-4 py-3 rounded-xl bg-surface-900 border text-cinder placeholder-surface-400 focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all ${errors.name ? 'border-red-500/50' : 'border-surface-700'}`}
                   />
                   {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
                 </div>
@@ -245,7 +245,7 @@ export default function AuditPage() {
                     placeholder="Your email address"
                     value={email}
                     onChange={(e) => { setEmail(e.target.value); setErrors((p) => ({ ...p, email: '' })); }}
-                    className={`w-full px-4 py-3 rounded-xl bg-slate-900 border text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all ${errors.email ? 'border-red-500/50' : 'border-slate-800'}`}
+                    className={`w-full px-4 py-3 rounded-xl bg-surface-900 border text-cinder placeholder-surface-400 focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all ${errors.email ? 'border-red-500/50' : 'border-surface-700'}`}
                   />
                   {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
                 </div>
@@ -256,7 +256,7 @@ export default function AuditPage() {
                     placeholder="https://yourwebsite.com"
                     value={url}
                     onChange={(e) => { setUrl(e.target.value); setErrors((p) => ({ ...p, url: '' })); }}
-                    className={`w-full px-4 py-3 rounded-xl bg-slate-900 border text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all font-mono text-sm ${errors.url ? 'border-red-500/50' : 'border-slate-800'}`}
+                    className={`w-full px-4 py-3 rounded-xl bg-surface-900 border text-cinder placeholder-surface-400 focus:outline-none focus:ring-2 focus:ring-brand-500/50 transition-all font-mono text-sm ${errors.url ? 'border-red-500/50' : 'border-surface-700'}`}
                   />
                   {errors.url && <p className="text-red-400 text-xs mt-1">{errors.url}</p>}
                 </div>
@@ -267,13 +267,13 @@ export default function AuditPage() {
                   type="submit"
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-emerald-500 text-white font-semibold text-base hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+                  className="w-full py-4 rounded-xl bg-brand-500 hover:bg-brand-600 text-cinder font-semibold text-base transition-colors flex items-center justify-center gap-2"
                 >
                   <Search className="w-5 h-5" />
                   Run Free Audit
                 </motion.button>
 
-                <p className="text-center text-xs text-slate-500">
+                <p className="text-center text-xs text-surface-400">
                   No account needed. Results appear instantly. We may follow up with tips.
                 </p>
               </form>
@@ -291,27 +291,27 @@ export default function AuditPage() {
             >
               <div className="relative inline-flex items-center justify-center mb-8">
                 <motion.div
-                  className="w-24 h-24 rounded-full border-2 border-indigo-500/30"
+                  className="w-24 h-24 rounded-full border-2 border-brand-500/30"
                   animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.8, 0.4] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
                 <motion.div
-                  className="absolute w-16 h-16 rounded-full border-2 border-emerald-500/40"
+                  className="absolute w-16 h-16 rounded-full border-2 border-steel-500/40"
                   animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }}
                   transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
                 />
-                <Globe className="absolute w-8 h-8 text-indigo-400" />
+                <Globe className="absolute w-8 h-8 text-brand-400" />
               </div>
 
-              <h2 className="text-2xl font-bold text-white mb-3">Scanning your site…</h2>
-              <p className="text-slate-400 text-sm mb-8 font-mono">{url}</p>
+              <h2 className="font-display text-2xl font-bold text-cinder mb-3">Scanning your site…</h2>
+              <p className="text-ash text-sm mb-8 font-mono">{url}</p>
 
               <motion.div
                 key={scanMessage}
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
-                className="text-indigo-300 text-sm font-medium"
+                className="text-brand-400 text-sm font-medium"
               >
                 {scanMessage}
               </motion.div>
@@ -328,8 +328,8 @@ export default function AuditPage() {
             >
               {/* Score header */}
               <div className="text-center mb-10">
-                <h2 className="text-3xl font-bold text-white mb-1">Your Site Audit Report</h2>
-                <p className="text-slate-400 text-sm font-mono truncate">{result.url}</p>
+                <h2 className="font-display text-3xl font-bold text-cinder mb-1">Your Site Audit Report</h2>
+                <p className="text-ash text-sm font-mono truncate">{result.url}</p>
               </div>
 
               <div className="flex justify-center mb-10">
@@ -353,10 +353,10 @@ export default function AuditPage() {
                     <div key={cat} className={`rounded-xl border p-4 ${bg}`}>
                       <div className={`flex items-center gap-2 mb-2 ${color}`}>
                         <Icon className="w-4 h-4" />
-                        <span className="text-xs font-semibold uppercase tracking-wide">{label}</span>
+                        <span className="text-xs font-mono font-semibold uppercase tracking-wide">{label}</span>
                       </div>
-                      <p className="text-2xl font-bold text-white">{passed}/{catChecks.length}</p>
-                      <p className="text-xs text-slate-500">checks passed</p>
+                      <p className="text-2xl font-bold text-cinder">{passed}/{catChecks.length}</p>
+                      <p className="text-xs text-surface-400">checks passed</p>
                     </div>
                   );
                 })}
@@ -372,7 +372,7 @@ export default function AuditPage() {
                     <div key={cat}>
                       <div className={`flex items-center gap-2 mb-3 ${color}`}>
                         <Icon className="w-4 h-4" />
-                        <h3 className="text-sm font-semibold uppercase tracking-wider">{label}</h3>
+                        <h3 className="text-sm font-mono font-semibold uppercase tracking-wider">{label}</h3>
                       </div>
                       <div className="space-y-2">
                         {catChecks.map((check) => (
@@ -385,29 +385,29 @@ export default function AuditPage() {
               </div>
 
               {/* CTA */}
-              <div className="rounded-2xl bg-gradient-to-br from-indigo-500/15 to-emerald-500/10 border border-indigo-500/25 p-8 text-center">
-                <h3 className="text-xl font-bold text-white mb-2">
+              <div className="rounded-2xl bg-gradient-to-br from-brand-500/10 to-steel-700/10 border border-brand-500/20 p-8 text-center">
+                <h3 className="font-display text-xl font-bold text-cinder mb-2">
                   {result.score >= 80
                     ? 'Great foundation — let\'s take it further'
                     : result.score >= 50
                     ? 'There\'s real room to improve your site'
                     : 'Your site needs some attention'}
                 </h3>
-                <p className="text-slate-400 text-sm mb-6 max-w-md mx-auto">
+                <p className="text-ash text-sm mb-6 max-w-md mx-auto">
                   I can help you fix these issues and build a faster, more visible website.
                   Let&apos;s talk about what your site needs.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-emerald-500 text-white font-semibold hover:opacity-90 transition-opacity"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-600 text-cinder font-semibold transition-colors"
                   >
                     Get a Free Consultation
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <button
                     onClick={() => { setStep('form'); setResult(null); setUrl(''); }}
-                    className="px-6 py-3 rounded-xl border border-slate-700 text-slate-300 hover:border-slate-600 hover:text-white transition-colors text-sm font-semibold"
+                    className="px-6 py-3 rounded-xl border border-surface-700 text-ash hover:border-surface-600 hover:text-cinder transition-colors text-sm font-semibold"
                   >
                     Audit Another Site
                   </button>
