@@ -41,7 +41,7 @@ export const categories: Category[] = [
     name: 'Trees & Shrubs',
     description: 'Structure and shade for every landscape',
     productCount: 35,
-    imageSrc: '/images/category-tress-shrubs.jpg',
+    imageSrc: '/images/category-trees-shrubs.jpg',
     imageAlt: 'Trees and shrubs in a nursery',
     accentColor: 'from-green-900/40',
   },
