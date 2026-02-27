@@ -5,21 +5,13 @@ import { ArrowRight, Leaf } from 'lucide-react';
 export default function Hero() {
   return (
     <section className="relative h-screen min-h-[620px] max-h-[900px] overflow-hidden -mt-16 lg:-mt-20">
-      {/*
-        📸 IMAGE SLOT — Hero
-        Replace gradient div with:
-          <Image
-            src="/images/hero-garden.jpg"
-            fill
-            className="object-cover object-center"
-            alt="Clover Garden Centre in full bloom"
-            priority
-          />
-      */}
-      <div className="absolute inset-0 bg-stone-300">
-        <div className="absolute inset-0 bg-gradient-to-br from-green-900/20 via-stone-400/30 to-stone-300" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_30%,_rgba(74,122,67,0.15)_0%,_transparent_60%)]" />
-      </div>
+      <Image
+        src="/images/hero-garden.jpg"
+        fill
+        className="object-cover object-center"
+        alt="Clover Garden Centre in full bloom"
+        priority
+      />
 
       {/* Cream gradient fade — bottom 55% for text legibility */}
       <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-cream via-cream/85 to-transparent" />

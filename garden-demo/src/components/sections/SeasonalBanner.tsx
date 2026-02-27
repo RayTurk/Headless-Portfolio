@@ -5,21 +5,13 @@ import { ArrowRight, Leaf } from 'lucide-react';
 export default function SeasonalBanner() {
   return (
     <section className="relative overflow-hidden">
-      {/*
-        📸 IMAGE SLOT — Seasonal banner background
-        Replace gradient with:
-          <Image
-            src="/images/seasonal-spring.jpg"
-            fill
-            className="object-cover object-center"
-            alt="Spring garden in bloom"
-          />
-          <div className="absolute inset-0 bg-brand-900/60" />
-      */}
-      <div className="absolute inset-0 bg-brand-900">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,_rgba(74,160,80,0.15)_0%,_transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,_rgba(255,255,255,0.03)_0%,_transparent_50%)]" />
-      </div>
+      <Image
+        src="/images/seasonal-spring.jpg"
+        fill
+        className="object-cover object-center"
+        alt="Spring garden in bloom"
+      />
+      <div className="absolute inset-0 bg-brand-900/60" />
 
       {/* Decorative botanical lines */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-500/30 to-transparent" />
@@ -70,21 +62,17 @@ export default function SeasonalBanner() {
           {/* Right: feature grid */}
           <div className="hidden lg:grid grid-cols-2 gap-4 mt-10 lg:mt-0">
             {[
-              { name: 'Lavender', desc: 'From $12.99', gradient: 'from-purple-900/60 to-purple-800/40' },
-              { name: 'Peonies', desc: 'From $18.99', gradient: 'from-rose-900/60 to-rose-800/40' },
-              { name: 'Coneflower', desc: 'From $10.99', gradient: 'from-orange-900/60 to-amber-800/40' },
-              { name: 'Black-Eyed Susan', desc: 'From $9.99', gradient: 'from-yellow-900/60 to-amber-900/40' },
+              { name: 'Lavender', desc: 'From $12.99', slug: 'lavender' },
+              { name: 'Peonies', desc: 'From $18.99', slug: 'peonies' },
+              { name: 'Coneflower', desc: 'From $10.99', slug: 'coneflower' },
+              { name: 'Black-Eyed Susan', desc: 'From $9.99', slug: 'black-eyed-susan' },
             ].map((item) => (
               <div
                 key={item.name}
-                className={`relative aspect-square rounded-xl overflow-hidden bg-gradient-to-br ${item.gradient} border border-white/10`}
+                className="relative aspect-square rounded-xl overflow-hidden border border-white/10"
               >
-                {/*
-                  📸 IMAGE SLOT — {item.name}
-                  Replace gradient with:
-                    <Image src="/images/seasonal-{item.name.toLowerCase().replace(' ', '-')}.jpg" fill className="object-cover" alt={item.name} />
-                */}
-                <div className="absolute inset-0 flex flex-col justify-end p-4">
+                <Image src={`/images/seasonal-${item.slug}.jpg`} fill className="object-cover" alt={item.name} />
+                <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-4">
                   <p className="text-white font-semibold text-sm">{item.name}</p>
                   <p className="text-white/60 text-xs">{item.desc}</p>
                 </div>

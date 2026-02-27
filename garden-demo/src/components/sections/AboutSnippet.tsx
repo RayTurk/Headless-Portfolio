@@ -17,13 +17,7 @@ export default function AboutSnippet() {
           {/* Left: Image */}
           <div className="relative mb-10 lg:mb-0">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-stone-100">
-              {/*
-                📸 IMAGE SLOT — About nursery photo
-                Replace with:
-                  <Image src="/images/about-nursery.jpg" fill className="object-cover" alt="Clover Garden Centre greenhouse" />
-              */}
-              <div className="absolute inset-0 bg-gradient-to-br from-green-200/60 via-stone-200 to-stone-300" />
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_40%_60%,_rgba(74,122,67,0.15)_0%,_transparent_60%)]" />
+              <Image src="/images/about-nursery.jpg" fill className="object-cover" alt="Clover Garden Centre greenhouse" />
             </div>
 
             {/* Floating stat card */}

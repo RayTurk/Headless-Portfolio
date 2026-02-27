@@ -107,12 +107,7 @@ export default function AboutPage() {
           {/* Story image */}
           <div className="mt-10 lg:mt-0">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-stone-200">
-              {/*
-                📸 IMAGE SLOT — About story photo
-                Replace with:
-                  <Image src="/images/about-story.jpg" fill className="object-cover" alt="Clover Garden Centre history" />
-              */}
-              <div className="absolute inset-0 bg-gradient-to-br from-green-200/50 via-stone-200 to-stone-300" />
+              <Image src="/images/about-story.jpg" fill className="object-cover" alt="Clover Garden Centre history" />
             </div>
           </div>
         </div>
