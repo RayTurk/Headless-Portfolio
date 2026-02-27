@@ -50,23 +50,12 @@ export default function AboutPage() {
 
             {/* Story photo */}
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100">
-              {/*
-                📸 IMAGE SLOT — About Story
-                Replace placeholder div with:
-                  <Image
-                    src="/images/about-story.jpg"
-                    fill
-                    className="object-cover object-center"
-                    alt="Summit HVAC founder Mike Donovan"
-                  />
-                Recommended: 800×600px — founder portrait, team shot, or job site
-              */}
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-                <div className="text-center text-gray-400">
-                  <div className="text-5xl mb-2 opacity-50">📸</div>
-                  <p className="text-xs font-mono opacity-60">/images/about-story.jpg</p>
-                </div>
-              </div>
+              <Image
+                src="/images/about-story.jpg"
+                fill
+                className="object-cover object-center"
+                alt="Summit HVAC founder Mike Donovan"
+              />
             </div>
 
             {/* Stats */}
@@ -101,21 +90,13 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {teamMembers.map((member) => (
               <div key={member.id} className="bg-white rounded-xl p-6 shadow-card">
-                {/*
-                  📸 IMAGE SLOT — Team member photo
-                  Replace placeholder div with:
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden mb-4">
-                      <Image
-                        src={`/images/team-${member.id}.jpg`}
-                        fill
-                        className="object-cover object-top"
-                        alt={member.name}
-                      />
-                    </div>
-                  Files: /images/team-1.jpg, team-2.jpg, etc. — 200×200px headshots
-                */}
-                <div className="w-14 h-14 bg-navy-950 rounded-full flex items-center justify-center text-white font-bold text-lg mb-4">
-                  {member.name.split(' ').map((n) => n[0]).join('')}
+                <div className="relative w-14 h-14 rounded-full overflow-hidden mb-4">
+                  <Image
+                    src={`/images/team-${member.id}.jpg`}
+                    fill
+                    className="object-cover object-top"
+                    alt={member.name}
+                  />
                 </div>
                 <h3 className="font-bold text-navy-950 text-lg">{member.name}</h3>
                 <p className="text-amber-600 font-medium text-sm mb-3">{member.title}</p>

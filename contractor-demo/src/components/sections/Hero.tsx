@@ -77,24 +77,13 @@ export default function Hero() {
 
         {/* ── Right: Photo panel ── */}
         <div className="relative hidden lg:block">
-          {/*
-            📸 IMAGE SLOT — Hero
-            Replace placeholder div with:
-              <Image
-                src="/images/hero-team.jpg"
-                fill
-                className="object-cover object-center"
-                alt="Summit HVAC & Plumbing technician"
-                priority
-              />
-            Recommended: 900×860px — technician at job site, van, or team photo
-          */}
-          <div className="absolute inset-0 bg-navy-900 flex items-center justify-center">
-            <div className="text-center text-navy-600">
-              <div className="text-6xl mb-3 opacity-40">📸</div>
-              <p className="text-sm font-mono opacity-50">/images/hero-team.jpg</p>
-            </div>
-          </div>
+          <Image
+            src="/images/hero-team.jpg"
+            fill
+            className="object-cover object-center"
+            alt="Summit HVAC & Plumbing technician"
+            priority
+          />
 
           {/* Bleed gradient into left column */}
           <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-navy-950 to-transparent z-10" />
