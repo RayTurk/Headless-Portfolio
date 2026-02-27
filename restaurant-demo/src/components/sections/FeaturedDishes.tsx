@@ -34,24 +34,12 @@ export default function FeaturedDishes() {
             <div key={dish.id} className="group relative rounded-2xl overflow-hidden bg-ember-900 border border-ember-700/50 hover:border-gold-500/30 transition-all duration-300">
               {/* Image slot */}
               <div className="relative aspect-[4/3] overflow-hidden">
-                {/*
-                  📸 IMAGE SLOT — Featured dish photo
-                  Path: {dish.image} (e.g. /images/dish-ribeye.jpg)
-                  Replace placeholder div with:
-                    <Image
-                      src={dish.image}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                      alt={dish.name}
-                    />
-                  Recommended: 800×600px — moody close-up, dark background, natural lighting
-                */}
-                <div className="absolute inset-0 bg-ember-800 flex items-center justify-center">
-                  <div className="text-center text-ember-600">
-                    <div className="text-4xl mb-1 opacity-50">📸</div>
-                    <p className="text-[10px] font-mono opacity-40">{dish.image}</p>
-                  </div>
-                </div>
+                <Image
+                  src={dish.image}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  alt={dish.name}
+                />
 
                 {/* Tag */}
                 <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-gold-500/90 text-ember-950 text-xs font-semibold font-sans">

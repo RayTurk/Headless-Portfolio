@@ -9,23 +9,13 @@ export default function ChefStory() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
           <div className="relative">
-            {/*
-              📸 IMAGE SLOT — Chef portrait or kitchen action shot
-              Replace placeholder div with:
-                <Image
-                  src="/images/chef-portrait.jpg"
-                  fill
-                  className="object-cover object-top rounded-2xl"
-                  alt="Executive Chef Marcus Webb at Ember & Oak"
-                />
-              Recommended: 700×900px — chef at the pass, plating, or candid kitchen shot
-            */}
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-ember-800 flex items-center justify-center">
-              <div className="text-center text-ember-600">
-                <div className="text-5xl mb-2 opacity-40">📸</div>
-                <p className="text-xs font-mono opacity-40">/images/chef-portrait.jpg</p>
-                <p className="text-[10px] opacity-30 mt-1 font-sans">Chef portrait / kitchen action</p>
-              </div>
+            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/chef-portrait.jpg"
+                fill
+                className="object-cover object-top"
+                alt="Executive Chef Marcus Webb at Ember & Oak"
+              />
             </div>
 
             {/* Floating press quote */}

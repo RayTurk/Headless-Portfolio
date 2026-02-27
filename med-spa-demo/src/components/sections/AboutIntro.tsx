@@ -12,23 +12,13 @@ export default function AboutIntro() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Photo */}
           <div className="relative">
-            {/*
-              📸 IMAGE SLOT — Dr. / Medical Director portrait
-              Replace placeholder div with:
-                <Image
-                  src="/images/about-dr-ashford.jpg"
-                  fill
-                  className="object-cover object-top rounded-2xl"
-                  alt="Dr. Claire Ashford, Medical Director"
-                />
-              Recommended: 700×880px — professional headshot or at-work portrait
-            */}
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-parchment-200 flex items-center justify-center">
-              <div className="text-center text-parchment-400">
-                <div className="text-5xl mb-2 opacity-50">📸</div>
-                <p className="text-xs font-mono opacity-50">/images/about-dr-ashford.jpg</p>
-                <p className="text-[10px] opacity-40 mt-1 font-sans">Dr. portrait / headshot</p>
-              </div>
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/about-dr-ashford.jpg"
+                fill
+                className="object-cover object-top"
+                alt="Dr. Claire Ashford, Medical Director"
+              />
             </div>
 
             {/* Awards badge */}

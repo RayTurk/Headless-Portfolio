@@ -41,24 +41,12 @@ export default function AboutPage() {
                 {/* Photo */}
                 <div className={`lg:col-span-2 ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-parchment-200">
-                    {/*
-                      📸 IMAGE SLOT — Team member portrait
-                      Path: {member.image} (e.g. /images/team-claire.jpg)
-                      Replace placeholder div with:
-                        <Image
-                          src={member.image}
-                          fill
-                          className="object-cover object-top"
-                          alt={member.name}
-                        />
-                      Recommended: 500×625px — professional headshot
-                    */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center text-parchment-400">
-                        <div className="text-4xl mb-2 opacity-50">📸</div>
-                        <p className="text-xs font-mono opacity-50">{member.image}</p>
-                      </div>
-                    </div>
+                    <Image
+                      src={member.image}
+                      fill
+                      className="object-cover object-top"
+                      alt={member.name}
+                    />
                   </div>
                 </div>
 

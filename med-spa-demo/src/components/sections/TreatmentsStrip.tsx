@@ -40,24 +40,12 @@ export default function TreatmentsStrip() {
             >
               {/* Image slot */}
               <div className="relative aspect-[4/3] overflow-hidden">
-                {/*
-                  📸 IMAGE SLOT — Treatment card
-                  Path: {t.image} (e.g. /images/treatment-botox.jpg)
-                  Replace placeholder div with:
-                    <Image
-                      src={t.image}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      alt={t.name}
-                    />
-                  Recommended: 600×450px — clinical/lifestyle shot of treatment or result
-                */}
-                <div className="absolute inset-0 bg-parchment-200 flex items-center justify-center">
-                  <div className="text-center text-parchment-400">
-                    <div className="text-3xl mb-1 opacity-50">📸</div>
-                    <p className="text-[10px] font-mono opacity-50">{t.image}</p>
-                  </div>
-                </div>
+                <Image
+                  src={t.image}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  alt={t.name}
+                />
               </div>
 
               <div className="p-5 flex flex-col flex-1">

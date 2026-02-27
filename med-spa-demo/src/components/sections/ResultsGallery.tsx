@@ -32,25 +32,12 @@ export default function ResultsGallery() {
             <div key={r.id} className="group relative rounded-2xl overflow-hidden bg-parchment-200">
               {/* Image slot */}
               <div className="relative aspect-[3/4]">
-                {/*
-                  📸 IMAGE SLOT — Result photo
-                  Path: {r.image} (e.g. /images/result-lips.jpg)
-                  Replace placeholder div with:
-                    <Image
-                      src={r.image}
-                      fill
-                      className="object-cover object-top group-hover:scale-103 transition-transform duration-500"
-                      alt={r.label}
-                    />
-                  Recommended: 600×800px — tasteful before/after or lifestyle result shot
-                  NOTE: ensure all result photos are patient-consented
-                */}
-                <div className="absolute inset-0 bg-parchment-200 flex items-center justify-center">
-                  <div className="text-center text-parchment-400">
-                    <div className="text-4xl mb-2 opacity-50">📸</div>
-                    <p className="text-[10px] font-mono opacity-50">{r.image}</p>
-                  </div>
-                </div>
+                <Image
+                  src={r.image}
+                  fill
+                  className="object-cover object-top group-hover:scale-103 transition-transform duration-500"
+                  alt={r.label}
+                />
               </div>
 
               {/* Overlay label */}

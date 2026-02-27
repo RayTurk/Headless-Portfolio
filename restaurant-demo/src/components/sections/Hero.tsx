@@ -6,29 +6,13 @@ import { siteConfig } from '@/lib/data';
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-end pb-16 lg:pb-24 overflow-hidden">
-      {/*
-        📸 IMAGE SLOT — Hero (full-screen)
-        Replace placeholder div with:
-          <Image
-            src="/images/hero-dining.jpg"
-            fill
-            className="object-cover object-center"
-            alt="Ember & Oak dining room"
-            priority
-          />
-        Recommended: 1920×1080px or 2:1 ratio
-        Subject: dim-lit dining room, fire/hearth, or atmospheric plated dish on dark table
-      */}
-      <div className="absolute inset-0 bg-ember-950">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,_rgba(201,168,76,0.06)_0%,_transparent_60%)]" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-ember-700">
-            <div className="text-8xl mb-4 opacity-30">📸</div>
-            <p className="text-sm font-mono opacity-40">/images/hero-dining.jpg</p>
-            <p className="text-xs opacity-30 mt-1 font-sans">Full-screen dining room or hearth</p>
-          </div>
-        </div>
-      </div>
+      <Image
+        src="/images/hero-dining.jpg"
+        fill
+        className="object-cover object-center"
+        alt="Ember & Oak dining room"
+        priority
+      />
 
       {/* Gradient overlay — bottom heavy for text legibility */}
       <div className="absolute inset-0 bg-gradient-to-t from-ember-950 via-ember-950/70 to-ember-950/20 z-10" />

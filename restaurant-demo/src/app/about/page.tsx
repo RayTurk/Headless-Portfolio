@@ -58,23 +58,13 @@ export default function AboutPage() {
 
             {/* Story image */}
             <div className="relative">
-              {/*
-                📸 IMAGE SLOT — Restaurant interior / hearth
-                Replace placeholder div with:
-                  <Image
-                    src="/images/about-hearth.jpg"
-                    fill
-                    className="object-cover rounded-2xl"
-                    alt="The Ember & Oak open kitchen and hearth"
-                  />
-                Recommended: 700×880px — the wood-burning hearth, open kitchen, or dining room
-              */}
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-ember-900 flex items-center justify-center">
-                <div className="text-center text-ember-600">
-                  <div className="text-5xl mb-2 opacity-40">📸</div>
-                  <p className="text-xs font-mono opacity-40">/images/about-hearth.jpg</p>
-                  <p className="text-[10px] opacity-30 mt-1 font-sans">Hearth or kitchen interior</p>
-                </div>
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/about-hearth.jpg"
+                  fill
+                  className="object-cover"
+                  alt="The Ember & Oak open kitchen and hearth"
+                />
               </div>
             </div>
           </div>
@@ -91,25 +81,13 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {team.map((member) => (
               <div key={member.name}>
-                {/*
-                  📸 IMAGE SLOT — Team member photo
-                  Path: {member.image} (e.g. /images/team-marcus.jpg)
-                  Replace placeholder div with:
-                    <div className="relative aspect-square rounded-2xl overflow-hidden mb-5">
-                      <Image
-                        src={member.image}
-                        fill
-                        className="object-cover object-top"
-                        alt={member.name}
-                      />
-                    </div>
-                  Recommended: 500×500px — candid or portrait, moody lighting
-                */}
-                <div className="relative aspect-square rounded-2xl overflow-hidden mb-5 bg-ember-800 flex items-center justify-center">
-                  <div className="text-center text-ember-600">
-                    <div className="text-4xl mb-1 opacity-40">📸</div>
-                    <p className="text-[10px] font-mono opacity-40">{member.image}</p>
-                  </div>
+                <div className="relative aspect-square rounded-2xl overflow-hidden mb-5">
+                  <Image
+                    src={member.image}
+                    fill
+                    className="object-cover object-top"
+                    alt={member.name}
+                  />
                 </div>
                 <h3 className="font-display text-xl font-semibold text-cream">{member.name}</h3>
                 <p className="text-xs tracking-wider uppercase text-gold-500 font-sans mb-3">{member.title}</p>

@@ -10,23 +10,12 @@ export default function ReservationsCTA() {
         <div className="rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-5 border border-ember-700/50">
           {/* Left: ambient photo */}
           <div className="relative lg:col-span-2 min-h-[280px]">
-            {/*
-              📸 IMAGE SLOT — Reservations ambient
-              Replace placeholder div with:
-                <Image
-                  src="/images/dining-ambient.jpg"
-                  fill
-                  className="object-cover object-center"
-                  alt="Ember & Oak dining atmosphere"
-                />
-              Recommended: 600×700px — candle-lit table, bar, or intimate corner setting
-            */}
-            <div className="absolute inset-0 bg-ember-800 flex items-center justify-center">
-              <div className="text-center text-ember-600">
-                <div className="text-4xl mb-2 opacity-40">📸</div>
-                <p className="text-xs font-mono opacity-40">/images/dining-ambient.jpg</p>
-              </div>
-            </div>
+            <Image
+              src="/images/dining-ambient.jpg"
+              fill
+              className="object-cover object-center"
+              alt="Ember & Oak dining atmosphere"
+            />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-ember-900/40 lg:block hidden" />
           </div>
 

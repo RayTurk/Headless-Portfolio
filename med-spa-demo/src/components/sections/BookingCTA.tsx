@@ -53,23 +53,12 @@ export default function BookingCTA() {
 
           {/* Right: Studio photo */}
           <div className="lg:col-span-2 relative min-h-[300px]">
-            {/*
-              📸 IMAGE SLOT — Booking CTA ambient photo
-              Replace placeholder div with:
-                <Image
-                  src="/images/studio-interior.jpg"
-                  fill
-                  className="object-cover object-center"
-                  alt="Luminary Aesthetics reception"
-                />
-              Recommended: 600×700px — reception desk, treatment room, or serene detail shot
-            */}
-            <div className="absolute inset-0 bg-parchment-200 flex items-center justify-center">
-              <div className="text-center text-parchment-400">
-                <div className="text-4xl mb-2 opacity-50">📸</div>
-                <p className="text-xs font-mono opacity-50">/images/studio-interior.jpg</p>
-              </div>
-            </div>
+            <Image
+              src="/images/studio-interior.jpg"
+              fill
+              className="object-cover object-center"
+              alt="Luminary Aesthetics reception"
+            />
           </div>
         </div>
       </div>

@@ -45,24 +45,12 @@ export default function TreatmentsPage() {
                   <div key={t.id} className="group flex flex-col rounded-2xl overflow-hidden border border-parchment-200 bg-parchment-50 hover:shadow-card transition-all duration-300">
                     {/* Image slot */}
                     <div className="relative aspect-[16/9] overflow-hidden">
-                      {/*
-                        📸 IMAGE SLOT — Treatment detail photo
-                        Path: {t.image} (e.g. /images/treatment-botox.jpg)
-                        Replace placeholder div with:
-                          <Image
-                            src={t.image}
-                            fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-500"
-                            alt={t.name}
-                          />
-                        Recommended: 800×450px — treatment process or result
-                      */}
-                      <div className="absolute inset-0 bg-parchment-200 flex items-center justify-center">
-                        <div className="text-center text-parchment-400">
-                          <div className="text-3xl mb-1 opacity-50">📸</div>
-                          <p className="text-[10px] font-mono opacity-50">{t.image}</p>
-                        </div>
-                      </div>
+                      <Image
+                        src={t.image}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        alt={t.name}
+                      />
                     </div>
                     <div className="p-6 flex flex-col flex-1">
                       <h3 className="font-display text-xl font-medium text-bark mb-1">{t.name}</h3>

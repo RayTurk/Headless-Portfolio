@@ -60,26 +60,13 @@ export default function Hero() {
 
       {/* ── Right: Photo panel ── */}
       <div className="relative hidden lg:block">
-        {/*
-          📸 IMAGE SLOT — Hero
-          Replace placeholder div with:
-            <Image
-              src="/images/hero-studio.jpg"
-              fill
-              className="object-cover object-center"
-              alt="Luminary Aesthetics treatment suite"
-              priority
-            />
-          Recommended: 900×900px
-          Subject: treatment room interior, OR a clean close-up portrait of a glowing face
-        */}
-        <div className="absolute inset-0 bg-parchment-200 flex items-center justify-center">
-          <div className="text-center text-parchment-400">
-            <div className="text-6xl mb-3 opacity-50">📸</div>
-            <p className="text-sm font-mono opacity-60">/images/hero-studio.jpg</p>
-            <p className="text-xs opacity-40 mt-1">Treatment room or portrait</p>
-          </div>
-        </div>
+        <Image
+          src="/images/hero-studio.jpg"
+          fill
+          className="object-cover object-center"
+          alt="Luminary Aesthetics treatment suite"
+          priority
+        />
 
         {/* Subtle gradient bleed into left panel */}
         <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-parchment-50 to-transparent z-10" />
