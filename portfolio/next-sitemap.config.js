@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://2k26portfolio.netlify.app',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://rturk.me',
   generateRobotsTxt: true,
   sitemapSize: 7000,
   changefreq: 'weekly',
