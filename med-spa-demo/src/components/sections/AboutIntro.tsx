@@ -14,7 +14,7 @@ export default function AboutIntro() {
           <div className="relative">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
               <Image
-                src="/images/about-dr-ashford.jpg"
+                src="/images/about-dr-ashford.jpeg"
                 fill
                 className="object-cover object-top"
                 alt="Dr. Claire Ashford, Medical Director"

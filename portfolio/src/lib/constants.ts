@@ -6,14 +6,14 @@
 // SITE METADATA
 // ============================================================================
 
-export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'Portfolio';
+export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'Ray Turk';
 export const SITE_DESCRIPTION =
   process.env.NEXT_PUBLIC_SITE_DESCRIPTION ||
-  'A professional portfolio showcasing projects and services';
+  'Cleveland-based WordPress and full-stack developer specializing in web maintenance, hosting, updates, and custom website builds.';
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com';
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://rturk.me';
 export const SITE_AUTHOR =
-  process.env.NEXT_PUBLIC_SITE_AUTHOR || 'Your Name';
+  process.env.NEXT_PUBLIC_SITE_AUTHOR || 'Ray Turk';
 
 // ============================================================================
 // DEFAULT SEO
@@ -23,7 +23,7 @@ export const DEFAULT_OG_IMAGE =
   process.env.NEXT_PUBLIC_DEFAULT_OG_IMAGE ||
   `${SITE_URL}/images/og-default.jpg`;
 export const DEFAULT_TWITTER_HANDLE =
-  process.env.NEXT_PUBLIC_TWITTER_HANDLE || '@yourhandle';
+  process.env.NEXT_PUBLIC_TWITTER_HANDLE || '@rayturk';
 
 // ============================================================================
 // CACHING AND ISR
@@ -101,7 +101,7 @@ export const SOCIAL_LINKS = [
   {
     name: 'Email',
     platform: 'email',
-    url: `mailto:${process.env.NEXT_PUBLIC_EMAIL || 'hello@example.com'}`,
+    url: `mailto:${process.env.NEXT_PUBLIC_EMAIL || 'rturk.me@gmail.com'}`,
     icon: 'email',
   },
 ] as const;

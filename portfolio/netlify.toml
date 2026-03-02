@@ -10,10 +10,10 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# Redirect www to non-www (adjust if you prefer www)
+# Redirect www to non-www
 [[redirects]]
-  from = "https://www.2k26portfolio.netlify.app/*"
-  to = "https://2k26portfolio.netlify.app/:splat"
+  from = "https://www.rturk.me/*"
+  to = "https://rturk.me/:splat"
   status = 301
   force = true
 

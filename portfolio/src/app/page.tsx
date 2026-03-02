@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: 'Ray Turk | Cleveland WordPress & Full Stack Developer',
     description:
       'Cleveland-based WordPress and full-stack developer specializing in web maintenance, hosting, updates, and custom website builds.',
-    url: 'https://rayturk.dev',
+    url: 'https://rturk.me',
     type: 'website',
     images: [
       {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://rayturk.dev',
+    canonical: 'https://rturk.me',
   },
 }
 
@@ -50,9 +50,9 @@ function jsonLdSchema() {
     '@graph': [
       {
         '@type': 'Person',
-        '@id': 'https://rayturk.dev/#person',
+        '@id': 'https://rturk.me/#person',
         name: 'Ray Turk',
-        url: 'https://rayturk.dev',
+        url: 'https://rturk.me',
         sameAs: [
           'https://www.linkedin.com/in/raymondturk-625097137',
           'https://twitter.com/rayturk',
@@ -79,13 +79,13 @@ function jsonLdSchema() {
       },
       {
         '@type': 'LocalBusiness',
-        '@id': 'https://rayturk.dev/#business',
+        '@id': 'https://rturk.me/#business',
         name: 'Ray Turk Development',
         description:
           'Cleveland-based WordPress and full-stack developer specializing in web maintenance, hosting, updates, and custom website builds.',
-        url: 'https://rayturk.dev',
-        logo: 'https://rayturk.dev/logo.png',
-        image: 'https://rayturk.dev/og-image.jpg',
+        url: 'https://rturk.me',
+        logo: 'https://rturk.me/logo.png',
+        image: 'https://rturk.me/og-image.jpg',
         address: {
           '@type': 'PostalAddress',
           addressLocality: 'Cleveland',

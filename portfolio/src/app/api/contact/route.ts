@@ -162,7 +162,7 @@ ${data.message}
                 to: [{ email: process.env.SENDGRID_TO_EMAIL }],
               },
             ],
-            from: { email: 'noreply@yourdomain.com' },
+            from: { email: process.env.SENDGRID_FROM_EMAIL || 'noreply@rturk.me' },
             reply_to: { email: data.email },
             subject: data.subject || 'New Contact Form Submission',
             content: [

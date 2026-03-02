@@ -6,10 +6,10 @@ import { Suspense } from 'react';
 export const revalidate = 3600 // Revalidate every hour
 
 export const metadata: Metadata = {
-  title: 'Blog | Portfolio',
+  title: 'Blog',
   description: 'Insights on WordPress, web development, and digital strategy. Tips and best practices for building modern websites.',
   openGraph: {
-    title: 'Blog',
+    title: 'Blog | Ray Turk',
     description: 'Insights on WordPress, web development, and digital strategy.',
     type: 'website',
   },

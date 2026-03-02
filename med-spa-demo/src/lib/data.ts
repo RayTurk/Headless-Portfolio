@@ -86,7 +86,7 @@ export const teamMembers = [
     title: 'Medical Director & Injector',
     credentials: 'MD, Board Certified Dermatologist',
     bio: 'Dr. Ashford trained at Cleveland Clinic before founding Luminary in 2017. Her approach centers on facial harmony — enhancing what\'s uniquely yours, never erasing it.',
-    image: '/images/team-claire.jpg',
+    image: '/images/team-claire.jpeg',
   },
   {
     id: 2,
@@ -94,7 +94,7 @@ export const teamMembers = [
     title: 'Lead Aesthetic Nurse Practitioner',
     credentials: 'FNP-BC, 8 Years Experience',
     bio: 'Jessica specializes in subtle, natural-looking injectables and laser treatments. Her loyal clientele return not just for the results, but for her calming, consultative approach.',
-    image: '/images/team-jessica.jpg',
+    image: '/images/team-jessica.jpeg',
   },
   {
     id: 3,
@@ -102,7 +102,7 @@ export const teamMembers = [
     title: 'Licensed Medical Aesthetician',
     credentials: 'LMA, HydraFacial Certified',
     bio: 'With a background in clinical skincare, Mara designs result-driven facial protocols and works closely with our injectors to optimize skin health alongside treatments.',
-    image: '/images/team-mara.jpg',
+    image: '/images/team-mara.jpeg',
   },
 ];
 

@@ -5,10 +5,10 @@ import { ProjectCard } from '@/components/projects/ProjectCard';
 import { ProjectFilter } from '@/components/projects/ProjectFilter';
 
 export const metadata: Metadata = {
-  title: 'Projects | Portfolio',
-  description: 'Explore my portfolio of web design, WordPress, and custom development projects.',
+  title: 'Projects',
+  description: 'Explore my portfolio of web design, WordPress, and custom development projects. Cleveland-based developer serving clients nationwide.',
   openGraph: {
-    title: 'Projects',
+    title: 'Projects | Ray Turk',
     description: 'Explore my portfolio of web design, WordPress, and custom development projects.',
     type: 'website',
   },

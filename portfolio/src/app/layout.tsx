@@ -27,7 +27,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://2k26portfolio.netlify.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://rturk.me'),
   title: {
     default: 'Ray Turk | Cleveland WordPress & Full Stack Developer',
     template: '%s | Ray Turk',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     'Next.js',
     'PHP',
   ],
-  authors: [{ name: 'Ray Turk', url: process.env.NEXT_PUBLIC_SITE_URL || 'https://2k26portfolio.netlify.app' }],
+  authors: [{ name: 'Ray Turk', url: process.env.NEXT_PUBLIC_SITE_URL || 'https://rturk.me' }],
   creator: 'Ray Turk',
   publisher: 'Ray Turk',
   robots: {
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://2k26portfolio.netlify.app',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://rturk.me',
     siteName: 'Ray Turk',
     title: 'Ray Turk | Cleveland WordPress & Full Stack Developer',
     description:
