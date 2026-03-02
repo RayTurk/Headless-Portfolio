@@ -4,6 +4,8 @@ import { BentoGrid } from '@/components/ui/bento-grid';
 import { ProjectCard } from '@/components/projects/ProjectCard';
 import { ProjectFilter } from '@/components/projects/ProjectFilter';
 
+export const revalidate = 3600 // Revalidate every hour
+
 export const metadata: Metadata = {
   title: 'Projects',
   description: 'Explore my portfolio of web design, WordPress, and custom development projects. Cleveland-based developer serving clients nationwide.',

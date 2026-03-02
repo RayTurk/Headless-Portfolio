@@ -10,6 +10,9 @@ import { ProjectIframe } from '@/components/projects/ProjectIframe';
 import { RelatedProjects } from '@/components/projects/RelatedProjects';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 
+export const revalidate = 3600 // Revalidate every hour
+export const dynamicParams = true // Render new slugs on-demand without a rebuild
+
 export async function generateStaticParams() {
   const slugs = await getAllProjectSlugs();
   return slugs.map((slug: string) => ({ slug }));
