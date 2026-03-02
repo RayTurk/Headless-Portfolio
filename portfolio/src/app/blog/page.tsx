@@ -7,10 +7,10 @@ export const revalidate = 3600 // Revalidate every hour
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: 'Insights on WordPress, web development, and digital strategy. Tips and best practices for building modern websites.',
+  description: 'Web development tips, WordPress insights, and frontend tutorials from Ray Turk — a Cleveland-based full stack developer.',
   openGraph: {
     title: 'Blog | Ray Turk',
-    description: 'Insights on WordPress, web development, and digital strategy.',
+    description: 'Web development tips, WordPress insights, and frontend tutorials from Ray Turk — a Cleveland-based full stack developer.',
     type: 'website',
   },
 };

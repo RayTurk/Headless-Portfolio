@@ -9,6 +9,8 @@ import {
 import { ProjectIframe } from '@/components/projects/ProjectIframe';
 import { RelatedProjects } from '@/components/projects/RelatedProjects';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { generateBreadcrumbSchema } from '@/lib/schema';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 export const revalidate = 3600 // Revalidate every hour
 export const dynamicParams = true // Render new slugs on-demand without a rebuild
@@ -207,6 +209,13 @@ export default async function ProjectPage(
           </section>
         )}
       </div>
+
+      {/* Breadcrumb JSON-LD */}
+      <JsonLd data={generateBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: 'Projects', url: '/projects' },
+        { name: project.title, url: `/projects/${params.slug}` },
+      ])} />
 
       {/* JSON-LD Schema */}
       <script

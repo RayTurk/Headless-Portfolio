@@ -8,10 +8,10 @@ export const revalidate = 3600 // Revalidate every hour
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Explore my portfolio of web design, WordPress, and custom development projects. Cleveland-based developer serving clients nationwide.',
+  description: 'Explore portfolio projects by Ray Turk — WordPress sites, custom Next.js builds, and web maintenance work for clients across Ohio and beyond.',
   openGraph: {
     title: 'Projects | Ray Turk',
-    description: 'Explore my portfolio of web design, WordPress, and custom development projects.',
+    description: 'Explore portfolio projects by Ray Turk — WordPress sites, custom Next.js builds, and web maintenance work for clients across Ohio and beyond.',
     type: 'website',
   },
 };

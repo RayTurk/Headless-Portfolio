@@ -70,6 +70,11 @@ export function generateLocalBusinessSchema() {
     },
     areaServed: [
       { '@type': 'City', name: 'Cleveland' },
+      { '@type': 'City', name: 'Akron' },
+      { '@type': 'City', name: 'Lakewood' },
+      { '@type': 'City', name: 'Parma' },
+      { '@type': 'City', name: 'Mentor' },
+      { '@type': 'AdministrativeArea', name: 'Northeast Ohio' },
       { '@type': 'State', name: 'Ohio' },
       { '@type': 'Country', name: 'United States' },
     ],

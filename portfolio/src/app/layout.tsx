@@ -3,6 +3,8 @@ import { Barlow, Barlow_Condensed, IBM_Plex_Mono } from 'next/font/google'
 import { AnimatePresence } from 'framer-motion'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { JsonLd } from '@/components/seo/JsonLd'
+import { generateLocalBusinessSchema, generateWebSiteSchema } from '@/lib/schema'
 import '@/styles/globals.css'
 
 const barlow = Barlow({
@@ -127,6 +129,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </AnimatePresence>
         </main>
         <Footer />
+        <JsonLd data={[generateLocalBusinessSchema(), generateWebSiteSchema()]} />
       </body>
     </html>
   )

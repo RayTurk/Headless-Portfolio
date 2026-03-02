@@ -7,6 +7,8 @@ import {
 } from '@/lib/api';
 import { ShareButtons } from '@/components/blog/ShareButtons';
 import { TableOfContents } from '@/components/blog/TableOfContents';
+import { generateBreadcrumbSchema } from '@/lib/schema';
+import { JsonLd } from '@/components/seo/JsonLd';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/constants';
@@ -369,6 +371,13 @@ export default async function BlogPostPage(
           </div>
         </div>
       </div>
+
+      {/* Breadcrumb JSON-LD */}
+      <JsonLd data={generateBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: 'Blog', url: '/blog' },
+        { name: post.title, url: `/blog/${params.slug}` },
+      ])} />
 
       {/* JSON-LD */}
       <script

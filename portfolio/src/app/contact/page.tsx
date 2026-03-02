@@ -9,7 +9,7 @@ import { SOCIAL_LINKS } from '@/lib/constants';
 export const metadata: Metadata = generatePageMetadata({
   title: 'Contact',
   description:
-    'Get in touch with Ray Turk for WordPress maintenance, custom development, hosting, or a free site audit. Cleveland-based, serving clients nationwide.',
+    'Get in touch with Ray Turk, Cleveland WordPress & Full Stack Developer. Available for web maintenance plans, new builds, and hosting. Quick response guaranteed.',
   path: '/contact',
 });
 
