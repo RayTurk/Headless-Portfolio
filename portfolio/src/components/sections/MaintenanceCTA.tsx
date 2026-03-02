@@ -121,10 +121,10 @@ export function MaintenanceCTA() {
               <motion.div
                 key={feature.title}
                 variants={itemVariants}
-                className="relative group"
+                className="relative group h-full"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-brand-500/10 to-brand-600/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative p-6 rounded-lg border border-brand-500/20 group-hover:border-brand-400/40 transition-colors duration-300">
+                <div className="relative h-full p-6 rounded-lg border border-brand-500/20 group-hover:border-brand-400/40 transition-colors duration-300">
                   <div className="flex items-start gap-4">
                     <motion.div
                       className="flex-shrink-0"

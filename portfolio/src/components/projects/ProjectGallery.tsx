@@ -99,7 +99,7 @@ export function ProjectGallery({ images }: ProjectGalleryProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedIndex(null)}
-              className="absolute top-6 right-6 text-white hover:text-slate-300 transition-colors"
+              className="absolute top-6 right-6 text-white hover:text-ash transition-colors"
               aria-label="Close lightbox"
             >
               <svg
@@ -147,7 +147,7 @@ export function ProjectGallery({ images }: ProjectGalleryProps) {
                     (selectedIndex - 1 + images.length) % images.length
                   )
                 }
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-slate-300 transition-colors"
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-ash transition-colors"
                 aria-label="Previous image"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -171,7 +171,7 @@ export function ProjectGallery({ images }: ProjectGalleryProps) {
                 onClick={() =>
                   setSelectedIndex((selectedIndex + 1) % images.length)
                 }
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-slate-300 transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-ash transition-colors"
                 aria-label="Next image"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -214,8 +214,8 @@ export function ProjectGallery({ images }: ProjectGalleryProps) {
                   onClick={() => setSelectedIndex(index)}
                   className={`flex-shrink-0 relative w-16 h-16 rounded-lg overflow-hidden border-2 transition-colors ${
                     selectedIndex === index
-                      ? 'border-emerald-500'
-                      : 'border-slate-500 hover:border-slate-400'
+                      ? 'border-brand-500'
+                      : 'border-surface-600 hover:border-surface-400'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
