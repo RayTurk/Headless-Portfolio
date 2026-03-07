@@ -17,6 +17,42 @@
   status = 301
   force = true
 
+# Redirect legacy WordPress paths from the old site
+[[redirects]]
+  from = "/feed"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/feed/"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/category/*"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/tag/*"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/author/*"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/wp-json/*"
+  to = "/"
+  status = 410
+
+[[redirects]]
+  from = "/xmlrpc.php"
+  to = "/"
+  status = 410
+
 # Security headers
 [[headers]]
   for = "/*"

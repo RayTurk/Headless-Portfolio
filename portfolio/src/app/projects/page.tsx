@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { generatePageMetadata } from '@/lib/seo';
 import { getAllProjects } from '@/lib/api';
 import { BentoGrid } from '@/components/ui/bento-grid';
 import { ProjectCard } from '@/components/projects/ProjectCard';
@@ -6,15 +7,11 @@ import { ProjectFilter } from '@/components/projects/ProjectFilter';
 
 export const revalidate = 3600 // Revalidate every hour
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generatePageMetadata({
   title: 'Projects',
   description: 'Explore portfolio projects by Ray Turk — WordPress sites, custom Next.js builds, and web maintenance work for clients across Ohio and beyond.',
-  openGraph: {
-    title: 'Projects | Ray Turk',
-    description: 'Explore portfolio projects by Ray Turk — WordPress sites, custom Next.js builds, and web maintenance work for clients across Ohio and beyond.',
-    type: 'website',
-  },
-};
+  path: '/projects',
+});
 
 export default async function ProjectsPage() {
   const { projects } = await getAllProjects();

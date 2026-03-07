@@ -21,7 +21,7 @@ export const SITE_AUTHOR =
 
 export const DEFAULT_OG_IMAGE =
   process.env.NEXT_PUBLIC_DEFAULT_OG_IMAGE ||
-  `${SITE_URL}/images/og-default.jpg`;
+  `${SITE_URL}/api/og`;
 export const DEFAULT_TWITTER_HANDLE =
   process.env.NEXT_PUBLIC_TWITTER_HANDLE || '@rayturk';
 

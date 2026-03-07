@@ -1,19 +1,16 @@
 import { Metadata } from 'next';
+import { generatePageMetadata } from '@/lib/seo';
 import { getAllPosts } from '@/lib/api';
 import { BlogPostCard } from '@/components/blog/PostCard';
 import { Suspense } from 'react';
 
 export const revalidate = 3600 // Revalidate every hour
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generatePageMetadata({
   title: 'Blog',
   description: 'Web development tips, WordPress insights, and frontend tutorials from Ray Turk — a Cleveland-based full stack developer.',
-  openGraph: {
-    title: 'Blog | Ray Turk',
-    description: 'Web development tips, WordPress insights, and frontend tutorials from Ray Turk — a Cleveland-based full stack developer.',
-    type: 'website',
-  },
-};
+  path: '/blog',
+});
 
 interface SearchParams {
   page?: string;

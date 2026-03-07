@@ -120,6 +120,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="preconnect" href="https://cms.rturk.me" />
+        <link rel="dns-prefetch" href="https://cms.rturk.me" />
       </head>
       <body className="dark bg-surface-950 text-cinder font-sans antialiased">
         <Header />

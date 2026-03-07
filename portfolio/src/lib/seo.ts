@@ -100,7 +100,9 @@ export function generatePageMetadata(options: {
   noIndex?: boolean;
 }): Metadata {
   const url = absoluteUrl(options.path);
-  const image = options.image || DEFAULT_OG_IMAGE;
+  const image =
+    options.image ||
+    `${DEFAULT_OG_IMAGE}?title=${encodeURIComponent(options.title)}`;
 
   return {
     title: options.title,
