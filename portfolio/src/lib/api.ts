@@ -26,6 +26,7 @@ import {
   GET_MENU_BY_LOCATION,
   GET_SITE_INFO,
 } from './queries';
+import { STATIC_PROJECTS, STATIC_FEATURED_PROJECTS } from './data/projects';
 
 import {
   Project,
@@ -99,17 +100,19 @@ export async function getAllProjects(
 
     checkForErrors(data);
 
-    return {
-      projects: data.projects?.nodes || [],
-      pageInfo: data.projects?.pageInfo || {
-        hasNextPage: false,
-        hasPreviousPage: false,
-      },
-    };
+    const projects: Project[] = data.projects?.nodes || [];
+    if (projects.length > 0) {
+      return {
+        projects,
+        pageInfo: data.projects?.pageInfo || { hasNextPage: false, hasPreviousPage: false },
+      };
+    }
+    // CMS returned no projects — fall back to static data
+    return { projects: STATIC_PROJECTS, pageInfo: { hasNextPage: false, hasPreviousPage: false } };
   } catch (error) {
-    console.error('Error fetching all projects:', error);
+    console.error('Error fetching all projects — using static fallback:', error);
     return {
-      projects: [],
+      projects: STATIC_PROJECTS,
       pageInfo: { hasNextPage: false, hasPreviousPage: false },
     };
   }
@@ -128,10 +131,12 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
 
     checkForErrors(data);
 
-    return data.project || null;
+    if (data.project) return data.project;
+    // CMS returned nothing — try static fallback
+    return STATIC_PROJECTS.find((p) => p.slug === slug) || null;
   } catch (error) {
-    console.error(`Error fetching project with slug ${slug}:`, error);
-    return null;
+    console.error(`Error fetching project with slug ${slug} — trying static fallback:`, error);
+    return STATIC_PROJECTS.find((p) => p.slug === slug) || null;
   }
 }
 
@@ -148,17 +153,17 @@ export async function getFeaturedProjects(): Promise<Project[]> {
     checkForErrors(data);
 
     const allProjects: Project[] = data.projects?.nodes || [];
-    // Filter to featured projects and sort by projectOrder client-side
-    // since WPGraphQL doesn't support metaKey/metaValue on custom post types
     const featured = allProjects
       .filter((p) => p.projectDetails?.isFeatured)
       .sort((a, b) => (a.projectDetails?.projectOrder ?? 99) - (b.projectDetails?.projectOrder ?? 99))
       .slice(0, FEATURED_PROJECTS_COUNT);
 
-    return featured;
+    if (featured.length > 0) return featured;
+    // CMS returned nothing — fall back to static featured projects
+    return STATIC_FEATURED_PROJECTS.slice(0, FEATURED_PROJECTS_COUNT);
   } catch (error) {
-    console.error('Error fetching featured projects:', error);
-    return [];
+    console.error('Error fetching featured projects — using static fallback:', error);
+    return STATIC_FEATURED_PROJECTS.slice(0, FEATURED_PROJECTS_COUNT);
   }
 }
 
@@ -174,10 +179,12 @@ export async function getAllProjectSlugs(): Promise<string[]> {
 
     checkForErrors(data);
 
-    return data.projects?.nodes?.map((p: Project) => p.slug) || [];
+    const slugs: string[] = data.projects?.nodes?.map((p: Project) => p.slug) || [];
+    if (slugs.length > 0) return slugs;
+    return STATIC_PROJECTS.map((p) => p.slug);
   } catch (error) {
-    console.error('Error fetching project slugs:', error);
-    return [];
+    console.error('Error fetching project slugs — using static fallback:', error);
+    return STATIC_PROJECTS.map((p) => p.slug);
   }
 }
 

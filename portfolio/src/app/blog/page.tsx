@@ -121,8 +121,16 @@ async function BlogContent({ page }: { page?: string }) {
             )}
           </>
         ) : (
-          <div className="text-center py-12">
-            <p className="text-surface-400 text-lg">No posts found.</p>
+          <div className="text-center py-20">
+            <p className="font-mono text-xs tracking-[0.15em] uppercase text-brand-500 mb-4">
+              → Coming Soon
+            </p>
+            <h2 className="font-display font-black text-4xl md:text-5xl uppercase text-cinder mb-4">
+              Posts on the way
+            </h2>
+            <p className="text-surface-400 text-lg max-w-md mx-auto">
+              Articles are being set up and will appear here shortly. Check back soon.
+            </p>
           </div>
         )}
       </section>
