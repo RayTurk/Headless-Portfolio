@@ -214,6 +214,16 @@ export const POST_FRAGMENT = gql`
         ...TaxonomyTermFragment
       }
     }
+    blogFields {
+      readingTimeOverride
+      postSubtitle
+      showToc
+      ctaText
+      ctaUrl
+      seoTitle
+      seoDescription
+      seoKeywords
+    }
   }
   ${IMAGE_FRAGMENT}
   ${AUTHOR_FRAGMENT}

@@ -9,6 +9,10 @@ const nextConfig = {
         hostname: process.env.NEXT_PUBLIC_WP_HOSTNAME || 'cms.rturk.me',
         pathname: '/wp-content/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'secure.gravatar.com',
+      },
     ],
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
