@@ -48,12 +48,14 @@ export function ContactCTA() {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Button
+            href="/contact"
             size="lg"
             className="bg-brand-600 hover:bg-brand-700 text-white px-10 py-3 text-lg"
           >
             Start a Project
           </Button>
           <Button
+            href="/contact#schedule"
             size="lg"
             variant="secondary"
             className="border-brand-500/50 text-brand-400 hover:bg-brand-500/10 px-10 py-3 text-lg"

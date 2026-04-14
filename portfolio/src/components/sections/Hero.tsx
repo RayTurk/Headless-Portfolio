@@ -100,12 +100,14 @@ export function Hero({ settings }: HeroProps) {
           className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
         >
           <Button
+            href="/projects"
             size="lg"
             className="bg-brand-600 hover:bg-brand-700 text-white px-8"
           >
             View My Work
           </Button>
           <Button
+            href="/contact"
             size="lg"
             variant="secondary"
             className="border-brand-500/50 text-brand-400 hover:bg-brand-500/10 px-8"
