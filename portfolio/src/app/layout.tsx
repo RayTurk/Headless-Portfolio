@@ -3,6 +3,7 @@ import { Barlow, Barlow_Condensed, IBM_Plex_Mono } from 'next/font/google'
 import { AnimatePresence } from 'framer-motion'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { ConsentBanner } from '@/components/consent/ConsentBanner'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { generateLocalBusinessSchema, generateWebSiteSchema } from '@/lib/schema'
 import '@/styles/globals.css'
@@ -122,23 +123,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <link rel="preconnect" href="https://cms.rturk.me" />
         <link rel="dns-prefetch" href="https://cms.rturk.me" />
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WSTH9JTX');`,
-          }}
-        />
       </head>
       <body className="dark bg-surface-950 text-cinder font-sans antialiased">
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-WSTH9JTX"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
         <Header />
         <main>
           <AnimatePresence mode="wait">
@@ -146,6 +132,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </AnimatePresence>
         </main>
         <Footer />
+        <ConsentBanner />
         <JsonLd data={[generateLocalBusinessSchema(), generateWebSiteSchema()]} />
       </body>
     </html>

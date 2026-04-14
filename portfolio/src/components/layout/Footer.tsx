@@ -215,7 +215,7 @@ const Footer = () => {
             <p className="mb-2">
               &copy; {currentYear} Ray Turk. All rights reserved.
             </p>
-            <p>
+            <p className="mb-3">
               Built with{' '}
               <motion.span
                 animate={{ scale: [1, 1.1, 1] }}
@@ -226,6 +226,22 @@ const Footer = () => {
               </motion.span>{' '}
               using WordPress, Next.js, React, TypeScript, and Tailwind CSS.
             </p>
+            <div className="flex items-center justify-center gap-4 text-xs text-surface-600">
+              <Link href="/privacy" className="hover:text-surface-400 transition-colors">
+                Privacy Policy
+              </Link>
+              <span>·</span>
+              <Link href="/terms" className="hover:text-surface-400 transition-colors">
+                Terms
+              </Link>
+              <span>·</span>
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent('open-consent-banner'))}
+                className="hover:text-surface-400 transition-colors cursor-pointer"
+              >
+                Cookie Preferences
+              </button>
+            </div>
           </motion.div>
         </div>
       </div>
