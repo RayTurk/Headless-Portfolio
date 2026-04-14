@@ -61,7 +61,7 @@ export const STATIC_PROJECTS: Project[] = [
     },
     projectInfo: {
       projectExcerpt: 'Headless WordPress contractor site for a Greater Cleveland HVAC & plumbing company.',
-      projectUrl: '',
+      projectUrl: 'https://summit-hvac-demo.netlify.app/',
       githubUrl: '',
     },
     projectDetails: {
@@ -96,7 +96,7 @@ export const STATIC_PROJECTS: Project[] = [
     },
     projectInfo: {
       projectExcerpt: 'Dark, editorial med-spa site with Framer Motion animations and a booking flow.',
-      projectUrl: '',
+      projectUrl: 'https://luminary-aesthetics-demo.netlify.app/',
       githubUrl: '',
     },
     projectDetails: {
@@ -131,7 +131,7 @@ export const STATIC_PROJECTS: Project[] = [
     },
     projectInfo: {
       projectExcerpt: 'Fine-dining restaurant demo with animated hero, digital menu, and reservation flow.',
-      projectUrl: '',
+      projectUrl: 'https://ember-and-oak-demo.netlify.app/',
       githubUrl: '',
     },
     projectDetails: {
@@ -166,7 +166,7 @@ export const STATIC_PROJECTS: Project[] = [
     },
     projectInfo: {
       projectExcerpt: 'Mobile-first auto detailing site focused on same-day booking conversions.',
-      projectUrl: '',
+      projectUrl: 'https://revive-detailing-demo.netlify.app/',
       githubUrl: '',
     },
     projectDetails: {
@@ -201,7 +201,7 @@ export const STATIC_PROJECTS: Project[] = [
     },
     projectInfo: {
       projectExcerpt: 'Local garden centre e-commerce demo with product catalogue and seasonal promotions.',
-      projectUrl: '',
+      projectUrl: 'https://clover-garden-demo.netlify.app/',
       githubUrl: '',
     },
     projectDetails: {
@@ -236,7 +236,7 @@ export const STATIC_PROJECTS: Project[] = [
     },
     projectInfo: {
       projectExcerpt: 'SaaS marketing site demo with pricing tiers, feature grid, and animated hero.',
-      projectUrl: '',
+      projectUrl: 'https://rturk-beacon-demo.netlify.app/',
       githubUrl: '',
     },
     projectDetails: {
