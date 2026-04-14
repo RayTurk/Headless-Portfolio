@@ -28,6 +28,10 @@ Thumbs.db
 .vercel
 .netlify
 
+# Generated sitemaps (built by next-sitemap postbuild step)
+/public/sitemap*.xml
+/public/robots.txt
+
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
