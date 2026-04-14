@@ -38,7 +38,7 @@ export default function SeasonalBanner() {
             </h2>
 
             <p className="text-brand-100 text-lg leading-relaxed mb-8 max-w-md">
-              Fresh from our growers — lavender, peonies, coneflowers, and over 60 varieties ready
+              Fresh from our growers. Lavender, peonies, coneflowers, and over 60 varieties ready
               to plant now. Updated weekly while supplies last.
             </p>
 

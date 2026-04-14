@@ -44,7 +44,7 @@ export default function ContactPage() {
             See Beacon in action
           </h1>
           <p className="text-lg text-slate-400">
-            Tell us about your stack and we&rsquo;ll walk you through a personalized demo. Or just start your free trial — no demo required.
+            Tell us about your stack and we&rsquo;ll walk you through a personalized demo. Or just start your free trial. No demo required.
           </p>
         </div>
       </section>

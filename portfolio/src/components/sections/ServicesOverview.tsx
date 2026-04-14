@@ -38,7 +38,7 @@ const services = [
     number: '03',
     icon: Code2,
     title: 'Full Stack Development',
-    description: 'From REST APIs to React frontends — I build robust, scalable applications that grow with your business.',
+    description: 'From REST APIs to React frontends. I build robust, scalable applications that grow with your business.',
     features: ['React & Next.js', 'Node.js & PHP', 'Database design', 'API development'],
     price: 'Custom quote',
     accent: 'from-orange-500 to-amber-500',
@@ -97,7 +97,7 @@ export function ServicesOverview() {
             How I Can Help
           </h2>
           <p className="text-lg text-surface-400 max-w-2xl mx-auto">
-            From keeping your site secure to building something new — I&apos;ve got you covered.
+            From keeping your site secure to building something new. I&apos;ve got you covered.
           </p>
         </motion.div>
 

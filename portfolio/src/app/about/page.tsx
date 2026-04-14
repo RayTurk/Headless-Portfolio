@@ -66,7 +66,7 @@ export default function AboutPage() {
             <div className="relative aspect-square max-w-md mx-auto md:mx-0 rounded-2xl border border-surface-700 overflow-hidden bg-gradient-to-br from-surface-800 to-surface-900">
               <Image
                 src="/images/profile-avatar.png"
-                alt="Ray Turk — Cleveland WordPress & Full Stack Developer"
+                alt="Ray Turk, Cleveland WordPress & Full Stack Developer"
                 fill
                 className="object-contain"
                 priority
@@ -83,15 +83,15 @@ export default function AboutPage() {
             <div className="space-y-4 text-surface-300 leading-relaxed">
               <p>
                 I&apos;m a Greater Cleveland-area WordPress and Full Stack Developer currently working at
-                Neon Goldfish Marketing Solutions. I started my tech career in customer service —
-                six years as a Service Coordinator at Classic BMW — before making a full leap into
-                web development in 2021.
+                Neon Goldfish Marketing Solutions. I started my tech career in customer service,
+                spending six years as a Service Coordinator at Classic BMW, before making a full
+                leap into web development in 2021.
               </p>
               <p>
                 That background isn&apos;t a detour; it&apos;s a superpower.{' '}
                 <strong className="text-surface-100">I understand clients, not just code.</strong>{' '}
-                Since 2021 I&apos;ve worked at three agencies — Company 119, Full Spectrum Marketing,
-                and now Neon Goldfish — growing from WordPress theme work into full-stack React and
+                Since 2021 I&apos;ve worked at three agencies: Company 119, Full Spectrum Marketing,
+                and now Neon Goldfish, growing from WordPress theme work into full-stack React and
                 Next.js development.
               </p>
               <p>
@@ -128,7 +128,7 @@ export default function AboutPage() {
               Skills & Expertise
             </h2>
             <p className="text-surface-400 max-w-2xl mx-auto">
-              From Help Desk to BMW Service Desk to Web Dev — each role added something to the toolkit.
+              From Help Desk to BMW Service Desk to Web Dev. Each role added something to the toolkit.
             </p>
           </RevealOnScroll>
           <SkillsVisualization />

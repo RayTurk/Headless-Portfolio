@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Project } from '@/types/wordpress'
 import { ProjectCard } from '@/components/ui/project-card'
-import { BentoGrid } from '@/components/ui/bento-grid'
 
 interface FeaturedProjectsProps {
   projects: Project[]
@@ -66,33 +65,21 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
-          <BentoGrid className="grid-cols-1 md:grid-cols-4 gap-6">
-            {/* Featured large project */}
-            {featuredProject && (
-              <motion.div
-                variants={itemVariants}
-                className="md:col-span-2 md:row-span-2"
-              >
-                <ProjectCard
-                  project={featuredProject}
-                  size="large"
-                  featured
-                />
-              </motion.div>
-            )}
+          {/* Featured project — full width top row */}
+          {featuredProject && (
+            <motion.div variants={itemVariants} className="md:col-span-3">
+              <ProjectCard project={featuredProject} size="large" featured />
+            </motion.div>
+          )}
 
-            {/* Other projects */}
-            {otherProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                variants={itemVariants}
-                className="md:col-span-2"
-              >
-                <ProjectCard project={project} size="standard" />
-              </motion.div>
-            ))}
-          </BentoGrid>
+          {/* Remaining projects — three-column row */}
+          {otherProjects.map((project) => (
+            <motion.div key={project.id} variants={itemVariants}>
+              <ProjectCard project={project} size="standard" />
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* View all projects link */}

@@ -43,7 +43,7 @@ export default function AboutIntro() {
 
             <div className="space-y-4 text-base text-drift font-sans leading-relaxed mb-8">
               <p>
-                Dr. Ashford founded Luminary on a simple philosophy: the best aesthetic treatments leave people looking like themselves — just rested, refreshed, and at their most confident.
+                Dr. Ashford founded Luminary on a simple philosophy: the best aesthetic treatments leave people looking like themselves. Just rested, refreshed, and at their most confident.
               </p>
               <p>
                 Every consultation begins with listening. We never propose a treatment menu. We ask about your goals, assess your unique anatomy, and build a plan that&rsquo;s genuinely yours.

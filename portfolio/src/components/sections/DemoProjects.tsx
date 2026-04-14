@@ -138,7 +138,7 @@ export function DemoProjects() {
             </span>
           </h2>
           <p className="text-lg text-surface-300 max-w-2xl mx-auto">
-            Six fully built Next.js demo sites spanning local services, SaaS, automotive, retail, wellness, and hospitality — each designed from the ground up for its audience.
+            Six fully built Next.js demo sites spanning local services, SaaS, automotive, retail, wellness, and hospitality. Each designed from the ground up for its audience.
           </p>
         </motion.div>
 

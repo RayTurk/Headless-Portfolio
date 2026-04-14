@@ -19,7 +19,7 @@ export default function BookingCTA() {
               <em className="text-blush-400 not-italic">awaits</em>
             </h2>
             <p className="text-base text-parchment-300 font-sans leading-relaxed mb-10 max-w-md">
-              All new patients begin with a 30-minute consultation — complimentary, no obligation. We&rsquo;ll discuss your goals, assess your anatomy, and design a plan that&rsquo;s uniquely yours.
+              All new patients begin with a 30-minute consultation. Complimentary, no obligation. We&rsquo;ll discuss your goals, assess your anatomy, and design a plan that&rsquo;s uniquely yours.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10">

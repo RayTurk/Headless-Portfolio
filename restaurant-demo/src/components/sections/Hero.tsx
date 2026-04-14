@@ -39,7 +39,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-base lg:text-lg text-stone font-sans leading-relaxed mb-10 max-w-md">
-            Ember &amp; Oak is built around the fire — dry-aged beef, wood-smoked duck, hand-cut pasta. No foam, no theater. Just exceptional ingredients treated with respect.
+            Ember &amp; Oak is built around the fire. Dry-aged beef, wood-smoked duck, hand-cut pasta. No foam, no theater. Just exceptional ingredients treated with respect.
           </p>
 
           {/* CTAs */}

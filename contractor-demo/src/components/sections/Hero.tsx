@@ -44,7 +44,7 @@ export default function Hero() {
 
           {/* Subheadline */}
           <p className="text-lg text-navy-200 leading-relaxed mb-8 max-w-lg">
-            Heating, cooling, plumbing, and water heaters — we fix it right the first time. Serving Lake and Geauga counties for over 22 years. Licensed, insured, and available around the clock.
+            Heating, cooling, plumbing, and water heaters. We fix it right the first time. Serving Lake and Geauga counties for over 22 years. Licensed, insured, and available around the clock.
           </p>
 
           {/* CTAs */}

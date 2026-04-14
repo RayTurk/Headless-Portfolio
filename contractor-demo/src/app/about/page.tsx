@@ -155,7 +155,7 @@ export default function AboutPage() {
           </div>
           <h2 className="text-3xl font-bold mb-4">Our Promise to You</h2>
           <p className="text-navy-300 leading-relaxed text-lg mb-8">
-            We will never recommend a repair or replacement you don't need. We will never start work without a written quote you've approved. And if our work ever fails, we'll make it right — no questions asked.
+            We will never recommend a repair or replacement you don't need. We will never start work without a written quote you've approved. And if our work ever fails, we'll make it right. No questions asked.
           </p>
           <Link
             href="/contact"

@@ -6,7 +6,7 @@ import { siteConfig } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Our story — Clover Garden Centre has been rooted in Hudson, Ohio since 1987. Learn about our family, our plants, and our commitment to the community.',
+  description: 'Our story. Clover Garden Centre has been rooted in Hudson, Ohio since 1987. Learn about our family, our plants, and our commitment to the community.',
 };
 
 const team = [

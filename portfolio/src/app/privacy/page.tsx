@@ -3,7 +3,7 @@ import { generatePageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Privacy Policy',
-  description: 'Privacy policy for rturk.me — how your data is collected and used.',
+  description: 'Privacy policy for rturk.me: how your data is collected and used.',
   path: '/privacy',
   noIndex: true,
 });

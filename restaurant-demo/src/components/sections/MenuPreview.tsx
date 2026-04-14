@@ -59,7 +59,7 @@ export default function MenuPreview() {
         </div>
 
         <p className="mt-10 text-xs text-ember-600 font-sans italic">
-          Menu changes seasonally. Dietary accommodations available — please inform your server of any allergies.
+          Menu changes seasonally. Dietary accommodations available. Please inform your server of any allergies.
         </p>
       </div>
     </section>

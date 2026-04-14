@@ -88,7 +88,7 @@ export const features: Feature[] = [
     id: '7',
     title: 'API Endpoint Monitoring',
     description:
-      'POST, PUT, DELETE — monitor any HTTP method with custom headers and request bodies. Assert on response JSON.',
+      'POST, PUT, DELETE. Monitor any HTTP method with custom headers and request bodies. Assert on response JSON.',
     icon: 'code-2',
     category: 'monitoring',
   },
@@ -133,7 +133,7 @@ export const howItWorksSteps: HowItWorksStep[] = [
     step: 3,
     title: 'Sleep soundly',
     description:
-      'Beacon watches 24/7. When something breaks, the right person gets paged immediately — before customers notice.',
+      'Beacon watches 24/7. When something breaks, the right person gets paged immediately. Before customers notice.',
     icon: 'shield-check',
   },
 ];

@@ -6,7 +6,7 @@ import { services } from '@/lib/data';
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    'Full breakdown of Revive Auto Detailing services — exterior wash, interior deep clean, paint correction, ceramic coating, headlight restoration, and engine bay detailing.',
+    'Full breakdown of Revive Auto Detailing services. Exterior wash, interior deep clean, paint correction, ceramic coating, headlight restoration, and engine bay detailing.',
 };
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {

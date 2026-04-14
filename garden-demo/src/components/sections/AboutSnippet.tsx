@@ -42,7 +42,7 @@ export default function AboutSnippet() {
 
             <p className="text-stone-600 leading-relaxed mb-6">
               Clover Garden Centre started with a single greenhouse and a family obsessed with plants.
-              Today, we cover five acres in Hudson and carry thousands of varieties — but we still know
+              Today, we cover five acres in Hudson and carry thousands of varieties. But we still know
               most of our customers by name.
             </p>
 

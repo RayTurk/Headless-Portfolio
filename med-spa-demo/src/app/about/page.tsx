@@ -6,7 +6,7 @@ import BookingCTA from '@/components/sections/BookingCTA';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Meet the team at Luminary Aesthetics — board-certified practitioners committed to natural, refined results in Chagrin Falls, OH.',
+    'Meet the team at Luminary Aesthetics. Board-certified practitioners committed to natural, refined results in Chagrin Falls, OH.',
 };
 
 export default function AboutPage() {

@@ -9,7 +9,7 @@ export const revalidate = 3600 // Revalidate every hour
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Projects',
-  description: 'Explore portfolio projects by Ray Turk — WordPress sites, custom Next.js builds, and web maintenance work for clients across Ohio and beyond.',
+  description: 'Explore portfolio projects by Ray Turk. WordPress sites, custom Next.js builds, and web maintenance work for clients across Ohio and beyond.',
   path: '/projects',
 });
 

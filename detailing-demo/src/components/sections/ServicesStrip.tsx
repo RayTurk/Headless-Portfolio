@@ -42,7 +42,7 @@ export default function ServicesStrip() {
             </h2>
           </div>
           <p className="hidden lg:block text-zinc-500 text-sm leading-relaxed max-w-xs mt-4 lg:mt-0">
-            From a weekly maintenance wash to a full ceramic coating install — the same precision, every time.
+            From a weekly maintenance wash to a full ceramic coating install. The same precision, every time.
           </p>
         </div>
 

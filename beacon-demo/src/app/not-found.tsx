@@ -14,7 +14,7 @@ export default function NotFound() {
         <div className="text-6xl font-bold text-orange-500 mb-4">404</div>
         <h1 className="text-2xl font-bold text-white mb-3">Page not found</h1>
         <p className="text-slate-400 mb-8">
-          We monitor uptime for thousands of endpoints — but this one doesn&rsquo;t exist.
+          We monitor uptime for thousands of endpoints. But this one doesn&rsquo;t exist.
         </p>
 
         <Link

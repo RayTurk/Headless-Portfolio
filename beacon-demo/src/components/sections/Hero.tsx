@@ -40,7 +40,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg text-slate-400 leading-relaxed mb-8 max-w-xl">
-              Beacon monitors your websites and APIs every 30 seconds from 8 global locations. Get paged on Slack or PagerDuty the instant something breaks — before a single user notices.
+              Beacon monitors your websites and APIs every 30 seconds from 8 global locations. Get paged on Slack or PagerDuty the instant something breaks. Before a single user notices.
             </p>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12">
@@ -138,7 +138,7 @@ export default function Hero() {
               {/* Mini response time chart */}
               <div className="px-5 py-4 border-t border-slate-800">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs text-slate-500">Response time — last 15 checks</span>
+                  <span className="text-xs text-slate-500">Response time. Last 15 checks</span>
                   <span className="text-xs text-orange-400 font-mono">avg 93ms</span>
                 </div>
                 <div className="flex items-end gap-0.5 h-10">

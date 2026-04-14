@@ -23,7 +23,7 @@ export default function ResultsGallery() {
             <em className="text-blush-500 not-italic">the transformation</em>
           </h2>
           <p className="mt-4 text-base text-drift font-sans leading-relaxed">
-            Every result shown is from a real Luminary patient. Individual outcomes vary — that&rsquo;s why every plan begins with a personal consultation.
+            Every result shown is from a real Luminary patient. Individual outcomes vary. That&rsquo;s why every plan begins with a personal consultation.
           </p>
         </div>
 

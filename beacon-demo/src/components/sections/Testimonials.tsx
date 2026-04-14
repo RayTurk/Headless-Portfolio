@@ -13,7 +13,7 @@ export default function Testimonials() {
             Engineering teams rely on Beacon
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto">
-            From solo founders to DevOps leads at scale-ups — here&rsquo;s what they say.
+            From solo founders to DevOps leads at scale-ups. Here&rsquo;s what they say.
           </p>
         </div>
 

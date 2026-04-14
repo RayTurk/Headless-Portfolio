@@ -43,7 +43,7 @@ export default function FeaturesPage() {
             Everything your team needs to stay on top of uptime
           </h1>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            From 30-second HTTP checks to branded status pages and SLA reports — Beacon gives your team the full picture.
+            From 30-second HTTP checks to branded status pages and SLA reports. Beacon gives your team the full picture.
           </p>
         </div>
       </section>
@@ -81,7 +81,7 @@ export default function FeaturesPage() {
             </p>
             <h2 className="text-3xl font-bold text-white mb-4">Plugs into your existing stack</h2>
             <p className="text-slate-400 max-w-xl mx-auto">
-              Connect Beacon to the tools your team already uses — in minutes, not days.
+              Connect Beacon to the tools your team already uses. In minutes, not days.
             </p>
           </div>
 

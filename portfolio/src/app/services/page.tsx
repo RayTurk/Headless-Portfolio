@@ -186,7 +186,7 @@ export default function ServicesPage() {
               </h2>
               <p className="text-surface-400 mb-8 max-w-xl mx-auto">
                 Not sure what your site needs? I will run a comprehensive audit covering security,
-                performance, SEO, and more — completely free, no strings attached.
+                performance, SEO, and more. Completely free, no strings attached.
               </p>
               <a
                 href="/audit"

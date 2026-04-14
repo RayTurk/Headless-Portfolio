@@ -5,7 +5,7 @@ const differentiators = [
   {
     title: 'Flat-Rate Pricing',
     description:
-      'You get a written quote before we start — the price never changes once you approve it. No overtime charges, no hidden fees.',
+      'You get a written quote before we start. The price never changes once you approve it. No overtime charges, no hidden fees.',
   },
   {
     title: 'NATE-Certified Technicians',
@@ -15,7 +15,7 @@ const differentiators = [
   {
     title: 'Same-Day Service',
     description:
-      'Most calls are serviced the same day. Emergency calls are prioritized — we aim for 90-minute response for urgent issues.',
+      'Most calls are serviced the same day. Emergency calls are prioritized. We aim for 90-minute response for urgent issues.',
   },
   {
     title: '1-Year Labor Warranty',

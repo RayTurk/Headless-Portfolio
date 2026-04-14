@@ -142,7 +142,7 @@ export default function BookingPage() {
                   {[
                     { step: '01', text: 'Complete this form or call us directly' },
                     { step: '02', text: 'We confirm your appointment within 24 hours' },
-                    { step: '03', text: '30-minute consultation — no commitment required' },
+                    { step: '03', text: '30-minute consultation. No commitment required' },
                     { step: '04', text: 'We design a personalized treatment plan together' },
                   ].map((item) => (
                     <li key={item.step} className="flex gap-4">

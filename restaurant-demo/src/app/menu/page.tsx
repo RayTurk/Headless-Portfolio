@@ -5,7 +5,7 @@ import ReservationsCTA from '@/components/sections/ReservationsCTA';
 export const metadata: Metadata = {
   title: 'Menu',
   description:
-    'The Ember & Oak menu — wood-fired starters, signature mains, sides, and desserts. Seasonal and locally sourced. Cleveland, OH.',
+    'The Ember & Oak menu. Wood-fired starters, signature mains, sides, and desserts. Seasonal and locally sourced. Cleveland, OH.',
 };
 
 export default function MenuPage() {
@@ -22,7 +22,7 @@ export default function MenuPage() {
             The <em className="font-light italic text-gold-400">Menu</em>
           </h1>
           <p className="text-sm text-stone font-sans max-w-xl leading-relaxed">
-            Our menu reflects what&rsquo;s best right now — sourced from regional farms and our relationships with local producers. Menu changes seasonally.
+            Our menu reflects what&rsquo;s best right now. Sourced from regional farms and our relationships with local producers. Menu changes seasonally.
           </p>
         </div>
       </section>

@@ -47,7 +47,7 @@ export const services: ContractorService[] = [
     shortDescription:
       'Furnace installation, repair, and tune-ups. Stay warm all winter with our certified heating technicians.',
     fullDescription:
-      "When temperatures drop in Northeast Ohio, your heating system is critical. Our certified technicians install, repair, and maintain all major furnace brands including Carrier, Trane, Lennox, and Rheem. Whether you need an emergency repair on a freezing night or a planned system replacement, Summit HVAC responds fast and gets it right the first time. We offer transparent pricing with no hidden fees — you'll know the cost before we start any work.",
+      "When temperatures drop in Northeast Ohio, your heating system is critical. Our certified technicians install, repair, and maintain all major furnace brands including Carrier, Trane, Lennox, and Rheem. Whether you need an emergency repair on a freezing night or a planned system replacement, Summit HVAC responds fast and gets it right the first time. We offer transparent pricing with no hidden fees. You'll know the cost before we start any work.",
     icon: 'flame',
     accentColor: 'bg-orange-100 text-orange-600',
     features: [
@@ -88,7 +88,7 @@ export const services: ContractorService[] = [
       {
         question: 'How do I know if I need a repair or a full replacement?',
         answer:
-          "If your furnace is under 15 years old and the repair cost is less than 50% of a new unit, repair usually makes sense. We give honest recommendations — we won't push unnecessary replacements.",
+          "If your furnace is under 15 years old and the repair cost is less than 50% of a new unit, repair usually makes sense. We give honest recommendations. We won't push unnecessary replacements.",
       },
       {
         question: 'Do you offer financing for new furnaces?',
@@ -111,7 +111,7 @@ export const services: ContractorService[] = [
     shortDescription:
       'Central AC installation, repair, and seasonal maintenance to keep you cool through Cleveland summers.',
     fullDescription:
-      "Ohio summers can be brutal, and a failing air conditioner is more than an inconvenience — it can be a health risk for elderly family members and young children. Summit HVAC provides same-day AC repair for most issues, plus expert installation of energy-efficient central air systems, ductless mini-splits, and whole-home ventilation. Our NATE-certified technicians diagnose problems correctly the first time.",
+      "Ohio summers can be brutal, and a failing air conditioner is more than an inconvenience. It can be a health risk for elderly family members and young children. Summit HVAC provides same-day AC repair for most issues, plus expert installation of energy-efficient central air systems, ductless mini-splits, and whole-home ventilation. Our NATE-certified technicians diagnose problems correctly the first time.",
     icon: 'wind',
     accentColor: 'bg-sky-100 text-sky-600',
     features: [
@@ -149,7 +149,7 @@ export const services: ContractorService[] = [
     ],
     faqs: [
       {
-        question: "My AC is running but not cooling — what's wrong?",
+        question: "My AC is running but not cooling. What's wrong?",
         answer:
           "Most likely causes are low refrigerant, a dirty condenser coil, or a failing compressor. We'll diagnose it exactly and give you options.",
       },
@@ -172,7 +172,7 @@ export const services: ContractorService[] = [
     slug: 'plumbing',
     title: 'Plumbing',
     shortDescription:
-      'From dripping faucets to burst pipes — licensed plumbers serving Greater Cleveland around the clock.',
+      'From dripping faucets to burst pipes. Licensed plumbers serving Greater Cleveland around the clock.',
     fullDescription:
       "Water damage is one of the most expensive home repairs you can face. Summit's licensed plumbers respond fast to leaks, clogs, and plumbing emergencies to minimize damage and get your home back to normal. We handle everything from routine drain cleaning and water heater installation to whole-house repiping. All work is permitted and code-compliant.",
     icon: 'droplets',
@@ -196,7 +196,7 @@ export const services: ContractorService[] = [
         step: 2,
         title: 'Camera Inspection',
         description:
-          'We use video camera inspection on drain and sewer issues to find the exact problem location — no guessing.',
+          'We use video camera inspection on drain and sewer issues to find the exact problem location. No guessing.',
       },
       {
         step: 3,
@@ -213,7 +213,7 @@ export const services: ContractorService[] = [
     ],
     faqs: [
       {
-        question: 'My water heater is leaking — is it an emergency?',
+        question: 'My water heater is leaking. Is it an emergency?',
         answer:
           "Yes, treat it as one. A leaking water heater can cause floor and structural damage quickly. Call us right away and we'll get a tech out fast.",
       },
@@ -238,7 +238,7 @@ export const services: ContractorService[] = [
     shortDescription:
       'Tank and tankless water heater installation, repair, and replacement by licensed plumbers.',
     fullDescription:
-      "A failing water heater disrupts your entire household. Summit installs and services all types — traditional tank, tankless (on-demand), heat pump, and solar-assisted. We carry top brands in stock and can often complete same-day installations. Our licensed plumbers properly size every system to match your household's hot water demand so you never run cold again.",
+      "A failing water heater disrupts your entire household. Summit installs and services all types. Traditional tank, tankless (on-demand), heat pump, and solar-assisted. We carry top brands in stock and can often complete same-day installations. Our licensed plumbers properly size every system to match your household's hot water demand so you never run cold again.",
     icon: 'thermometer',
     accentColor: 'bg-amber-100 text-amber-600',
     features: [
@@ -282,7 +282,7 @@ export const services: ContractorService[] = [
           'Tank water heaters typically last 8–12 years. Tankless units last 20+ years with proper maintenance. If yours is over 10 years old and having issues, replacement often makes more financial sense than repair.',
       },
       {
-        question: 'Tankless vs. tank — which is better?',
+        question: 'Tankless vs. tank. Which is better?',
         answer:
           'Tankless wins on efficiency (20–30% less energy), space savings, and lifespan. Tank wins on lower upfront cost. We help you run the numbers for your specific situation.',
       },
@@ -302,7 +302,7 @@ export const services: ContractorService[] = [
     shortDescription:
       'Whole-home air filtration, humidifiers, UV purifiers, and duct cleaning for healthier indoor air.',
     fullDescription:
-      "The EPA estimates indoor air can be 2–5x more polluted than outdoor air. Summit offers a full range of indoor air quality solutions to reduce allergens, eliminate odors, control humidity, and kill airborne pathogens. Our solutions integrate directly into your existing HVAC system for whole-home coverage — no portable units or constant filter replacements.",
+      "The EPA estimates indoor air can be 2–5x more polluted than outdoor air. Summit offers a full range of indoor air quality solutions to reduce allergens, eliminate odors, control humidity, and kill airborne pathogens. Our solutions integrate directly into your existing HVAC system for whole-home coverage. No portable units or constant filter replacements.",
     icon: 'shield',
     accentColor: 'bg-emerald-100 text-emerald-600',
     features: [
@@ -330,7 +330,7 @@ export const services: ContractorService[] = [
         step: 3,
         title: 'Professional Installation',
         description:
-          'All equipment integrates with your existing HVAC system — no standalone units that take up floor space.',
+          'All equipment integrates with your existing HVAC system. No standalone units that take up floor space.',
       },
       {
         step: 4,
@@ -343,7 +343,7 @@ export const services: ContractorService[] = [
       {
         question: 'Who benefits most from improved indoor air quality?',
         answer:
-          "Anyone with allergies, asthma, pets, or young children sees the biggest improvement. But better air quality benefits everyone — it reduces sick days and improves sleep quality.",
+          "Anyone with allergies, asthma, pets, or young children sees the biggest improvement. But better air quality benefits everyone. It reduces sick days and improves sleep quality.",
       },
       {
         question: "Do UV lights really kill viruses?",
@@ -353,7 +353,7 @@ export const services: ContractorService[] = [
       {
         question: "What's the right humidity level for a home?",
         answer:
-          "30–50% relative humidity is ideal. Below 30% causes dry skin and static electricity. Above 50% promotes mold growth. Ohio winters often push indoor humidity well below 30% — a whole-home humidifier solves this.",
+          "30–50% relative humidity is ideal. Below 30% causes dry skin and static electricity. Above 50% promotes mold growth. Ohio winters often push indoor humidity well below 30%. A whole-home humidifier solves this.",
       },
     ],
     emergencyAvailable: false,

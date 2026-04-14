@@ -12,14 +12,14 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Beacon — Uptime Monitoring for Modern Teams',
+    default: 'Beacon | Uptime Monitoring for Modern Teams',
     template: '%s | Beacon',
   },
   description:
     'Know before your customers do. Beacon monitors your websites and APIs every 30 seconds from 8 global locations with instant Slack and PagerDuty alerts.',
   keywords: ['uptime monitoring', 'API monitoring', 'status page', 'incident alerts', 'SaaS'],
   openGraph: {
-    title: 'Beacon — Uptime Monitoring for Modern Teams',
+    title: 'Beacon | Uptime Monitoring for Modern Teams',
     description: 'Know before your customers do.',
     type: 'website',
   },

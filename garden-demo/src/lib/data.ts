@@ -101,7 +101,7 @@ export const products: Product[] = [
     name: "Hydrangea 'Endless Summer'",
     category: 'Shrubs',
     categorySlug: 'trees-shrubs',
-    shortDescription: 'Reblooming mophead — blue in acidic soil, pink in alkaline. Re-blooms reliably.',
+    shortDescription: 'Reblooming mophead. Blue in acidic soil, pink in alkaline. Re-blooms reliably.',
     price: 34.99,
     originalPrice: 44.99,
     unit: '2 gal. pot',
@@ -254,7 +254,7 @@ export const products: Product[] = [
     name: 'Herb Garden 3-Pack',
     category: 'Annuals',
     categorySlug: 'annuals',
-    shortDescription: 'Basil, parsley, and chives — ready to plant or pot. Organic starts.',
+    shortDescription: 'Basil, parsley, and chives. Ready to plant or pot. Organic starts.',
     price: 10.99,
     unit: '3-pack',
     rating: 4,
@@ -291,7 +291,7 @@ export const testimonials: Testimonial[] = [
     location: 'Hudson, OH',
     rating: 5,
     quote:
-      "I've been coming to Clover since the early nineties. The staff actually knows plants — not just how to ring them up, but which varieties will thrive in our clay soil, which ones the deer will leave alone. That kind of knowledge is irreplaceable. My garden is proof.",
+      "I've been coming to Clover since the early nineties. The staff actually knows plants. Not just how to ring them up, but which varieties will thrive in our clay soil, which ones the deer will leave alone. That kind of knowledge is irreplaceable. My garden is proof.",
     context: 'Loyal customer since 1993',
   },
   {

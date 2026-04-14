@@ -35,7 +35,7 @@ export default function Hero() {
 
           {/* Description */}
           <p className="text-zinc-400 text-lg leading-relaxed mb-10 max-w-md relative">
-            Ceramic coatings, paint correction, and interior restoration — by
+            Ceramic coatings, paint correction, and interior restoration. By
             certified technicians who care about your car as much as you do.
           </p>
 
@@ -101,7 +101,7 @@ export default function Hero() {
             <p className="text-white text-sm font-semibold leading-snug mb-2">
               "Looks better than the day I picked it up from the dealer."
             </p>
-            <p className="text-zinc-500 text-xs">Derek M. — 2021 BMW M4</p>
+            <p className="text-zinc-500 text-xs">Derek M., 2021 BMW M4</p>
           </div>
 
           {/* Amber accent stripe at base */}

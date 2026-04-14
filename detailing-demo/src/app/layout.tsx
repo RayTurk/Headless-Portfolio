@@ -13,7 +13,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.businessName} | Premium Auto Detailing — Brooklyn, OH`,
+    default: `${siteConfig.businessName} | Premium Auto Detailing | Brooklyn, OH`,
     template: `%s | ${siteConfig.businessName}`,
   },
   description:

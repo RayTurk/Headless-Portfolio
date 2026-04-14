@@ -15,7 +15,7 @@ const timelineData: TimelineItem[] = [
     year: '2014–2020',
     title: 'Lakeland Community College',
     description:
-      'Earned an Associate\'s degree in Web Page, Digital/Multimedia and Information Resources Design — where the passion for building on the web first took root.',
+      'Earned an Associate\'s degree in Web Page, Digital/Multimedia and Information Resources Design. Where the passion for building on the web first took root.',
   },
   {
     year: '2015–2021',
@@ -27,13 +27,13 @@ const timelineData: TimelineItem[] = [
     year: '2021–2024',
     title: 'Web Developer · Company 119',
     description:
-      'Made the full leap into professional web development. Built and maintained WordPress sites for a range of clients out of Chardon, Ohio — learning the full lifecycle of a client project from kickoff to launch to long-term care.',
+      'Made the full leap into professional web development. Built and maintained WordPress sites for a range of clients out of Chardon, Ohio. Learning the full lifecycle of a client project from kickoff to launch to long-term care.',
   },
   {
     year: '2024–2025',
     title: 'WordPress Developer · Full Spectrum Marketing',
     description:
-      'Joined FSM in Akron to deepen WordPress expertise in an agency environment — custom themes, plugins, and ongoing client site management across diverse industries.',
+      'Joined FSM in Akron to deepen WordPress expertise in an agency environment. Custom themes, plugins, and ongoing client site management across diverse industries.',
   },
   {
     year: '2025–Present',

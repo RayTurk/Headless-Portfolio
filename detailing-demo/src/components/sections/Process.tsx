@@ -28,7 +28,7 @@ export default function Process() {
               </p>
 
               {/*
-                📸 IMAGE SLOT — Process section accent
+                📸 IMAGE SLOT. Process section accent
                 Optionally add a small portrait image here:
                   <div className="mt-10 rounded-xl overflow-hidden aspect-[4/3]">
                     <Image src="/images/process-detail.jpg" width={400} height={300} className="object-cover" alt="Detailer at work" />

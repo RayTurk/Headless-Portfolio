@@ -48,7 +48,7 @@ export default function PricingCard({ tier, annual, className }: PricingCardProp
 
         {!isFree && annual && (
           <p className="text-xs text-emerald-400 mb-5">
-            Billed annually — save ~20%
+            Billed annually. Save ~20%
           </p>
         )}
         {!isFree && !annual && (

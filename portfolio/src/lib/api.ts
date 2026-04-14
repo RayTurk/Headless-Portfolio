@@ -110,7 +110,7 @@ export async function getAllProjects(
     // CMS returned no projects — fall back to static data
     return { projects: STATIC_PROJECTS, pageInfo: { hasNextPage: false, hasPreviousPage: false } };
   } catch (error) {
-    console.error('Error fetching all projects — using static fallback:', error);
+    console.error('Error fetching all projects. Using static fallback:', error);
     return {
       projects: STATIC_PROJECTS,
       pageInfo: { hasNextPage: false, hasPreviousPage: false },
@@ -135,7 +135,7 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
     // CMS returned nothing — try static fallback
     return STATIC_PROJECTS.find((p) => p.slug === slug) || null;
   } catch (error) {
-    console.error(`Error fetching project with slug ${slug} — trying static fallback:`, error);
+    console.error(`Error fetching project with slug ${slug}. Trying static fallback:`, error);
     return STATIC_PROJECTS.find((p) => p.slug === slug) || null;
   }
 }
@@ -162,7 +162,7 @@ export async function getFeaturedProjects(): Promise<Project[]> {
     // CMS returned nothing — fall back to static featured projects
     return STATIC_FEATURED_PROJECTS.slice(0, FEATURED_PROJECTS_COUNT);
   } catch (error) {
-    console.error('Error fetching featured projects — using static fallback:', error);
+    console.error('Error fetching featured projects. Using static fallback:', error);
     return STATIC_FEATURED_PROJECTS.slice(0, FEATURED_PROJECTS_COUNT);
   }
 }
@@ -183,7 +183,7 @@ export async function getAllProjectSlugs(): Promise<string[]> {
     if (slugs.length > 0) return slugs;
     return STATIC_PROJECTS.map((p) => p.slug);
   } catch (error) {
-    console.error('Error fetching project slugs — using static fallback:', error);
+    console.error('Error fetching project slugs. Using static fallback:', error);
     return STATIC_PROJECTS.map((p) => p.slug);
   }
 }

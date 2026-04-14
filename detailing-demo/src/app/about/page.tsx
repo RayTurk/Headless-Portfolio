@@ -6,7 +6,7 @@ import { siteConfig, teamMembers } from '@/lib/data';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Learn about Revive Auto Detailing — our story, team, and ceramic certifications. Serving Greater Cleveland since 2016.',
+    'Learn about Revive Auto Detailing. Our story, team, and ceramic certifications. Serving Greater Cleveland since 2016.',
 };
 
 export default function AboutPage() {
@@ -25,7 +25,7 @@ export default function AboutPage() {
               We do this because we love cars.
             </h1>
             <p className="text-zinc-400 text-lg leading-relaxed">
-              Revive started in Marcus Webb&apos;s garage in 2016 — evenings and weekends spent detailing
+              Revive started in Marcus Webb&apos;s garage in 2016. Evenings and weekends spent detailing
               friends&apos; cars for the love of it. What started as a hobby became a calling. Eight years
               later, we&apos;ve detailed over 2,000 vehicles and built a team of technicians who share the
               same obsession with getting it right.
@@ -63,17 +63,17 @@ export default function AboutPage() {
                 Drive-through car washes leave micro-scratches in your paint every single time. Automated
                 equipment can&apos;t reach door jambs, intricate wheels, or the crevices that trap road
                 grime. They push dirt across your paint with recirculated water. It&apos;s not a detail
-                — it&apos;s damage.
+               . It&apos;s damage.
               </p>
               <p>
                 At Revive, every vehicle is hand-washed with fresh, clean water and proper microfiber
                 technique. Every wheel is cleaned individually. Every door jamb gets attention. We treat
-                every car like it&apos;s going to a show — because to the owner, it matters.
+                every car like it&apos;s going to a show. Because to the owner, it matters.
               </p>
               <p>
                 Our detailers are trained and certified through the International Detailing Association and
                 leading product manufacturers like CARPRO and Gyeon. We don&apos;t guess at products or
-                processes — we invest in education and the right tools.
+                processes. We invest in education and the right tools.
               </p>
             </div>
           </div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
                 icon: Award,
                 title: 'Honest Pricing',
                 description:
-                  'We quote before we start. If we discover additional work needed during an inspection, we call you first — always.',
+                  'We quote before we start. If we discover additional work needed during an inspection, we call you first. Always.',
               },
               {
                 icon: Users,

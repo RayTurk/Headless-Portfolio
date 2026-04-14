@@ -20,7 +20,7 @@ export default function CtaBanner() {
               Start monitoring in 60 seconds
             </h2>
             <p className="text-slate-300 text-lg max-w-xl mx-auto mb-8">
-              Add your first monitor free — no credit card required. Upgrade when your team is ready.
+              Add your first monitor free. No credit card required. Upgrade when your team is ready.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

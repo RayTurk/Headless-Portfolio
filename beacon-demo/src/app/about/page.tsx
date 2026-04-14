@@ -21,13 +21,13 @@ const values = [
     icon: Globe,
     title: 'Global by default',
     description:
-      'Regional outages are real. Multi-location checking isn\'t a "Pro" feature — it\'s the baseline. Every plan checks from multiple locations.',
+      'Regional outages are real. Multi-location checking isn\'t a "Pro" feature. It\'s the baseline. Every plan checks from multiple locations.',
   },
   {
     icon: Heart,
     title: 'Calm alerting',
     description:
-      'Alert fatigue is an epidemic. Beacon is designed to page you only when something actually needs your attention — and to stop when it\'s resolved.',
+      'Alert fatigue is an epidemic. Beacon is designed to page you only when something actually needs your attention. And to stop when it\'s resolved.',
   },
 ];
 

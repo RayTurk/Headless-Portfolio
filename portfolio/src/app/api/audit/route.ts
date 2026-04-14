@@ -101,7 +101,7 @@ export async function POST(req: NextRequest) {
       message: `Server responded in ${responseTimeMs}ms`,
       detail:
         responseTimeMs < 1500
-          ? 'Fast server response — great for SEO and user experience.'
+          ? 'Fast server response. Great for SEO and user experience.'
           : responseTimeMs < 3000
           ? 'Response time is acceptable but could be faster. Consider a CDN or better hosting.'
           : 'Slow server response. Google recommends under 200ms TTFB. Consider upgrading hosting or enabling caching.',
@@ -111,7 +111,7 @@ export async function POST(req: NextRequest) {
   } catch (err: unknown) {
     const msg = err instanceof Error && err.name === 'AbortError'
       ? 'Request timed out after 12 seconds'
-      : 'Could not reach the site — it may be down or blocking automated requests';
+      : 'Could not reach the site. It may be down or blocking automated requests';
     fetchError = msg;
 
     checks.push({
@@ -142,7 +142,7 @@ export async function POST(req: NextRequest) {
         ? 'No title tag found'
         : `Title is ${titleLen} characters: "${titleDecoded.substring(0, 60)}${titleLen > 60 ? '…' : ''}"`,
       detail: !titleDecoded
-        ? 'Add a <title> tag. It appears in search results and browser tabs — it\'s one of the most important SEO elements.'
+        ? 'Add a <title> tag. It appears in search results and browser tabs. It\'s one of the most important SEO elements.'
         : titleLen < 30
         ? 'Title is too short. Aim for 50–65 characters to make full use of search result space.'
         : titleLen > 65
@@ -195,7 +195,7 @@ export async function POST(req: NextRequest) {
       detail: h1Count === 0
         ? 'Add one H1 tag per page. It tells search engines what your page is about.'
         : h1Count === 1
-        ? 'One H1 tag found — exactly right.'
+        ? 'One H1 tag found. Exactly right.'
         : 'Multiple H1 tags can dilute your SEO signal. Stick to one per page.',
       points: h1Count === 1 ? 8 : h1Count === 0 ? 0 : 4,
       maxPoints: 8,
@@ -210,7 +210,7 @@ export async function POST(req: NextRequest) {
       status: viewport ? 'pass' : 'fail',
       message: viewport ? 'Viewport meta tag is present' : 'No viewport meta tag found',
       detail: viewport
-        ? 'Good — your site is set up to display correctly on mobile devices.'
+        ? 'Good. Your site is set up to display correctly on mobile devices.'
         : 'Add <meta name="viewport" content="width=device-width, initial-scale=1"> for proper mobile rendering. Google uses mobile-first indexing.',
       points: viewport ? 8 : 0,
       maxPoints: 8,
@@ -232,7 +232,7 @@ export async function POST(req: NextRequest) {
           ? `All ${imgTotal} images have alt attributes`
           : `${imgMissingAlt} of ${imgTotal} images are missing alt attributes`,
         detail: imgMissingAlt === 0
-          ? 'All images have descriptive alt text — great for accessibility and image SEO.'
+          ? 'All images have descriptive alt text. Great for accessibility and image SEO.'
           : 'Add descriptive alt text to all images. This helps visually impaired users and lets search engines understand your images.',
         points: imgMissingAlt === 0 ? 8 : imgMissingAlt <= 2 ? 4 : 0,
         maxPoints: 8,
@@ -280,7 +280,7 @@ export async function POST(req: NextRequest) {
       status: ogTitle ? 'pass' : 'warning',
       message: ogTitle ? `OG title: "${ogTitle.substring(0, 50)}"` : 'No og:title found',
       detail: ogTitle
-        ? 'Open Graph title is set — your page will look good when shared on social media.'
+        ? 'Open Graph title is set. Your page will look good when shared on social media.'
         : 'Add <meta property="og:title"> to control how your page appears when shared on Facebook, LinkedIn, etc.',
       points: ogTitle ? 4 : 0,
       maxPoints: 4,
@@ -327,7 +327,7 @@ export async function POST(req: NextRequest) {
       status: hasFavicon ? 'pass' : 'warning',
       message: hasFavicon ? 'Favicon is set' : 'No favicon found in HTML',
       detail: hasFavicon
-        ? 'Favicon is configured — your site displays a recognizable icon in browser tabs.'
+        ? 'Favicon is configured. Your site displays a recognizable icon in browser tabs.'
         : 'Add a favicon (<link rel="icon">) so your site has a recognizable icon in browser tabs and bookmarks.',
       points: hasFavicon ? 3 : 0,
       maxPoints: 3,

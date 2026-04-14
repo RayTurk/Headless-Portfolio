@@ -3,7 +3,7 @@ import { generatePageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Terms of Service',
-  description: 'Terms of service for rturk.me — the conditions under which this site and its services are provided.',
+  description: 'Terms of service for rturk.me: the conditions under which this site and its services are provided.',
   path: '/terms',
   noIndex: true,
 });
@@ -48,7 +48,7 @@ export default function TermsPage() {
               3. Intellectual Property
             </h2>
             <p>
-              All content on this site — including design, copy, code, and demo projects — is the
+              All content on this site. Including design, copy, code, and demo projects. Is the
               intellectual property of Ray Turk unless otherwise noted. You may not reproduce,
               distribute, or create derivative works without written permission.
             </p>

@@ -54,7 +54,7 @@ export const services: DetailingService[] = [
     shortDescription:
       'A thorough two-bucket hand wash that removes road grime, brake dust, and contaminants without swirling paint.',
     fullDescription:
-      'Our exterior hand wash is the foundation of every detail. We use pH-neutral soap, a two-bucket wash method with grit guards, and microfiber mitts to safely lift dirt without scratching your clear coat. Every vehicle is pre-rinsed, hand washed panel by panel, rinsed again, and dried with plush waffle-weave towels. Wheels, wheel wells, and door jambs are cleaned separately. This is how detailing should be done — not how the drive-through does it.',
+      'Our exterior hand wash is the foundation of every detail. We use pH-neutral soap, a two-bucket wash method with grit guards, and microfiber mitts to safely lift dirt without scratching your clear coat. Every vehicle is pre-rinsed, hand washed panel by panel, rinsed again, and dried with plush waffle-weave towels. Wheels, wheel wells, and door jambs are cleaned separately. This is how detailing should be done. Not how the drive-through does it.',
     icon: 'droplets',
     accentColor: 'bg-zinc-700/40 text-white',
     features: [
@@ -73,9 +73,9 @@ export const services: DetailingService[] = [
     slug: 'interior-deep-clean',
     title: 'Interior Deep Clean',
     shortDescription:
-      'Full interior vacuum, steam clean, and detail — seats, carpet, dash, vents, and door panels.',
+      'Full interior vacuum, steam clean, and detail. Seats, carpet, dash, vents, and door panels.',
     fullDescription:
-      "Life happens inside your car. Pet hair, coffee spills, kids, sports gear — it all takes a toll. Our interior deep clean starts with a full vacuum of every surface including under seats and in crevices. We steam clean and extract carpets and upholstery, wipe down all hard surfaces with appropriate cleaners, detail the vents and center console, dress and protect plastic and vinyl, and clean all glass inside. You'll step into a car that smells and feels new.",
+      "Life happens inside your car. Pet hair, coffee spills, kids, sports gear. It all takes a toll. Our interior deep clean starts with a full vacuum of every surface including under seats and in crevices. We steam clean and extract carpets and upholstery, wipe down all hard surfaces with appropriate cleaners, detail the vents and center console, dress and protect plastic and vinyl, and clean all glass inside. You'll step into a car that smells and feels new.",
     icon: 'sparkles',
     accentColor: 'bg-violet-500/15 text-violet-400',
     features: [
@@ -94,7 +94,7 @@ export const services: DetailingService[] = [
     slug: 'paint-correction',
     title: 'Paint Correction',
     shortDescription:
-      'Machine polishing to remove swirl marks, light scratches, and oxidation — restoring true paint depth.',
+      'Machine polishing to remove swirl marks, light scratches, and oxidation. Restoring true paint depth.',
     fullDescription:
       "Paint correction is the art of removing imperfections from your vehicle's clear coat using machine polishing. Swirl marks from automatic car washes, fine scratches from improper washing, water spot etching, and oxidation dullness are all correctable. We use a dual-action polisher with the appropriate compound and pad combination to safely cut and refine the clear coat, revealing the deep, glossy finish underneath. Before we start, we inspect your paint under LED lighting to map every defect and determine the correction needed.",
     icon: 'layers',
@@ -117,7 +117,7 @@ export const services: DetailingService[] = [
     shortDescription:
       'Professional-grade nano-ceramic protection that bonds to your paint for years of hydrophobic defense.',
     fullDescription:
-      "A ceramic coating is a liquid polymer that chemically bonds to your vehicle's factory paint, creating a protective layer that lasts years — not weeks. Unlike waxes and sealants that sit on top of the clear coat, ceramic coatings bond at the molecular level, providing 9H hardness, extreme hydrophobicity (water beads and rolls off), UV protection, and resistance to bird droppings, tree sap, and industrial fallout. Every ceramic coating installation at Revive includes a full paint correction to ensure you're sealing perfection, not defects.",
+      "A ceramic coating is a liquid polymer that chemically bonds to your vehicle's factory paint, creating a protective layer that lasts years. Not weeks. Unlike waxes and sealants that sit on top of the clear coat, ceramic coatings bond at the molecular level, providing 9H hardness, extreme hydrophobicity (water beads and rolls off), UV protection, and resistance to bird droppings, tree sap, and industrial fallout. Every ceramic coating installation at Revive includes a full paint correction to ensure you're sealing perfection, not defects.",
     icon: 'shield-check',
     accentColor: 'bg-blue-500/15 text-blue-400',
     features: [
@@ -136,9 +136,9 @@ export const services: DetailingService[] = [
     slug: 'headlight-restoration',
     title: 'Headlight Restoration',
     shortDescription:
-      'Restore hazy, yellowed headlights to crystal clarity — improving safety and curb appeal.',
+      'Restore hazy, yellowed headlights to crystal clarity. Improving safety and curb appeal.',
     fullDescription:
-      'Yellowed headlights reduce your light output by up to 80% — a safety issue as much as an aesthetic one. Our headlight restoration process sands through the oxidized outer layer of the polycarbonate lens using a wet-sand progression, then machine polishes to restore optical clarity. We finish with a UV-resistant sealant to protect the lens from re-yellowing. Results last 2–3 years with proper care.',
+      'Yellowed headlights reduce your light output by up to 80%. A safety issue as much as an aesthetic one. Our headlight restoration process sands through the oxidized outer layer of the polycarbonate lens using a wet-sand progression, then machine polishes to restore optical clarity. We finish with a UV-resistant sealant to protect the lens from re-yellowing. Results last 2–3 years with proper care.',
     icon: 'zap',
     accentColor: 'bg-yellow-500/15 text-yellow-400',
     features: [
@@ -157,9 +157,9 @@ export const services: DetailingService[] = [
     slug: 'engine-bay-cleaning',
     title: 'Engine Bay Cleaning',
     shortDescription:
-      'Safe degreasing and detailing of your engine compartment — looks factory-fresh, helps catch leaks.',
+      'Safe degreasing and detailing of your engine compartment. Looks factory-fresh, helps catch leaks.',
     fullDescription:
-      'A clean engine bay makes it easier to spot leaks, looks impressive when the hood goes up, and can even run slightly cooler by removing built-up grime that traps heat. We protect all sensitive electronics before any moisture is applied, apply an appropriate degreaser, agitate with brushes, rinse carefully, dry thoroughly, and dress all rubber and plastic components to prevent cracking. We never use high-pressure steam directly on electronics — safety is the priority.',
+      'A clean engine bay makes it easier to spot leaks, looks impressive when the hood goes up, and can even run slightly cooler by removing built-up grime that traps heat. We protect all sensitive electronics before any moisture is applied, apply an appropriate degreaser, agitate with brushes, rinse carefully, dry thoroughly, and dress all rubber and plastic components to prevent cracking. We never use high-pressure steam directly on electronics. Safety is the priority.',
     icon: 'wrench',
     accentColor: 'bg-orange-500/15 text-orange-400',
     features: [
@@ -200,7 +200,7 @@ export const packages: Package[] = [
   {
     id: '2',
     name: 'Signature',
-    tagline: 'Our most popular — the complete detail',
+    tagline: 'Our most popular. The complete detail',
     price: 189,
     duration: '3–4 hrs',
     includes: [
@@ -291,7 +291,7 @@ export const testimonials: Testimonial[] = [
     vehicle: '2021 BMW M4 Competition',
     rating: 5,
     quote:
-      "Had the Elite package done before a car show. The paint correction was flawless — the M4 looked better than it did the day I picked it up from the dealer. The before and after photos were jaw-dropping. Worth every penny.",
+      "Had the Elite package done before a car show. The paint correction was flawless. The M4 looked better than it did the day I picked it up from the dealer. The before and after photos were jaw-dropping. Worth every penny.",
     serviceReceived: 'Elite Package + Ceramic Coating',
   },
   {
@@ -300,7 +300,7 @@ export const testimonials: Testimonial[] = [
     vehicle: '2019 Honda CR-V',
     rating: 5,
     quote:
-      "I let the interior go for way too long — two kids and a dog will do that. The Signature package brought it back completely. The carpet extraction pulled out stains I'd given up on. My CR-V smells and looks brand new. I'm booked for quarterly maintenance now.",
+      "I let the interior go for way too long. Two kids and a dog will do that. The Signature package brought it back completely. The carpet extraction pulled out stains I'd given up on. My CR-V smells and looks brand new. I'm booked for quarterly maintenance now.",
     serviceReceived: 'Signature Package',
   },
   {
@@ -309,7 +309,7 @@ export const testimonials: Testimonial[] = [
     vehicle: '2018 Chevy Silverado 1500',
     rating: 5,
     quote:
-      "The truck sees a lot of job sites. Revive did the headlight restoration and full exterior detail. Headlights are crystal clear — I didn't realize how bad my night vision had gotten until now. Highly professional operation from start to finish.",
+      "The truck sees a lot of job sites. Revive did the headlight restoration and full exterior detail. Headlights are crystal clear. I didn't realize how bad my night vision had gotten until now. Highly professional operation from start to finish.",
     serviceReceived: 'Express Detail + Headlight Restoration',
   },
 ];
@@ -330,14 +330,14 @@ export const teamMembers: TeamMember[] = [
     id: '2',
     name: 'Jordan Reyes',
     title: 'Senior Detailer',
-    bio: "Jordan specializes in paint correction and ceramic coating installs. His eye for defects under LED lighting is unmatched — clients routinely say he caught scratches they didn't even know existed.",
+    bio: "Jordan specializes in paint correction and ceramic coating installs. His eye for defects under LED lighting is unmatched. Clients routinely say he caught scratches they didn't even know existed.",
     certifications: ['IDA Certified Detailer', 'Gyeon Certified Installer'],
   },
   {
     id: '3',
     name: 'Priya Nair',
     title: 'Interior Specialist',
-    bio: "Priya handles every interior restoration from basic vacuum-and-wipe to full leather restoration on vintage vehicles. She brings a surgeon's patience to every job — nothing is overlooked.",
+    bio: "Priya handles every interior restoration from basic vacuum-and-wipe to full leather restoration on vintage vehicles. She brings a surgeon's patience to every job. Nothing is overlooked.",
     certifications: ['Leather Restoration Certified', 'Odor Elimination Specialist'],
   },
 ];

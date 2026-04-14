@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.businessName}`,
   },
   description:
-    'Clover Garden Centre — Hudson, Ohio\'s full-service nursery and garden center. Annuals, perennials, trees, houseplants, and expert advice since 1987.',
+    'Clover Garden Centre, Hudson, Ohio\'s full-service nursery and garden center. Annuals, perennials, trees, houseplants, and expert advice since 1987.',
   keywords: [
     'garden center Hudson Ohio',
     'nursery Hudson OH',

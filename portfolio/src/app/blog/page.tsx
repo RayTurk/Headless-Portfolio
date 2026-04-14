@@ -8,7 +8,7 @@ export const revalidate = 3600 // Revalidate every hour
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Blog',
-  description: 'Web development tips, WordPress insights, and frontend tutorials from Ray Turk — a Cleveland-based full stack developer.',
+  description: 'Web development tips, WordPress insights, and frontend tutorials from Ray Turk. A Cleveland-based full stack developer.',
   path: '/blog',
 });
 

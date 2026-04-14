@@ -18,7 +18,7 @@ export default function Features() {
             Built for engineers, loved by ops teams
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
-            From a solo founder monitoring five endpoints to a DevOps team with an SLA dashboard — Beacon scales with your stack.
+            From a solo founder monitoring five endpoints to a DevOps team with an SLA dashboard. Beacon scales with your stack.
           </p>
         </div>
 

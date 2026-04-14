@@ -1,5 +1,5 @@
 /**
- * Static project data — used as the primary source while cms.rturk.me is
+ * Static project data. Used as the primary source while cms.rturk.me is
  * unavailable, and as a fallback whenever WPGraphQL is unreachable.
  *
  * When the CMS is restored and projects are entered in WordPress, this file
@@ -47,9 +47,9 @@ export const STATIC_PROJECTS: Project[] = [
     databaseId: 1,
     title: 'Summit HVAC & Plumbing',
     slug: 'summit-hvac',
-    excerpt: 'Full-featured contractor website built headless — WordPress manages content, Next.js delivers a fast, SEO-optimised front end for a Greater Cleveland home-service company.',
+    excerpt: 'Full-featured contractor website built headless. WordPress manages content, Next.js delivers a fast, SEO-optimised front end for a Greater Cleveland home-service company.',
     content: `<p>Summit HVAC &amp; Plumbing is a headless WordPress demo that shows how a traditional contractor business can benefit from a modern decoupled architecture. WordPress handles all content management while Next.js delivers a fast, fully static front end.</p>
-<p>The site features service listings, a team page, testimonials, an emergency contact CTA, and an area-coverage map — all driven by WPGraphQL and rebuilt automatically whenever content changes.</p>`,
+<p>The site features service listings, a team page, testimonials, an emergency contact CTA, and an area-coverage map. All driven by WPGraphQL and rebuilt automatically whenever content changes.</p>`,
     date: '2025-09-01T00:00:00',
     modified: '2025-09-01T00:00:00',
     featuredImage: {
@@ -118,7 +118,7 @@ export const STATIC_PROJECTS: Project[] = [
     title: 'Ember & Oak',
     slug: 'ember-oak',
     excerpt: 'Upscale restaurant website with animated hero, full digital menu, OpenTable integration prompt, and a private dining enquiry form. Dark, wood-fire aesthetic.',
-    content: `<p>Ember &amp; Oak is a fine-dining restaurant demo set in Cleveland, OH. The brief was to capture the warmth of a wood-fired kitchen — rich textures, dramatic photography, and deliberately slow-paced typography.</p>
+    content: `<p>Ember &amp; Oak is a fine-dining restaurant demo set in Cleveland, OH. The brief was to capture the warmth of a wood-fired kitchen. Rich textures, dramatic photography, and deliberately slow-paced typography.</p>
 <p>Sections include a full digital menu with sections &amp; dietary filters, a private dining enquiry form, a meet-the-team page, and a reservations prompt wired to OpenTable. Built entirely in Next.js with Framer Motion for entrance animations.</p>`,
     date: '2025-11-01T00:00:00',
     modified: '2025-11-01T00:00:00',
@@ -153,7 +153,7 @@ export const STATIC_PROJECTS: Project[] = [
     title: 'Revive Auto Detailing',
     slug: 'revive-detailing',
     excerpt: 'Auto-detailing shop site with service packages, an online booking form, before & after gallery, and a mobile-first layout designed for same-day appointment conversions.',
-    content: `<p>Revive Auto Detailing serves the Greater Cleveland area from a shop in Brooklyn, OH. The site needed to convert mobile visitors into same-day bookings — so the design leads with a clear package comparison, prominent pricing, and a lightweight booking form above the fold.</p>
+    content: `<p>Revive Auto Detailing serves the Greater Cleveland area from a shop in Brooklyn, OH. The site needed to convert mobile visitors into same-day bookings. So the design leads with a clear package comparison, prominent pricing, and a lightweight booking form above the fold.</p>
 <p>Additional sections cover the detailing process, a before &amp; after gallery, customer testimonials, and a service-area map. Built in Next.js and deployed to Netlify.</p>`,
     date: '2025-08-01T00:00:00',
     modified: '2025-08-01T00:00:00',
@@ -189,7 +189,7 @@ export const STATIC_PROJECTS: Project[] = [
     slug: 'clover-garden',
     excerpt: 'Garden centre e-commerce demo with a full product catalogue, category browsing, a seasonal feature section, and a loyalty programme landing page. Hudson, OH.',
     content: `<p>Clover Garden Centre has served Hudson, OH since 1987. This demo shows how a long-established local garden centre can modernise its web presence with a clean, nature-forward design and lightweight e-commerce.</p>
-<p>The catalogue covers annuals, perennials, trees &amp; shrubs, and garden supplies. A seasonal section highlights current in-store specials, and a loyalty programme page encourages repeat visits. The shop-like interface was built with Next.js and static data — ready to connect to a real commerce backend.</p>`,
+<p>The catalogue covers annuals, perennials, trees &amp; shrubs, and garden supplies. A seasonal section highlights current in-store specials, and a loyalty programme page encourages repeat visits. The shop-like interface was built with Next.js and static data. Ready to connect to a real commerce backend.</p>`,
     date: '2025-07-01T00:00:00',
     modified: '2025-07-01T00:00:00',
     featuredImage: {

@@ -8,7 +8,7 @@ import Testimonials from '@/components/sections/Testimonials';
 import CtaBanner from '@/components/sections/CtaBanner';
 
 export const metadata: Metadata = {
-  title: 'Beacon — Uptime Monitoring for Modern Teams',
+  title: 'Beacon | Uptime Monitoring for Modern Teams',
   description:
     'Know before your customers do. Beacon monitors your websites and APIs every 30 seconds from 8 global locations with instant Slack and PagerDuty alerts.',
 };

@@ -22,11 +22,11 @@ const faqs = [
   },
   {
     q: 'What does the 30-second check interval mean?',
-    a: "Beacon pings your endpoint from multiple global locations every 30 seconds. You're alerted the moment two consecutive checks fail — keeping false positives to a minimum.",
+    a: "Beacon pings your endpoint from multiple global locations every 30 seconds. You're alerted the moment two consecutive checks fail. Keeping false positives to a minimum.",
   },
   {
     q: 'Do you offer a trial of Pro or Business?',
-    a: "Yes — both paid plans come with a 14-day free trial. No credit card required to start.",
+    a: "Yes. Both paid plans come with a 14-day free trial. No credit card required to start.",
   },
 ];
 

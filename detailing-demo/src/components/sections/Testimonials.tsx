@@ -28,7 +28,7 @@ export default function Testimonials() {
         {/* ── Featured pull-quote ───────────────────────────────── */}
         <div className="mb-16 lg:mb-20">
           {/*
-            📸 IMAGE SLOT — Testimonial background (optional)
+            📸 IMAGE SLOT. Testimonial background (optional)
             Wrap this section in a relative div with a background image for a
             dramatic quote-over-image effect:
               <div className="relative rounded-3xl overflow-hidden p-10 lg:p-16">

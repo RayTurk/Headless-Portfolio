@@ -35,7 +35,7 @@ export default function ContactPage() {
             </h1>
             <p className="text-lg text-surface-400 max-w-2xl mx-auto">
               Whether you need ongoing maintenance, a new build, or just want to chat about your
-              web strategy — I&apos;m here to help.
+              web strategy. I&apos;m here to help.
             </p>
           </RevealOnScroll>
 
@@ -107,7 +107,7 @@ export default function ContactPage() {
                   <a href="/audit" className="block rounded-xl border border-brand-500/30 bg-brand-500/5 hover:bg-brand-500/10 p-4 transition-colors group">
                     <h4 className="text-brand-400 font-medium mb-1 group-hover:text-brand-300">Free Site Audit →</h4>
                     <p className="text-surface-400 text-sm">
-                      Not sure what your site needs? Run an instant automated audit — no sign-up required.
+                      Not sure what your site needs? Run an instant automated audit. No sign-up required.
                     </p>
                   </a>
                   <div className="rounded-xl border border-surface-700 bg-surface-800/50 p-4">

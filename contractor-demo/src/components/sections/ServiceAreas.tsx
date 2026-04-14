@@ -44,7 +44,7 @@ export default function ServiceAreas() {
         <p className="text-center text-gray-500 text-sm mt-8">
           Don't see your city?{' '}
           <a href="/contact" className="text-amber-600 font-medium hover:underline">
-            Contact us — we may still serve your area.
+            Contact us. We may still serve your area.
           </a>
         </p>
       </div>

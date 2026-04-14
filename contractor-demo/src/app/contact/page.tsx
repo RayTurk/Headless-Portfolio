@@ -27,7 +27,7 @@ export default function ContactPage() {
           </p>
           <h1 className="text-4xl lg:text-5xl font-bold mb-4">Request a Free Quote</h1>
           <p className="text-navy-300 text-lg max-w-xl">
-            Fill out the form and we'll call you within 2 business hours. For emergencies, call us directly — we're available 24/7.
+            Fill out the form and we'll call you within 2 business hours. For emergencies, call us directly. We're available 24/7.
           </p>
         </div>
       </section>

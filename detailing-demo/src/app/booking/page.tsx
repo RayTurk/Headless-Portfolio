@@ -109,7 +109,7 @@ export default function BookingPage() {
                 100% Satisfaction Guarantee
               </h3>
               <p className="text-zinc-400 text-sm leading-relaxed">
-                Not happy with the results? We&apos;ll make it right — free of charge. No questions, no
+                Not happy with the results? We&apos;ll make it right. Free of charge. No questions, no
                 hassle.
               </p>
             </div>

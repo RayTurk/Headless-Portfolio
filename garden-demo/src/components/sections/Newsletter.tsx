@@ -29,7 +29,7 @@ export default function Newsletter() {
 
         <p className="text-stone-600 leading-relaxed mb-8 max-w-md mx-auto">
           Monthly planting guides, new arrival alerts, and exclusive discounts for subscribers.
-          No fluff — just what&apos;s growing.
+          No fluff. Just what&apos;s growing.
         </p>
 
         {submitted ? (

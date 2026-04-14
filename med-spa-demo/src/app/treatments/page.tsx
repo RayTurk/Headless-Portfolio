@@ -8,7 +8,7 @@ import BookingCTA from '@/components/sections/BookingCTA';
 export const metadata: Metadata = {
   title: 'Treatments',
   description:
-    'Browse all med spa treatments at Luminary Aesthetics — injectables, laser, microneedling, facials, and more. Chagrin Falls, OH.',
+    'Browse all med spa treatments at Luminary Aesthetics. Injectables, laser, microneedling, facials, and more. Chagrin Falls, OH.',
 };
 
 const categories = ['Injectables', 'Skin Resurfacing', 'Laser Treatments', 'Facials'] as const;
@@ -27,7 +27,7 @@ export default function TreatmentsPage() {
             Our <em className="text-blush-500 not-italic">Treatments</em>
           </h1>
           <p className="text-base text-drift font-sans max-w-xl leading-relaxed">
-            Every treatment at Luminary begins with a consultation. Below is our full menu — pricing shown is starting rate and varies by treatment plan.
+            Every treatment at Luminary begins with a consultation. Below is our full menu. Pricing shown is starting rate and varies by treatment plan.
           </p>
         </div>
       </section>

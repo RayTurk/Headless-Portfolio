@@ -6,13 +6,13 @@ import ReservationsCTA from '@/components/sections/ReservationsCTA';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'The story of Ember & Oak — a wood-fired restaurant in Cleveland, Ohio built by Chef Marcus Webb after a decade cooking in Chicago, Lyon, and San Sebastián.',
+    'The story of Ember & Oak. A wood-fired restaurant in Cleveland, Ohio built by Chef Marcus Webb after a decade cooking in Chicago, Lyon, and San Sebastián.',
 };
 
 const team = [
   { name: 'Marcus Webb', title: 'Executive Chef & Owner', image: '/images/team-marcus.jpg', bio: 'After stages in Lyon and San Sebastián, Marcus returned to Cleveland to open the restaurant he always wanted to eat at. The menu is his obsession.' },
   { name: 'Dana Reyes', title: 'General Manager', image: '/images/team-dana.jpg', bio: 'Dana leads front-of-house with a hospitality philosophy built on presence, not performance. She knows every regular\'s name.' },
-  { name: 'Kai Hollister', title: 'Pastry Chef', image: '/images/team-kai.jpg', bio: 'Kai\'s desserts are restrained but unforgettable — burnt honey, bittersweet chocolate, just enough sweetness to make you order one more.' },
+  { name: 'Kai Hollister', title: 'Pastry Chef', image: '/images/team-kai.jpg', bio: 'Kai\'s desserts are restrained but unforgettable. Burnt honey, bittersweet chocolate, just enough sweetness to make you order one more.' },
 ];
 
 export default function AboutPage() {
@@ -45,10 +45,10 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-base text-stone font-sans leading-relaxed">
                 <p>
-                  Marcus Webb grew up in Cleveland. He spent a decade away — cooking at a Michelin-starred brasserie in Lyon, staging at Arzak, running a section at a beloved Chicago steakhouse — before returning with a clear picture of what he wanted to build.
+                  Marcus Webb grew up in Cleveland. He spent a decade away. Cooking at a Michelin-starred brasserie in Lyon, staging at Arzak, running a section at a beloved Chicago steakhouse. Before returning with a clear picture of what he wanted to build.
                 </p>
                 <p>
-                  The hearth at Ember &amp; Oak is the kitchen. Every protein, most vegetables, a lot of the bread — it all passes through fire at some point. The menu is structured simply because the cooking is complex. There&rsquo;s no reason to hide behind elaborate descriptions.
+                  The hearth at Ember &amp; Oak is the kitchen. Every protein, most vegetables, a lot of the bread. It all passes through fire at some point. The menu is structured simply because the cooking is complex. There&rsquo;s no reason to hide behind elaborate descriptions.
                 </p>
                 <p>
                   We&rsquo;re committed to sourcing within 200 miles when possible. Our beef comes from a farm 45 minutes south of Cleveland. The produce changes with what&rsquo;s best each week.

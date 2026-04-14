@@ -207,7 +207,7 @@ export default function AuditPage() {
                 </h1>
                 <p className="text-ash max-w-md mx-auto text-lg">
                   Enter your details and we&apos;ll scan your site for SEO, technical,
-                  social sharing, and accessibility issues — instantly.
+                  social sharing, and accessibility issues. Instantly.
                 </p>
               </div>
 
@@ -388,7 +388,7 @@ export default function AuditPage() {
               <div className="rounded-2xl bg-gradient-to-br from-brand-500/10 to-steel-700/10 border border-brand-500/20 p-8 text-center">
                 <h3 className="font-display text-xl font-bold text-cinder mb-2">
                   {result.score >= 80
-                    ? 'Great foundation — let\'s take it further'
+                    ? 'Great foundation. Let\'s take it further'
                     : result.score >= 50
                     ? 'There\'s real room to improve your site'
                     : 'Your site needs some attention'}

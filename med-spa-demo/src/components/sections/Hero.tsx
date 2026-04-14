@@ -27,7 +27,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-base lg:text-lg text-drift leading-relaxed mb-10 max-w-md font-sans">
-          Board-certified practitioners delivering medical-grade injectables, advanced laser treatments, and transformative skincare — in a serene Chagrin Falls studio.
+          Board-certified practitioners delivering medical-grade injectables, advanced laser treatments, and transformative skincare. In a serene Chagrin Falls studio.
         </p>
 
         {/* Trust line */}

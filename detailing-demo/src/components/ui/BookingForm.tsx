@@ -14,7 +14,7 @@ const serviceOptions = [
   'Express Package ($89)',
   'Signature Package ($189)',
   'Elite Package ($349)',
-  'Not sure — advise me',
+  'Not sure. Advise me',
 ];
 
 const vehicleTypes = [

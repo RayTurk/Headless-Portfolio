@@ -21,7 +21,7 @@ export default function Footer() {
       <div className="bg-amber-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-navy-950 font-semibold text-sm">
-            24/7 Emergency Service — No Holiday Surcharges
+            24/7 Emergency Service. No Holiday Surcharges
           </p>
           <a
             href={`tel:${siteConfig.phone}`}

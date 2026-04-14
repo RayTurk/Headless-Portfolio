@@ -133,7 +133,7 @@ export default function DemoForm() {
           id="message"
           name="message"
           rows={4}
-          placeholder="Tell us about your stack — websites, APIs, microservices..."
+          placeholder="Tell us about your stack. Websites, APIs, microservices..."
           className={cn(
             'w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-2.5',
             'text-white placeholder-slate-500 text-sm',

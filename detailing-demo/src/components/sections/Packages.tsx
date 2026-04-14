@@ -31,7 +31,7 @@ export default function Packages() {
             <span className="text-zinc-500 font-light italic">of clean.</span>
           </h2>
           <p className="text-zinc-500 max-w-lg mx-auto text-sm leading-relaxed">
-            All packages include a satisfaction guarantee. Not sure which to book? Call us — we&apos;ll
+            All packages include a satisfaction guarantee. Not sure which to book? Call us. We&apos;ll
             recommend based on your car&apos;s condition.
           </p>
         </div>
