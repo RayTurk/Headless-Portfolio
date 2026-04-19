@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { ArrowRight, Zap } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import type { ContractorService } from '@/lib/types';
 
 interface ServiceCardProps {
@@ -14,8 +13,8 @@ export default function ServiceCard({ service }: ServiceCardProps) {
       className="group block bg-white border border-gray-200 rounded-xl p-6 hover:border-navy-950/20 hover:shadow-card-hover transition-all duration-300"
     >
       {/* Icon */}
-      <div className={cn('w-12 h-12 rounded-lg flex items-center justify-center mb-4', service.accentColor)}>
-        <ServiceIcon name={service.icon} className="w-6 h-6" />
+      <div className="mb-4">
+        <ServiceIcon name={service.icon} className={`w-8 h-8 ${service.accentColor.split(' ').find(c => c.startsWith('text-')) ?? 'text-gray-600'}`} />
       </div>
 
       {/* Title */}
